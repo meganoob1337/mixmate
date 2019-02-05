@@ -9,7 +9,7 @@ export default {
 		let dataSet = fetchObject.dataSet;
 		let embedItem = fetchObject.embedItem;
 		let fetchType = fetchObject.fetchType;
-		let dataBaseObject = fetchObject.dataBaseObject;
+		let databaseObject = fetchObject.databaseObject;
 		let specificId = fetchObject.specificId;
 
 		switch (fetchType) {
@@ -30,7 +30,7 @@ export default {
 				return fetch(`${databaseURL}/${dataSet}`, {
 					method: `${fetchType}`,
 					headers: {"Content-Type": "application/json; charset=utf-8"},
-					body: JSON.stringify(dataBaseObject)
+					body: JSON.stringify(databaseObject)
 				})
 				.then(r => r.json())
 
@@ -38,11 +38,12 @@ export default {
 				return fetch(`${databaseURL}/${dataSet}/${specificId}`, {
 					method: `${fetchType}`,
 					headers: {"Content-Type": "application/json; charset=utf-8"},
-					body: JSON.stringify(dataBaseObject)
+					body: JSON.stringify(databaseObject)
 				})
 				.then(r => r.json())
 
 			case "DELETE":
+				console.log(`deleted id${specificId}`)
 				return fetch(`${databaseURL}/${dataSet}/${specificId}`, {
 					method: `${fetchType}`
 				})

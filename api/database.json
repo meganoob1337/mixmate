@@ -5,6 +5,12 @@
       "userName": "Cole",
       "email": "cobryant47@gmail.com",
       "password": "abc"
+    },
+    {
+      "id": 2,
+      "userName": "Bill",
+      "email": "bill@bill.com",
+      "password": "abc"
     }
   ],
   "cocktails": [
@@ -18,7 +24,7 @@
     },
     {
       "id": 79,
-      "userId": 1,
+      "userId": 2,
       "name": "Sugar Water",
       "glass": "Coupe",
       "category": "Refreshing",
@@ -86,6 +92,24 @@
       "userId": 1,
       "cocktailId": 78,
       "comment": "It's good"
+    },
+    {
+      "userId": 1,
+      "cocktailId": 1,
+      "comment": "",
+      "id": 2
+    },
+    {
+      "userId": 1,
+      "cocktailId": 79,
+      "comment": "",
+      "id": 3
+    },
+    {
+      "userId": 1,
+      "cocktailId": 5,
+      "comment": "",
+      "id": 4
     }
   ],
   "userIngredients": [

@@ -16,6 +16,8 @@ export default class ApplicationViews extends Component {
     }
 
     postItem = (dataSet, databaseObject) => {
+        console.log(databaseObject);
+        console.log(dataSet);
         DataManager.dataManager({
             "dataSet": dataSet,
             "fetchType": "POST",
@@ -93,7 +95,8 @@ export default class ApplicationViews extends Component {
                 <Route exact path="/explore" render={props => {
                     return <ExploreBoard {...props}
                     ibaCocktails={this.state.ibaCocktails}
-                    cocktails={this.state.cocktails} />
+                    cocktails={this.state.cocktails}
+                    postItem={this.postItem} />
                 }}
                 />
 
