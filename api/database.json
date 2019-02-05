@@ -1,0 +1,108 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "userName": "Cole",
+      "email": "cobryant47@gmail.com",
+      "password": "abc"
+    }
+  ],
+  "cocktails": [
+    {
+      "id": 78,
+      "userId": 1,
+      "name": "Classic Daiquiri",
+      "glass": "Coupe",
+      "category": "Refreshing",
+      "preparation": "Combine ingredients in a shaker with ice, shake to chill and strain into a chilled glass."
+    },
+    {
+      "id": 79,
+      "userId": 1,
+      "name": "Sugar Water",
+      "glass": "Coupe",
+      "category": "Refreshing",
+      "preparation": "Combine ingredients in a shaker with ice, shake to chill and strain into a chilled glass."
+    }
+  ],
+  "ingredients": [
+    {
+      "id": 1,
+      "name": "Dark Rum",
+      "type": "Spirit"
+    },
+    {
+      "id": 2,
+      "name": "Lime Juice",
+      "type": "Fruit Juice"
+    },
+    {
+      "id": 3,
+      "name": "Simple Syrup",
+      "type": "Other"
+    }
+  ],
+  "cocktailIngredients": [
+    {
+      "id": 1,
+      "cocktailId": 78,
+      "ingredientId": 1,
+      "amount": 2,
+      "unit": "oz",
+      "label": "Smith & Cross Rum",
+      "required": true
+    },
+    {
+      "id": 2,
+      "cocktailId": 78,
+      "ingredientId": 2,
+      "amount": 1,
+      "unit": "oz",
+      "label": "Fresh Lime Juice",
+      "required": true
+    },
+    {
+      "id": 3,
+      "cocktailId": 78,
+      "ingredientId": 3,
+      "amount": 0.5,
+      "unit": "oz",
+      "label": "Simple Syrup",
+      "required": true
+    },
+    {
+      "id": 4,
+      "cocktailId": 79,
+      "ingredientId": 3,
+      "amount": 0.5,
+      "unit": "oz",
+      "label": "Demarara Syrup",
+      "required": true
+    }
+  ],
+  "userCocktails": [
+    {
+      "id": 1,
+      "userId": 1,
+      "cocktailId": 78,
+      "comment": "It's good"
+    }
+  ],
+  "userIngredients": [
+    {
+      "id": 1,
+      "userId": 1,
+      "ingredientId": 1
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "ingredientId": 2
+    },
+    {
+      "id": 3,
+      "userId": 1,
+      "ingredientId": 3
+    }
+  ]
+}

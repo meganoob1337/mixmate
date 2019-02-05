@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
+import ApplicationViews from './ApplicationViews';
+import NavBar from './nav/NavBar';
 
 export default class App extends Component {
     render() {
         return (
-            <p>Here We Go</p>
-        )
+            <React.Fragment>
+                <NavBar />
+                <ApplicationViews />
+            </React.Fragment>
+        );
     }
 }
