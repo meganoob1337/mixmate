@@ -15,6 +15,2083 @@
   ],
   "cocktails": [
     {
+      "id": 1,
+      "name": "Vesper",
+      "glass": "martini",
+      "category": "Before Dinner Cocktail",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 6,
+          "ingredient": "Gin"
+        },
+        {
+          "unit": "cl",
+          "amount": 1.5,
+          "ingredient": "Vodka"
+        },
+        {
+          "unit": "cl",
+          "amount": 0.75,
+          "ingredient": "Lillet",
+          "label": "Lillet Blanc"
+        }
+      ],
+      "garnish": "Lemon twist",
+      "preparation": "Shake and strain into a chilled cocktail glass."
+    },
+    {
+      "id": 2,
+      "name": "Bacardi",
+      "glass": "martini",
+      "category": "Before Dinner Cocktail",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 4.5,
+          "ingredient": "White rum",
+          "label": "Bacardi White Rum"
+        },
+        {
+          "unit": "cl",
+          "amount": 2,
+          "ingredient": "Lime juice"
+        },
+        {
+          "unit": "cl",
+          "amount": 1,
+          "ingredient": "Grenadine",
+          "label": "Grenadine"
+        }
+      ],
+      "preparation": "Shake with ice cubes. Strain into chilled cocktail glass."
+    },
+    {
+      "id": 3,
+      "name": "Negroni",
+      "glass": "old-fashioned",
+      "category": "Before Dinner Cocktail",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 3,
+          "ingredient": "Gin"
+        },
+        {
+          "unit": "cl",
+          "amount": 3,
+          "ingredient": "Campari"
+        },
+        {
+          "unit": "cl",
+          "amount": 3,
+          "ingredient": "Vermouth",
+          "label": "Sweet red vermouth"
+        }
+      ],
+      "garnish": "Half an orange slice",
+      "preparation": "Build into old-fashioned glass filled with ice. Stir gently."
+    },
+    {
+      "id": 4,
+      "name": "Rose",
+      "glass": "martini",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 2,
+          "ingredient": "Kirsch"
+        },
+        {
+          "unit": "cl",
+          "amount": 4,
+          "ingredient": "Vermouth",
+          "label": "Dry vermouth"
+        },
+        {
+          "special": "3 dashes Strawberry syrup"
+        }
+      ],
+      "preparation": "Stir all ingredients with ice and strain into a cocktail glass."
+    },
+    {
+      "id": 5,
+      "name": "Old Fashioned",
+      "glass": "old-fashioned",
+      "category": "Before Dinner Cocktail",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 4.5,
+          "ingredient": "Whiskey",
+          "label": "Bourbon or rye whiskey"
+        },
+        {
+          "special": "2 dashes Angostura Bitters"
+        },
+        {
+          "special": "1 sugar cube"
+        },
+        {
+          "special": "Few dashes plain water"
+        }
+      ],
+      "garnish": "Orange slice and cherry",
+      "preparation": "Place sugar cube in old-fashioned glass and saturate with bitters, add a dash of plain water. Muddle until dissolve. Fill the glass with ice cubes and add whisky."
+    },
+    {
+      "id": 6,
+      "name": "Tuxedo",
+      "glass": "martini",
+      "category": "All Day Cocktail",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 3,
+          "ingredient": "Gin",
+          "label": "Old Tom Gin"
+        },
+        {
+          "unit": "cl",
+          "amount": 3,
+          "ingredient": "Vermouth",
+          "label": "Dry vermouth"
+        },
+        {
+          "special": "1/2 bar spoon Maraschino"
+        },
+        {
+          "special": "1/4 bar spoon Absinthe"
+        },
+        {
+          "special": "3 dashes Orange Bitters"
+        }
+      ],
+      "garnish": "Cherry and lemon twist",
+      "preparation": "Stir all ingredients with ice and strain into cocktail glass."
+    },
+    {
+      "id": 7,
+      "name": "Mojito",
+      "glass": "collins",
+      "category": "Longdrink",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 4,
+          "ingredient": "White rum",
+          "label": "White Cuban Rum"
+        },
+        {
+          "unit": "cl",
+          "amount": 3,
+          "ingredient": "Lime juice"
+        },
+        {
+          "special": "6 Mint sprigs"
+        },
+        {
+          "special": "2 teaspoons white sugar"
+        },
+        {
+          "special": "Soda water"
+        }
+      ],
+      "garnish": "Mint leaves and lemon slice",
+      "preparation": "Muddle mint springs with sugar and lime juice. Add splash of soda water and fill glass with cracked ice. Pour rum and top with soda water. Serve with straw."
+    },
+    {
+      "id": 8,
+      "name": "Horse's Neck",
+      "glass": "highball",
+      "category": "Longdrink",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 4,
+          "ingredient": "Cognac"
+        },
+        {
+          "unit": "cl",
+          "amount": 12,
+          "ingredient": "Ginger Ale"
+        },
+        {
+          "special": "Dash of Angostura bitters (optional)"
+        }
+      ],
+      "garnish": "Lemon twist",
+      "preparation": "Build into highball glass with ice cubes. Stir gently. If required, add dashes of Angostura bitters."
+    },
+    {
+      "id": 9,
+      "name": "Planter's Punch",
+      "glass": "highball",
+      "category": "Longdrink",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 4.5,
+          "ingredient": "Dark rum"
+        },
+        {
+          "unit": "cl",
+          "amount": 3.5,
+          "ingredient": "Orange juice"
+        },
+        {
+          "unit": "cl",
+          "amount": 3.5,
+          "ingredient": "Pineapple juice"
+        },
+        {
+          "unit": "cl",
+          "amount": 2,
+          "ingredient": "Lemon juice"
+        },
+        {
+          "unit": "cl",
+          "amount": 1,
+          "ingredient": "Grenadine",
+          "label": "Grenadine"
+        },
+        {
+          "unit": "cl",
+          "amount": 1,
+          "ingredient": "Simple syrup",
+          "label": "Simple syrup"
+        },
+        {
+          "special": "3 to 4 dashes Angostura bitters"
+        }
+      ],
+      "garnish": "Pineapple slice and a cherry",
+      "preparation": "Pour all ingredients, except the bitters, into shaker filled with ice. Shake. Pour into large glass, filled with ice. Add Angostura bitters, “on top”."
+    },
+    {
+      "id": 10,
+      "name": "Sea Breeze",
+      "glass": "highball",
+      "category": "Longdrink",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 4,
+          "ingredient": "Vodka"
+        },
+        {
+          "unit": "cl",
+          "amount": 12,
+          "ingredient": "Cranberry juice"
+        },
+        {
+          "unit": "cl",
+          "amount": 3,
+          "ingredient": "Grapefruit juice"
+        }
+      ],
+      "garnish": "Lime wedge",
+      "preparation": "Build all ingredients in a rock glass filled with ice."
+    },
+    {
+      "id": 11,
+      "name": "Pisco Sour",
+      "glass": "old-fashioned",
+      "category": "All Day Cocktail",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 4.5,
+          "ingredient": "Pisco"
+        },
+        {
+          "unit": "cl",
+          "amount": 3,
+          "ingredient": "Lemon juice"
+        },
+        {
+          "unit": "cl",
+          "amount": 2,
+          "ingredient": "Simple syrup",
+          "label": "Simple syrup"
+        },
+        {
+          "special": "1 raw egg white (small egg)"
+        }
+      ],
+      "preparation": "Shake and strain into a chilled champagne flute. Dash some Angostura bitters on top."
+    },
+    {
+      "id": 12,
+      "name": "Long Island Iced Tea",
+      "glass": "highball",
+      "category": "Longdrink",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 1.5,
+          "ingredient": "Tequila"
+        },
+        {
+          "unit": "cl",
+          "amount": 1.5,
+          "ingredient": "Vodka"
+        },
+        {
+          "unit": "cl",
+          "amount": 1.5,
+          "ingredient": "White rum"
+        },
+        {
+          "unit": "cl",
+          "amount": 1.5,
+          "ingredient": "Triple Sec"
+        },
+        {
+          "unit": "cl",
+          "amount": 1.5,
+          "ingredient": "Gin"
+        },
+        {
+          "unit": "cl",
+          "amount": 2.5,
+          "ingredient": "Lemon juice"
+        },
+        {
+          "unit": "cl",
+          "amount": 3,
+          "ingredient": "Gomme syrup",
+          "label": "Gomme syrup"
+        },
+        {
+          "special": "1 dash of Cola"
+        }
+      ],
+      "garnish": "Lemon twist",
+      "preparation": "Add all ingredients into highball glass filled with ice. Stir gently. Serve with straw."
+    },
+    {
+      "id": 13,
+      "name": "Clover Club",
+      "glass": "martini",
+      "category": "All Day Cocktail",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 4.5,
+          "ingredient": "Gin"
+        },
+        {
+          "unit": "cl",
+          "amount": 1.5,
+          "ingredient": "Rasberry syrup",
+          "label": "Raspberry syrup"
+        },
+        {
+          "unit": "cl",
+          "amount": 1.5,
+          "ingredient": "Lemon juice"
+        },
+        {
+          "special": "Few drops of Egg White"
+        }
+      ],
+      "preparation": "Shake with ice cubes. Strain into cocktail glass."
+    },
+    {
+      "id": 14,
+      "name": "Angel Face",
+      "glass": "martini",
+      "category": "All Day Cocktail",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 3,
+          "ingredient": "Gin"
+        },
+        {
+          "unit": "cl",
+          "amount": 3,
+          "ingredient": "Apricot brandy"
+        },
+        {
+          "unit": "cl",
+          "amount": 3,
+          "ingredient": "Calvados"
+        }
+      ],
+      "preparation": "Shake with ice cubes. Strain into a cocktail glass."
+    },
+    {
+      "id": 15,
+      "name": "Mimosa",
+      "glass": "champagne-flute",
+      "category": "Sparkling Cocktail",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 7.5,
+          "ingredient": "Champagne"
+        },
+        {
+          "unit": "cl",
+          "amount": 7.5,
+          "ingredient": "Orange juice"
+        }
+      ],
+      "garnish": "Optional orange twist",
+      "preparation": "Pour orange juice into flute and gently pour Champagne. Stir gently. Note: a Buck’s Fizz and a Mimosa are the same drink."
+    },
+    {
+      "id": 16,
+      "name": "Whiskey Sour",
+      "glass": "old-fashioned",
+      "category": "Before Dinner Cocktail",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 4.5,
+          "ingredient": "Whiskey",
+          "label": "Bourbon whiskey"
+        },
+        {
+          "unit": "cl",
+          "amount": 3,
+          "ingredient": "Lemon juice"
+        },
+        {
+          "unit": "cl",
+          "amount": 1.5,
+          "ingredient": "Simple syrup",
+          "label": "Simple syrup"
+        }
+      ],
+      "garnish": "Half an orange slice and cherry",
+      "preparation": "Dash egg white (Optional: if used shake little harder to foam up the egg white). Pour all ingredients into cocktail shaker filled with ice. Shake. Strain into cocktail glass. If served ‘On the rocks’, strain ingredients into old-fashioned glass filled with ice."
+    },
+    {
+      "id": 17,
+      "name": "Screwdriver",
+      "glass": "highball",
+      "category": "All Day Cocktail",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 5,
+          "ingredient": "Vodka"
+        },
+        {
+          "unit": "cl",
+          "amount": 10,
+          "ingredient": "Orange juice"
+        }
+      ],
+      "garnish": "Orange slice",
+      "preparation": "Build into a highball glass filled with ice. Stir gently."
+    },
+    {
+      "id": 18,
+      "name": "Cuba Libre",
+      "glass": "highball",
+      "category": "Longdrink",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 5,
+          "ingredient": "White rum"
+        },
+        {
+          "unit": "cl",
+          "amount": 12,
+          "ingredient": "Cola"
+        },
+        {
+          "unit": "cl",
+          "amount": 1,
+          "ingredient": "Lime juice"
+        }
+      ],
+      "garnish": "Lime wedge",
+      "preparation": "Build all ingredients in a highball glass filled with ice."
+    },
+    {
+      "id": 19,
+      "name": "Manhattan",
+      "glass": "martini",
+      "category": "Before Dinner Cocktail",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 5,
+          "ingredient": "Whiskey",
+          "label": "Rye whiskey"
+        },
+        {
+          "unit": "cl",
+          "amount": 2,
+          "ingredient": "Vermouth",
+          "label": "Red vermouth"
+        },
+        {
+          "special": "1 dash Angostura Bitters"
+        }
+      ],
+      "garnish": "Cherry",
+      "preparation": "Stir in mixing glass with ice cubes. Strain into chilled cocktail glass."
+    },
+    {
+      "id": 20,
+      "name": "Porto Flip",
+      "glass": "martini",
+      "category": "After Dinner Cocktail",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 1.5,
+          "ingredient": "Cognac"
+        },
+        {
+          "unit": "cl",
+          "amount": 4.5,
+          "ingredient": "Red Port"
+        },
+        {
+          "unit": "cl",
+          "amount": 1,
+          "ingredient": "Egg yolk"
+        }
+      ],
+      "preparation": "Shake with ice cubes. Strain into cocktail glass. Sprinkle with fresh ground nutmeg."
+    },
+    {
+      "id": 21,
+      "name": "Gin Fizz",
+      "glass": "highball",
+      "category": "Longdrink",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 4.5,
+          "ingredient": "Gin"
+        },
+        {
+          "unit": "cl",
+          "amount": 3,
+          "ingredient": "Lemon juice"
+        },
+        {
+          "unit": "cl",
+          "amount": 1,
+          "ingredient": "Simple syrup",
+          "label": "Simple syrup"
+        },
+        {
+          "unit": "cl",
+          "amount": 8,
+          "ingredient": "Soda water"
+        }
+      ],
+      "garnish": "Lemon slice",
+      "preparation": "Shake all ingredients with ice cubes, except soda water. Pour into tumbler. Top with soda water."
+    },
+    {
+      "id": 22,
+      "name": "Espresso Martini",
+      "glass": "martini",
+      "category": "After Dinner Cocktail",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 5,
+          "ingredient": "Vodka"
+        },
+        {
+          "unit": "cl",
+          "amount": 1,
+          "ingredient": "Coffee liqueur",
+          "label": "Kahlúa"
+        },
+        {
+          "special": "Sugar syrup (according to individual preference of sweetness)"
+        },
+        {
+          "special": "1 short strong Espresso"
+        }
+      ],
+      "preparation": "Shake and strain into a chilled cocktail glass."
+    },
+    {
+      "id": 23,
+      "name": "Margarita",
+      "glass": "margarita",
+      "category": "All Day Cocktail",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 3.5,
+          "ingredient": "Tequila"
+        },
+        {
+          "unit": "cl",
+          "amount": 2,
+          "ingredient": "Triple Sec",
+          "label": "Cointreau"
+        },
+        {
+          "unit": "cl",
+          "amount": 1.5,
+          "ingredient": "Lime juice"
+        }
+      ],
+      "preparation": "Shake with ice cubes. Strain into cocktail glass rimmed with salt (note:Fruit Margarita - blend selected fruit with the above recipe)."
+    },
+    {
+      "id": 24,
+      "name": "French 75",
+      "glass": "champagne-tulip",
+      "category": "Sparkling Cocktail",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 3,
+          "ingredient": "Gin"
+        },
+        {
+          "unit": "cl",
+          "amount": 1.5,
+          "ingredient": "Lemon juice"
+        },
+        {
+          "special": "2 dashes Sugar syrup"
+        },
+        {
+          "unit": "cl",
+          "amount": 6,
+          "ingredient": "Champagne"
+        }
+      ],
+      "preparation": "Shake with ice cubes, except for champagne. Strain into a champagne flute. Top up with champagne. Stir gently."
+    },
+    {
+      "id": 25,
+      "name": "Yellow Bird",
+      "glass": "martini",
+      "category": "All Day Cocktail",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 3,
+          "ingredient": "White rum"
+        },
+        {
+          "unit": "cl",
+          "amount": 1.5,
+          "ingredient": "Galliano"
+        },
+        {
+          "unit": "cl",
+          "amount": 1.5,
+          "ingredient": "Triple Sec"
+        },
+        {
+          "unit": "cl",
+          "amount": 1.5,
+          "ingredient": "Lime juice"
+        }
+      ],
+      "preparation": "Shake and strain into a chilled cocktail glass."
+    },
+    {
+      "id": 26,
+      "name": "Pina Colada",
+      "glass": "hurricane",
+      "category": "Longdrink",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 3,
+          "ingredient": "White rum"
+        },
+        {
+          "unit": "cl",
+          "amount": 9,
+          "ingredient": "Pineapple juice"
+        },
+        {
+          "unit": "cl",
+          "amount": 3,
+          "ingredient": "Coconut milk"
+        }
+      ],
+      "garnish": "Pineapple slice and a cherry",
+      "preparation": "Blend all the ingredients with ice in a electric blender, pour into a large goblet or Hurricane glass and serve with straws."
+    },
+    {
+      "id": 27,
+      "name": "Aviation",
+      "glass": "martini",
+      "category": "All Day Cocktail",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 4.5,
+          "ingredient": "Gin"
+        },
+        {
+          "unit": "cl",
+          "amount": 1.5,
+          "ingredient": "Maraschino",
+          "label": "Maraschino"
+        },
+        {
+          "unit": "cl",
+          "amount": 1.5,
+          "ingredient": "Lemon juice"
+        }
+      ],
+      "preparation": "Shake and strain into a chilled cocktail glass."
+    },
+    {
+      "id": 28,
+      "name": "Bellini",
+      "glass": "champagne-flute",
+      "category": "Sparkling Cocktail",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 10,
+          "ingredient": "Prosecco"
+        },
+        {
+          "unit": "cl",
+          "amount": 5,
+          "ingredient": "Peach puree"
+        }
+      ],
+      "preparation": "Pour peach puree into chilled glass and add sparkling wine. Stir gently. Variations: Puccini (fresh mandarin juice), Rossini (fresh strawberry puree), Tintoretto (fresh pomegranate juice)"
+    },
+    {
+      "id": 29,
+      "name": "Grasshopper",
+      "glass": "martini",
+      "category": "After Dinner Cocktail",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 3,
+          "ingredient": "Créme liqueur",
+          "label": "White Créme de Cacao"
+        },
+        {
+          "unit": "cl",
+          "amount": 3,
+          "ingredient": "Créme liqueur",
+          "label": "Green Créme de Menthe"
+        },
+        {
+          "unit": "cl",
+          "amount": 3,
+          "ingredient": "Cream"
+        }
+      ],
+      "preparation": "Shake with ice cubes. Strain into chilled cocktail glass."
+    },
+    {
+      "id": 30,
+      "name": "Tequila Sunrise",
+      "glass": "highball",
+      "category": "Longdrink",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 4.5,
+          "ingredient": "Tequila"
+        },
+        {
+          "unit": "cl",
+          "amount": 9,
+          "ingredient": "Orange juice"
+        },
+        {
+          "unit": "cl",
+          "amount": 1.5,
+          "ingredient": "Grenadine",
+          "label": "Grenadine"
+        }
+      ],
+      "garnish": "Orange slice and a cherry",
+      "preparation": "Build tequila and orange juice into highball with ice cubes. Add a splash of grenadine to create sunrise effect. Do not stir."
+    },
+    {
+      "id": 31,
+      "name": "Daiquiri",
+      "glass": "martini",
+      "category": "Before Dinner Cocktail",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 4.5,
+          "ingredient": "White rum"
+        },
+        {
+          "unit": "cl",
+          "amount": 2.5,
+          "ingredient": "Lime juice"
+        },
+        {
+          "unit": "cl",
+          "amount": 1.5,
+          "ingredient": "Simple syrup",
+          "label": "Simple syrup"
+        }
+      ],
+      "preparation": "Shake and strain into a cocktail glass."
+    },
+    {
+      "id": 32,
+      "name": "Rusty Nail",
+      "glass": "old-fashioned",
+      "category": "After Dinner Cocktail",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 4.5,
+          "ingredient": "Whiskey",
+          "label": "Scotch whisky"
+        },
+        {
+          "unit": "cl",
+          "amount": 2.5,
+          "ingredient": "Drambuie"
+        }
+      ],
+      "garnish": "Lemon twist",
+      "preparation": "Build into old-fashioned glass filled with ice. Stir gently."
+    },
+    {
+      "id": 33,
+      "name": "B52",
+      "glass": "shot",
+      "category": "After Dinner Cocktail",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 2,
+          "ingredient": "Coffee liqueur",
+          "label": "Kahlúa"
+        },
+        {
+          "unit": "cl",
+          "amount": 2,
+          "ingredient": "Cream liqueur",
+          "label": "Baileys Irish Cream"
+        },
+        {
+          "unit": "cl",
+          "amount": 2,
+          "ingredient": "Triple Sec",
+          "label": "Grand Marnier"
+        }
+      ],
+      "preparation": "Layer ingredients one at a time starting with Kahlúa, followed by Baileys Irish Cream and top with Grand Marnier. Flame the Grand Marnier, serve while the flame is still on, accompanied with a straw on side plate."
+    },
+    {
+      "id": 34,
+      "name": "Stinger",
+      "glass": "martini",
+      "category": "After Dinner Cocktail",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 5,
+          "ingredient": "Cognac"
+        },
+        {
+          "unit": "cl",
+          "amount": 2,
+          "ingredient": "Créme liqueur",
+          "label": "White Créme de Menthe"
+        }
+      ],
+      "preparation": "Stir in mixing glass with ice cubes. Strain into a cocktail glass."
+    },
+    {
+      "id": 35,
+      "name": "Golden Dream",
+      "glass": "martini",
+      "category": "After Dinner Cocktail",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 2,
+          "ingredient": "Galliano"
+        },
+        {
+          "unit": "cl",
+          "amount": 2,
+          "ingredient": "Triple Sec"
+        },
+        {
+          "unit": "cl",
+          "amount": 2,
+          "ingredient": "Orange juice"
+        },
+        {
+          "unit": "cl",
+          "amount": 1,
+          "ingredient": "Cream"
+        }
+      ],
+      "preparation": "Shake with ice cubes. Strain into chilled cocktail glass."
+    },
+    {
+      "id": 36,
+      "name": "God Mother",
+      "glass": "old-fashioned",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 3.5,
+          "ingredient": "Vodka"
+        },
+        {
+          "unit": "cl",
+          "amount": 3.5,
+          "ingredient": "DiSaronno"
+        }
+      ],
+      "preparation": "Build into old fashioned glass filled with ice cubes. Stir gently."
+    },
+    {
+      "id": 37,
+      "name": "Spritz Veneziano",
+      "glass": "old-fashioned",
+      "category": "Sparkling Cocktail",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 6,
+          "ingredient": "Prosecco"
+        },
+        {
+          "unit": "cl",
+          "amount": 4,
+          "ingredient": "Aperol"
+        },
+        {
+          "special": "Splash of Soda water"
+        }
+      ],
+      "garnish": "Half an orange slice",
+      "preparation": "Build into an old-fashioned glass filled with ice. Top with a splash of soda water."
+    },
+    {
+      "id": 38,
+      "name": "Bramble",
+      "glass": "old-fashioned",
+      "category": "All Day Cocktail",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 4,
+          "ingredient": "Gin"
+        },
+        {
+          "unit": "cl",
+          "amount": 1.5,
+          "ingredient": "Lemon juice"
+        },
+        {
+          "unit": "cl",
+          "amount": 1,
+          "ingredient": "Simple syrup",
+          "label": "Simple syrup"
+        },
+        {
+          "unit": "cl",
+          "amount": 1.5,
+          "ingredient": "Blackberry liqueur"
+        }
+      ],
+      "garnish": "Lemon slice and two blackberries",
+      "preparation": "Build over crushed ice, in a rock glass. Stir, then pour the blackberry liqueur over the top of the drink in a circular fashion."
+    },
+    {
+      "id": 39,
+      "name": "Alexander",
+      "glass": "martini",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 3,
+          "ingredient": "Cognac"
+        },
+        {
+          "unit": "cl",
+          "amount": 3,
+          "ingredient": "Créme liqueur",
+          "label": "Brown Créme de Cacao"
+        },
+        {
+          "unit": "cl",
+          "amount": 3,
+          "ingredient": "Cream"
+        }
+      ],
+      "preparation": "Shake and strain into a chilled cocktail glass. Sprinkle with fresh ground nutmeg."
+    },
+    {
+      "id": 40,
+      "name": "Lemon Drop Martini",
+      "glass": "martini",
+      "category": "All Day Cocktail",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 2.5,
+          "ingredient": "Vodka",
+          "label": "Citron Vodka"
+        },
+        {
+          "unit": "cl",
+          "amount": 2,
+          "ingredient": "Triple Sec"
+        },
+        {
+          "unit": "cl",
+          "amount": 1.5,
+          "ingredient": "Lemon juice"
+        }
+      ],
+      "garnish": "Lemon slice",
+      "preparation": "Shake and strain into a chilled cocktail glass rimmed with sugar."
+    },
+    {
+      "id": 41,
+      "name": "French Martini",
+      "glass": "martini",
+      "category": "Before Dinner Cocktail",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 4.5,
+          "ingredient": "Vodka"
+        },
+        {
+          "unit": "cl",
+          "amount": 1.5,
+          "ingredient": "Raspberry liqueur"
+        },
+        {
+          "unit": "cl",
+          "amount": 1.5,
+          "ingredient": "Pineapple juice"
+        }
+      ],
+      "preparation": "Stir in mixing glass with ice cubes. Strain into chilled cocktail glass. Squeeze oil from lemon peel onto the drink."
+    },
+    {
+      "id": 42,
+      "name": "Black Russian",
+      "glass": "old-fashioned",
+      "category": "After Dinner Cocktail",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 5,
+          "ingredient": "Vodka"
+        },
+        {
+          "unit": "cl",
+          "amount": 2,
+          "ingredient": "Coffee liqueur"
+        }
+      ],
+      "preparation": "Build into old fashioned glass filled with ice cubes. Stir gently. Note: for White Russian, float fresh cream on the top and stir gently."
+    },
+    {
+      "id": 43,
+      "name": "Bloody Mary",
+      "glass": "highball",
+      "category": "Longdrink",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 4.5,
+          "ingredient": "Vodka"
+        },
+        {
+          "unit": "cl",
+          "amount": 9,
+          "ingredient": "Tomato juice"
+        },
+        {
+          "unit": "cl",
+          "amount": 1.5,
+          "ingredient": "Lemon juice"
+        },
+        {
+          "special": "2 to 3 dashes of Worcestershire Sauce"
+        },
+        {
+          "special": "Tabasco"
+        },
+        {
+          "special": "Celery salt"
+        },
+        {
+          "special": "Pepper"
+        }
+      ],
+      "garnish": "Celery and optionally lemon wedge",
+      "preparation": "Stir gently, pour all ingredients into highball glass."
+    },
+    {
+      "id": 44,
+      "name": "Mai-tai",
+      "glass": "highball",
+      "category": "Longdrink",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 4,
+          "ingredient": "White rum"
+        },
+        {
+          "unit": "cl",
+          "amount": 2,
+          "ingredient": "Dark rum"
+        },
+        {
+          "unit": "cl",
+          "amount": 1.5,
+          "ingredient": "Triple Sec",
+          "label": "Orange Curaçao"
+        },
+        {
+          "unit": "cl",
+          "amount": 1.5,
+          "ingredient": "Orgeat syrup",
+          "label": "Orgeat syrup"
+        },
+        {
+          "unit": "cl",
+          "amount": 1,
+          "ingredient": "Lime juice"
+        }
+      ],
+      "garnish": "Pineapple spear, mint leaves and lime wedge",
+      "preparation": "Shake and strain into highball glass. Serve with straw."
+    },
+    {
+      "id": 45,
+      "name": "Barracuda",
+      "glass": "margarita",
+      "category": "Sparkling Cocktail",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 4.5,
+          "ingredient": "Dark rum",
+          "label": "Gold rum"
+        },
+        {
+          "unit": "cl",
+          "amount": 1.5,
+          "ingredient": "Galliano"
+        },
+        {
+          "unit": "cl",
+          "amount": 6,
+          "ingredient": "Pineapple juice"
+        },
+        {
+          "special": "1 dash Lime juice"
+        },
+        {
+          "special": "Top with Prosecco"
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "name": "Sex on the Beach",
+      "glass": "highball",
+      "category": "Longdrink",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 4,
+          "ingredient": "Vodka"
+        },
+        {
+          "unit": "cl",
+          "amount": 2,
+          "ingredient": "Peach schnapps"
+        },
+        {
+          "unit": "cl",
+          "amount": 4,
+          "ingredient": "Cranberry juice"
+        },
+        {
+          "unit": "cl",
+          "amount": 4,
+          "ingredient": "Orange juice"
+        }
+      ],
+      "garnish": "Orange slice",
+      "preparation": "Build all ingredients in a highball glass filled with ice."
+    },
+    {
+      "id": 47,
+      "name": "Monkey Gland",
+      "glass": "martini",
+      "category": "All Day Cocktail",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 5,
+          "ingredient": "Gin"
+        },
+        {
+          "unit": "cl",
+          "amount": 3,
+          "ingredient": "Orange juice"
+        },
+        {
+          "special": "2 drops Absinthe"
+        },
+        {
+          "special": "2 drops Grenadine"
+        }
+      ],
+      "preparation": "Shake and strain into a chilled cocktail glass."
+    },
+    {
+      "id": 48,
+      "name": "Derby",
+      "glass": "martini",
+      "category": "All Day Cocktail",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 6,
+          "ingredient": "Gin"
+        },
+        {
+          "special": "2 drops Peach Bitters"
+        },
+        {
+          "special": "2 Fresh mint leaves"
+        }
+      ],
+      "garnish": "Mint leaves",
+      "preparation": "Stir in mixing glass with ice cubes. Strain into a cocktail glass."
+    },
+    {
+      "id": 49,
+      "name": "Sidecar",
+      "glass": "martini",
+      "category": "All Day Cocktail",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 5,
+          "ingredient": "Cognac"
+        },
+        {
+          "unit": "cl",
+          "amount": 2,
+          "ingredient": "Triple Sec"
+        },
+        {
+          "unit": "cl",
+          "amount": 2,
+          "ingredient": "Lemon juice"
+        }
+      ],
+      "preparation": "Shake with ice cubes. Strain into cocktail glass."
+    },
+    {
+      "id": 50,
+      "name": "Irish Coffee",
+      "glass": "hot-drink",
+      "category": "Hot Drink",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 4,
+          "ingredient": "Whiskey",
+          "label": "Irish whiskey"
+        },
+        {
+          "unit": "cl",
+          "amount": 9,
+          "ingredient": "Hot coffee"
+        },
+        {
+          "unit": "cl",
+          "amount": 3,
+          "ingredient": "Cream"
+        },
+        {
+          "special": "1 teaspoon of demarara syrup"
+        }
+      ],
+      "preparation": "Warm the Irish whiskey over a burner. Pour into the glass (for hot drink) hot coffee, and add a teaspoon of sugar. Float Cream on top."
+    },
+    {
+      "id": 51,
+      "name": "Sazerac",
+      "glass": "old-fashioned",
+      "category": "After Dinner Cocktail",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 5,
+          "ingredient": "Cognac"
+        },
+        {
+          "unit": "cl",
+          "amount": 1,
+          "ingredient": "Absinthe"
+        },
+        {
+          "special": "1 sugar cube"
+        },
+        {
+          "special": "2 dashes Peychaud’s bitters"
+        }
+      ],
+      "garnish": "Lemon twist",
+      "preparation": "Rinse a chilled old-fashioned glass with the absinthe, add crushed ice and set it aside. Stir the remaining ingredients over ice and set it aside. Discard the ice and any excess absinthe from the prepared glass, and strain the drink into the glass. Note: The original recipe changed after the American Civil War, rye whiskey substituted cognac as it became hard to obtain."
+    },
+    {
+      "id": 52,
+      "name": "Americano",
+      "glass": "old-fashioned",
+      "category": "Before Dinner Cocktail",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 3,
+          "ingredient": "Campari"
+        },
+        {
+          "unit": "cl",
+          "amount": 3,
+          "ingredient": "Vermouth",
+          "label": "Red vermouth"
+        },
+        {
+          "special": "A splash of soda water"
+        }
+      ],
+      "garnish": "Half an orange slice",
+      "preparation": "Build into old fashioned glass filled with ice cubes. Add a splash of soda water."
+    },
+    {
+      "id": 53,
+      "name": "Singapore Sling",
+      "glass": "highball",
+      "category": "Longdrink",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 3,
+          "ingredient": "Gin"
+        },
+        {
+          "unit": "cl",
+          "amount": 1.5,
+          "ingredient": "Maraschino"
+        },
+        {
+          "unit": "cl",
+          "amount": 0.75,
+          "ingredient": "Triple Sec",
+          "label": "Cointreau"
+        },
+        {
+          "unit": "cl",
+          "amount": 0.75,
+          "ingredient": "DOM Bénédictine"
+        },
+        {
+          "unit": "cl",
+          "amount": 12,
+          "ingredient": "Pineapple juice"
+        },
+        {
+          "unit": "cl",
+          "amount": 1.5,
+          "ingredient": "Lime juice"
+        },
+        {
+          "unit": "cl",
+          "amount": 1,
+          "ingredient": "Grenadine",
+          "label": "Grenadine"
+        },
+        {
+          "special": "1 dash Angostura bitters"
+        }
+      ],
+      "garnish": "Pineapple slice and a cherry",
+      "preparation": "Shake with ice cubes. Strain into highball glass."
+    },
+    {
+      "id": 54,
+      "name": "French Connection",
+      "glass": "old-fashioned",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 3.5,
+          "ingredient": "Cognac"
+        },
+        {
+          "unit": "cl",
+          "amount": 3.5,
+          "ingredient": "DiSaronno"
+        }
+      ],
+      "preparation": "Build into old fashioned glass filled with ice cubes. Stir gently."
+    },
+    {
+      "id": 55,
+      "name": "Moscow Mule",
+      "glass": "highball",
+      "category": "Longdrink",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 4.5,
+          "ingredient": "Vodka"
+        },
+        {
+          "unit": "cl",
+          "amount": 12,
+          "ingredient": "Ginger beer"
+        },
+        {
+          "unit": "cl",
+          "amount": 0.5,
+          "ingredient": "Lime juice"
+        },
+        {
+          "special": "1 slice lime"
+        }
+      ],
+      "garnish": "Lime slice",
+      "preparation": "Combine the vodka and ginger beer. Add lime juice."
+    },
+    {
+      "id": 56,
+      "name": "John Collins",
+      "glass": "highball",
+      "category": "Longdrink",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 4.5,
+          "ingredient": "Gin"
+        },
+        {
+          "unit": "cl",
+          "amount": 3,
+          "ingredient": "Lemon juice"
+        },
+        {
+          "unit": "cl",
+          "amount": 1.5,
+          "ingredient": "Simple syrup",
+          "label": "Simple syrup"
+        },
+        {
+          "unit": "cl",
+          "amount": 6,
+          "ingredient": "Soda water"
+        }
+      ],
+      "garnish": "Lemon slice and a cherry",
+      "preparation": "Build into highball glass filled with ice. Stir gently. Add a dash of Angostura bitters. (Note: Use Old Tom Gin for Tom Collins)"
+    },
+    {
+      "id": 57,
+      "name": "Kir",
+      "glass": "white-wine",
+      "category": "Before Dinner Cocktail",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 9,
+          "ingredient": "White wine"
+        },
+        {
+          "unit": "cl",
+          "amount": 1,
+          "ingredient": "Créme liqueur",
+          "label": "Créme de Cassis"
+        }
+      ],
+      "preparation": "Pour Créme de Cassis into glass, top up with white wine. For Kir Royal: Use champagne instead of white wine."
+    },
+    {
+      "id": 58,
+      "name": "Mint Julep",
+      "glass": "highball",
+      "category": "Longdrink",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 6,
+          "ingredient": "Whiskey",
+          "label": "Bourbon whiskey"
+        },
+        {
+          "special": "4 fresh mint sprigs"
+        },
+        {
+          "special": "1 teaspoon powdered sugar"
+        },
+        {
+          "special": "2 teaspoons plain water"
+        }
+      ],
+      "garnish": "Mint spring",
+      "preparation": "In a highball glass gently muddle the mint, sugar and water. Fill the glass with cracked ice, add Bourbon and stir well until the glass is frost."
+    },
+    {
+      "id": 59,
+      "name": "Tommy's Margarita",
+      "glass": "martini",
+      "category": "All Day Cocktail",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 4.5,
+          "ingredient": "Tequila"
+        },
+        {
+          "unit": "cl",
+          "amount": 1.5,
+          "ingredient": "Lime juice"
+        },
+        {
+          "special": "2 bar spoons of Agave nectar"
+        }
+      ],
+      "preparation": "Shake and strain into a chilled cocktail glass."
+    },
+    {
+      "id": 60,
+      "name": "Paradise",
+      "glass": "martini",
+      "category": "All Day Cocktail",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 3.5,
+          "ingredient": "Gin"
+        },
+        {
+          "unit": "cl",
+          "amount": 2,
+          "ingredient": "Apricot brandy"
+        },
+        {
+          "unit": "cl",
+          "amount": 1.5,
+          "ingredient": "Orange juice"
+        }
+      ],
+      "preparation": "Shake with ice cubes. Strain into chilled cocktail glass."
+    },
+    {
+      "id": 61,
+      "name": "Dirty Martini",
+      "glass": "martini",
+      "category": "Before Dinner Cocktail",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 6,
+          "ingredient": "Vodka"
+        },
+        {
+          "unit": "cl",
+          "amount": 1,
+          "ingredient": "Vermouth",
+          "label": "Dry vermouth"
+        },
+        {
+          "unit": "cl",
+          "amount": 1,
+          "ingredient": "Olive juice"
+        }
+      ],
+      "garnish": "Green olive",
+      "preparation": "Stir in mixing glass with ice cubes. Strain into chilled martini glass."
+    },
+    {
+      "id": 62,
+      "name": "Champagne Cocktail",
+      "glass": "champagne-flute",
+      "category": "Sparkling Cocktail",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 9,
+          "ingredient": "Champagne"
+        },
+        {
+          "unit": "cl",
+          "amount": 1,
+          "ingredient": "Cognac"
+        },
+        {
+          "special": "2 dashes Angostura Bitters"
+        },
+        {
+          "special": "1 sugar cube"
+        }
+      ],
+      "garnish": "Orange slice and a cherry",
+      "preparation": "Add dash of Angostura bitter onto sugar cube and drop it into champagne flute. Add cognac followed by pouring gently chilled champagne."
+    },
+    {
+      "id": 63,
+      "name": "Mary Pickford",
+      "glass": "martini",
+      "category": "All Day Cocktail",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 6,
+          "ingredient": "White rum"
+        },
+        {
+          "unit": "cl",
+          "amount": 1,
+          "ingredient": "Maraschino",
+          "label": "Maraschino"
+        },
+        {
+          "unit": "cl",
+          "amount": 6,
+          "ingredient": "Pineapple juice"
+        },
+        {
+          "unit": "cl",
+          "amount": 1,
+          "ingredient": "Grenadine",
+          "label": "Grenadine"
+        }
+      ],
+      "preparation": "Shake and strain into a chilled large cocktail glass."
+    },
+    {
+      "id": 64,
+      "name": "Hemingway Special",
+      "glass": "martini",
+      "category": "All Day Cocktail",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 6,
+          "ingredient": "White rum"
+        },
+        {
+          "unit": "cl",
+          "amount": 4,
+          "ingredient": "Grapefruit juice"
+        },
+        {
+          "unit": "cl",
+          "amount": 1.5,
+          "ingredient": "Maraschino",
+          "label": "Maraschino"
+        },
+        {
+          "unit": "cl",
+          "amount": 1.5,
+          "ingredient": "Lime juice"
+        }
+      ],
+      "preparation": "Shake with ice cubes. Strain into a double cocktail glass."
+    },
+    {
+      "id": 65,
+      "name": "Dark 'n' Stormy",
+      "glass": "highball",
+      "category": "Longdrink",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 6,
+          "ingredient": "Dark rum"
+        },
+        {
+          "unit": "cl",
+          "amount": 10,
+          "ingredient": "Ginger beer"
+        }
+      ],
+      "garnish": "Lime wedge",
+      "preparation": "Build into highball glass filled with ice. Add rum first and top it with ginger beer."
+    },
+    {
+      "id": 66,
+      "name": "Ramos Fizz",
+      "glass": "highball",
+      "category": "Longdrink",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 4.5,
+          "ingredient": "Gin"
+        },
+        {
+          "unit": "cl",
+          "amount": 1.5,
+          "ingredient": "Lime juice"
+        },
+        {
+          "unit": "cl",
+          "amount": 1.5,
+          "ingredient": "Lemon juice"
+        },
+        {
+          "unit": "cl",
+          "amount": 3,
+          "ingredient": "Simple syrup",
+          "label": "Simple syrup"
+        },
+        {
+          "unit": "cl",
+          "amount": 6,
+          "ingredient": "Cream"
+        },
+        {
+          "special": "1 Egg white"
+        },
+        {
+          "special": "3 dashes Orange flower water"
+        },
+        {
+          "special": "2 drops Vanilla extract"
+        },
+        {
+          "special": "Soda water"
+        }
+      ],
+      "preparation": "Pour all ingredients (except soda) in a mixing glass, dry shake (no ice) for two minutes, add ice and hard shake for another minute. Strain into a highball glass without ice, top with soda."
+    },
+    {
+      "id": 67,
+      "name": "Russian Spring Punch",
+      "glass": "highball",
+      "category": "Sparkling Cocktail",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 2.5,
+          "ingredient": "Vodka"
+        },
+        {
+          "unit": "cl",
+          "amount": 2.5,
+          "ingredient": "Lemon juice"
+        },
+        {
+          "unit": "cl",
+          "amount": 1.5,
+          "ingredient": "Créme liqueur",
+          "label": "Créme de Cassis"
+        },
+        {
+          "unit": "cl",
+          "amount": 1,
+          "ingredient": "Simple syrup",
+          "label": "Simple syrup"
+        }
+      ],
+      "garnish": "Lemon slice and a blackberry",
+      "preparation": "Shake the ingredients and pour into highball glass. Top with Sparkling wine."
+    },
+    {
+      "id": 68,
+      "name": "God Father",
+      "glass": "old-fashioned",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 3.5,
+          "ingredient": "Whiskey",
+          "label": "Scotch whisky"
+        },
+        {
+          "unit": "cl",
+          "amount": 3.5,
+          "ingredient": "DiSaronno"
+        }
+      ],
+      "preparation": "Build into old fashioned glass filled with ice cubes. Stir gently."
+    },
+    {
+      "id": 69,
+      "name": "Cosmopolitan",
+      "glass": "martini",
+      "category": "All Day Cocktail",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 4,
+          "ingredient": "Vodka",
+          "label": "Citron Vodka"
+        },
+        {
+          "unit": "cl",
+          "amount": 1.5,
+          "ingredient": "Triple Sec",
+          "label": "Cointreau"
+        },
+        {
+          "unit": "cl",
+          "amount": 1.5,
+          "ingredient": "Lime juice"
+        },
+        {
+          "unit": "cl",
+          "amount": 3,
+          "ingredient": "Cranberry juice"
+        }
+      ],
+      "garnish": "Lime slice",
+      "preparation": "Shake with ice cubes. Strain into a large cocktail glass."
+    },
+    {
+      "id": 70,
+      "name": "Dry Martini",
+      "glass": "martini",
+      "category": "Before Dinner Cocktail",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 6,
+          "ingredient": "Gin"
+        },
+        {
+          "unit": "cl",
+          "amount": 1,
+          "ingredient": "Vermouth",
+          "label": "Dry vermouth"
+        }
+      ],
+      "preparation": "Stir in mixing glass with ice cubes. Strain into chilled martini glass. Squeeze oil from lemon peel onto the drink, or garnish with olive."
+    },
+    {
+      "id": 71,
+      "name": "Between the Sheets",
+      "glass": "martini",
+      "category": "All Day Cocktail",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 3,
+          "ingredient": "White rum"
+        },
+        {
+          "unit": "cl",
+          "amount": 3,
+          "ingredient": "Cognac"
+        },
+        {
+          "unit": "cl",
+          "amount": 3,
+          "ingredient": "Triple Sec"
+        },
+        {
+          "unit": "cl",
+          "amount": 2,
+          "ingredient": "Lemon juice"
+        }
+      ],
+      "preparation": "Shake with ice cubes. Strain into chilled cocktail glass."
+    },
+    {
+      "id": 72,
+      "name": "Casino",
+      "glass": "martini",
+      "category": "All Day Cocktail",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 4,
+          "ingredient": "Gin",
+          "label": "Old Tom Gin"
+        },
+        {
+          "unit": "cl",
+          "amount": 1,
+          "ingredient": "Maraschino",
+          "label": "Maraschino"
+        },
+        {
+          "unit": "cl",
+          "amount": 1,
+          "ingredient": "Orange Bitters"
+        },
+        {
+          "unit": "cl",
+          "amount": 1,
+          "ingredient": "Lemon juice"
+        }
+      ],
+      "garnish": "Lemon twist and a cherry",
+      "preparation": "Shake with ice cubes. Strain into chilled cocktail glass."
+    },
+    {
+      "id": 73,
+      "name": "Caipirinha",
+      "glass": "old-fashioned",
+      "category": "All Day Cocktail",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 5,
+          "ingredient": "Cachaca"
+        },
+        {
+          "special": "Whole lime - 1 hal and cut into 4 wedges"
+        },
+        {
+          "special": "2 teaspoon sugar"
+        }
+      ],
+      "preparation": "Place lime and sugar in old fashion glass and muddle. Fill glass with ice and Cachaca (note:Caipiroska- use Vodka instead of Cachaca)."
+    },
+    {
+      "id": 74,
+      "name": "Vampiro",
+      "glass": "highball",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 5,
+          "ingredient": "Tequila",
+          "label": "Silver Tequila"
+        },
+        {
+          "unit": "cl",
+          "amount": 7,
+          "ingredient": "Tomato juice"
+        },
+        {
+          "unit": "cl",
+          "amount": 3,
+          "ingredient": "Orange juice"
+        },
+        {
+          "unit": "cl",
+          "amount": 1,
+          "ingredient": "Lime juice"
+        },
+        {
+          "special": "1 teaspoon clear honey"
+        },
+        {
+          "special": "Half slice onion finely chopped"
+        },
+        {
+          "special": "Few slices fresh red hot chili peppers"
+        },
+        {
+          "special": "Few drops Worcestershire sauce"
+        },
+        {
+          "special": "Salt"
+        }
+      ],
+      "garnish": "Lime wedge and a green or red chili",
+      "preparation": "Shake with ice cubes. Strain into a highball glass, filled with ice."
+    },
+    {
+      "id": 75,
+      "name": "Kamikaze",
+      "glass": "martini",
+      "category": "All Day Cocktail",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 3,
+          "ingredient": "Vodka"
+        },
+        {
+          "unit": "cl",
+          "amount": 3,
+          "ingredient": "Triple Sec"
+        },
+        {
+          "unit": "cl",
+          "amount": 3,
+          "ingredient": "Lime juice"
+        }
+      ],
+      "preparation": "Shake and strain into a chilled cocktail glass."
+    },
+    {
+      "id": 76,
+      "name": "White Lady",
+      "glass": "martini",
+      "category": "All Day Cocktail",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 4,
+          "ingredient": "Gin"
+        },
+        {
+          "unit": "cl",
+          "amount": 3,
+          "ingredient": "Triple Sec"
+        },
+        {
+          "unit": "cl",
+          "amount": 2,
+          "ingredient": "Lemon juice"
+        }
+      ],
+      "preparation": "Shake with ice cubes. Strain into large cocktail glass."
+    },
+    {
+      "id": 77,
+      "name": "Harvey Wallbanger",
+      "glass": "highball",
+      "category": "All Day Cocktail",
+      "ingredients": [
+        {
+          "unit": "cl",
+          "amount": 4.5,
+          "ingredient": "Vodka"
+        },
+        {
+          "unit": "cl",
+          "amount": 1.5,
+          "ingredient": "Galliano"
+        },
+        {
+          "unit": "cl",
+          "amount": 9,
+          "ingredient": "Orange juice"
+        }
+      ],
+      "garnish": "Orange slice and a cherry",
+      "preparation": "Build vodka and orange juice into a highball glass filled with ice. Stir gently and float Galliano on top."
+    },
+    {
       "id": 78,
       "userId": 1,
       "name": "Classic Daiquiri",
@@ -33,19 +2110,444 @@
   ],
   "ingredients": [
     {
-      "id": 1,
-      "name": "Dark Rum",
-      "type": "Spirit"
+      "name": "Absinthe",
+      "type": "Liquor",
+      "id": 1
     },
     {
-      "id": 2,
-      "name": "Lime Juice",
-      "type": "Fruit Juice"
+      "name": "Bourbon",
+      "type": "Liquor",
+      "id": 2
     },
     {
-      "id": 3,
-      "name": "Simple Syrup",
-      "type": "Other"
+      "name": "Cognac",
+      "type": "Liquor",
+      "id": 3
+    },
+    {
+      "name": "Dark rum",
+      "type": "Liquor",
+      "id": 4
+    },
+    {
+      "name": "Gin",
+      "type": "Liquor",
+      "id": 5
+    },
+    {
+      "name": "Mezcal",
+      "type": "Liquor",
+      "id": 6
+    },
+    {
+      "name": "Pisco",
+      "type": "Liquor",
+      "id": 7
+    },
+    {
+      "name": "Rye",
+      "type": "Liquor",
+      "id": 8
+    },
+    {
+      "name": "Scotch",
+      "type": "Liquor",
+      "id": 9
+    },
+    {
+      "name": "Tequila",
+      "type": "Liquor",
+      "id": 10
+    },
+    {
+      "name": "Vodka",
+      "type": "Liquor",
+      "id": 11
+    },
+    {
+      "name": "Whiskey",
+      "type": "Liquor",
+      "id": 12
+    },
+    {
+      "name": "White rum",
+      "type": "Liquor",
+      "id": 13
+    },
+    {
+      "name": "Amaro",
+      "type": "Liqueur",
+      "id": 14
+    },
+    {
+      "name": "Aperol",
+      "type": "Liqueur",
+      "id": 15
+    },
+    {
+      "name": "Blackberry liqueur",
+      "type": "Liqueur",
+      "id": 16
+    },
+    {
+      "name": "Cachaca",
+      "type": "Liqueur",
+      "id": 17
+    },
+    {
+      "name": "Calvados",
+      "type": "Liqueur",
+      "id": 18
+    },
+    {
+      "name": "Campari",
+      "type": "Liqueur",
+      "id": 19
+    },
+    {
+      "name": "Chartreuse",
+      "type": "Liqueur",
+      "id": 20
+    },
+    {
+      "name": "Coffee liqueur",
+      "type": "Liqueur",
+      "id": 21
+    },
+    {
+      "name": "Cream liqueur",
+      "type": "Liqueur",
+      "id": 22
+    },
+    {
+      "name": "Créme liqueur",
+      "type": "Liqueur",
+      "id": 23
+    },
+    {
+      "name": "DiSaronno",
+      "type": "Liqueur",
+      "id": 24
+    },
+    {
+      "name": "DOM Bénédictine",
+      "type": "Liqueur",
+      "id": 25
+    },
+    {
+      "name": "Drambuie",
+      "type": "Liqueur",
+      "id": 26
+    },
+    {
+      "name": "Galliano",
+      "type": "Liqueur",
+      "id": 27
+    },
+    {
+      "name": "Kirsch",
+      "type": "Liqueur",
+      "id": 28
+    },
+    {
+      "name": "Maraschino",
+      "type": "Liqueur",
+      "id": 29
+    },
+    {
+      "name": "Apricot brandy",
+      "type": "Liqueur",
+      "id": 30
+    },
+    {
+      "name": "Peach schnapps",
+      "type": "Liqueur",
+      "id": 31
+    },
+    {
+      "name": "Raspberry liqueur",
+      "type": "Liqueur",
+      "id": 32
+    },
+    {
+      "name": "Triple Sec",
+      "type": "Liqueur",
+      "id": 33
+    },
+    {
+      "name": "Cynar",
+      "type": "Liqueur",
+      "id": 34
+    },
+    {
+      "name": "Champagne",
+      "type": "Wine/Fortified Wine",
+      "id": 35
+    },
+    {
+      "name": "White wine",
+      "type": "Wine/Fortified Wine",
+      "id": 36
+    },
+    {
+      "name": "Lillet",
+      "type": "Wine/Fortified Wine",
+      "id": 37
+    },
+    {
+      "name": "Prosecco",
+      "type": "Wine/Fortified Wine",
+      "id": 38
+    },
+    {
+      "name": "Red port",
+      "type": "Wine/Fortified Wine",
+      "id": 39
+    },
+    {
+      "name": "Vermouth",
+      "type": "Wine/Fortified Wine",
+      "id": 40
+    },
+    {
+      "name": "Cranberry juice",
+      "type": "Juice",
+      "id": 41
+    },
+    {
+      "name": "Grapefruit juice",
+      "type": "Juice",
+      "id": 42
+    },
+    {
+      "name": "Lemon juice",
+      "type": "Juice",
+      "id": 43
+    },
+    {
+      "name": "Lime juice",
+      "type": "Juice",
+      "id": 44
+    },
+    {
+      "name": "Olive juice",
+      "type": "Juice",
+      "id": 45
+    },
+    {
+      "name": "Orange juice",
+      "type": "Juice",
+      "id": 46
+    },
+    {
+      "name": "Pineapple juice",
+      "type": "Juice",
+      "id": 47
+    },
+    {
+      "name": "Tomato juice",
+      "type": "Juice",
+      "id": 48
+    },
+    {
+      "name": "Angostura bitters",
+      "type": "Bitters",
+      "id": 49
+    },
+    {
+      "name": "Orange bitters",
+      "type": "Bitters",
+      "id": 50
+    },
+    {
+      "name": "Peychaud's Bitters",
+      "type": "Bitters",
+      "id": 51
+    },
+    {
+      "name": "Peach bitters",
+      "type": "Bitters",
+      "id": 52
+    },
+    {
+      "name": "Agave nectar",
+      "type": "Sweetener",
+      "id": 53
+    },
+    {
+      "name": "Brown sugar",
+      "type": "Sweetener",
+      "id": 54
+    },
+    {
+      "name": "Demarara syrup",
+      "type": "Sweetener",
+      "id": 55
+    },
+    {
+      "name": "Gomme syrup",
+      "type": "Sweetener",
+      "id": 56
+    },
+    {
+      "name": "Grenadine",
+      "type": "Sweetener",
+      "id": 57
+    },
+    {
+      "name": "Honey",
+      "type": "Sweetener",
+      "id": 58
+    },
+    {
+      "name": "Orgeat syrup",
+      "type": "Sweetener",
+      "id": 59
+    },
+    {
+      "name": "Powdered sugar",
+      "type": "Sweetener",
+      "id": 60
+    },
+    {
+      "name": "Rasberry syrup",
+      "type": "Sweetener",
+      "id": 61
+    },
+    {
+      "name": "Simple syrup",
+      "type": "Sweetener",
+      "id": 62
+    },
+    {
+      "name": "Sugar cube",
+      "type": "Sweetener",
+      "id": 63
+    },
+    {
+      "name": "Strawberry syrup",
+      "type": "Sweetener",
+      "id": 64
+    },
+    {
+      "name": "Celery salt",
+      "type": "Other",
+      "id": 65
+    },
+    {
+      "name": "Coconut milk",
+      "type": "Other",
+      "id": 66
+    },
+    {
+      "name": "Cola",
+      "type": "Other",
+      "id": 67
+    },
+    {
+      "name": "Cream",
+      "type": "Other",
+      "id": 68
+    },
+    {
+      "name": "Egg white",
+      "type": "Other",
+      "id": 69
+    },
+    {
+      "name": "Egg yolk",
+      "type": "Other",
+      "id": 70
+    },
+    {
+      "name": "Espresso",
+      "type": "Other",
+      "id": 71
+    },
+    {
+      "name": "Ginger ale",
+      "type": "Other",
+      "id": 72
+    },
+    {
+      "name": "Ginger beer",
+      "type": "Other",
+      "id": 73
+    },
+    {
+      "name": "Hot coffee",
+      "type": "Other",
+      "id": 74
+    },
+    {
+      "name": "Mint leaves",
+      "type": "Other",
+      "id": 75
+    },
+    {
+      "name": "Mint sprigs",
+      "type": "Other",
+      "id": 76
+    },
+    {
+      "name": "Onion",
+      "type": "Other",
+      "id": 77
+    },
+    {
+      "name": "Orange flower water",
+      "type": "Other",
+      "id": 78
+    },
+    {
+      "name": "Peach puree",
+      "type": "Other",
+      "id": 79
+    },
+    {
+      "name": "Pepper",
+      "type": "Other",
+      "id": 80
+    },
+    {
+      "name": "Plain water",
+      "type": "Other",
+      "id": 81
+    },
+    {
+      "name": "Red hot chili peppers",
+      "type": "Other",
+      "id": 82
+    },
+    {
+      "name": "Salt",
+      "type": "Other",
+      "id": 83
+    },
+    {
+      "name": "Soda water",
+      "type": "Other",
+      "id": 84
+    },
+    {
+      "name": "Tabasco",
+      "type": "Other",
+      "id": 85
+    },
+    {
+      "name": "Vanilla extract",
+      "type": "Other",
+      "id": 86
+    },
+    {
+      "name": "Whole lime",
+      "type": "Other",
+      "id": 87
+    },
+    {
+      "name": "Worcestershire Sauce",
+      "type": "Other",
+      "id": 88
     }
   ],
   "cocktailIngredients": [
@@ -64,7 +2566,7 @@
       "ingredientId": 2,
       "amount": 1,
       "unit": "oz",
-      "label": "Fresh Lime Juice",
+      "label": "Fresh lime juice",
       "required": true
     },
     {
@@ -73,7 +2575,7 @@
       "ingredientId": 3,
       "amount": 0.5,
       "unit": "oz",
-      "label": "Simple Syrup",
+      "label": "Simple syrup",
       "required": true
     },
     {
@@ -82,7 +2584,7 @@
       "ingredientId": 3,
       "amount": 0.5,
       "unit": "oz",
-      "label": "Demarara Syrup",
+      "label": "Demarara syrup",
       "required": true
     }
   ],
@@ -101,15 +2603,15 @@
     },
     {
       "userId": 1,
-      "cocktailId": 79,
+      "cocktailId": 6,
       "comment": "",
-      "id": 3
+      "id": 6
     },
     {
       "userId": 1,
-      "cocktailId": 5,
+      "cocktailId": 79,
       "comment": "",
-      "id": 4
+      "id": 7
     }
   ],
   "userIngredients": [

@@ -3,12 +3,12 @@ import React, { Component } from 'react';
 import DataManager from '../modules/DataManager';
 import ProfileBoard from './profile/ProfileBoard';
 import ExploreBoard from './explore/ExploreBoard';
+import InventoryBoard from './inventory/InventoryBoard';
 
 export default class ApplicationViews extends Component {
 
     state = {
         users: [],
-        ibaCocktails: [],
         cocktails: [],
         ingredients: [],
         cocktailIngredients: [],
@@ -16,8 +16,6 @@ export default class ApplicationViews extends Component {
     }
 
     postItem = (dataSet, databaseObject) => {
-        console.log(databaseObject);
-        console.log(dataSet);
         DataManager.dataManager({
             "dataSet": dataSet,
             "fetchType": "POST",
@@ -36,17 +34,7 @@ export default class ApplicationViews extends Component {
     }
 
     handleGetAlls = (stateName) => {
-        if (stateName === "ibaCocktails") {
-            DataManager.dataManager({
-                "dataSet": stateName,
-                "fetchType": "GET-ALL-IBA",
-            })
-            .then(dataSet => {
-                this.setState({
-                    [stateName]: dataSet
-                });
-            });
-        } else if (stateName === "cocktailIngredients") {
+        if (stateName === "cocktailIngredients") {
             DataManager.dataManager({
                 "dataSet": stateName,
                 "fetchType": "GET-ALL",
@@ -78,24 +66,49 @@ export default class ApplicationViews extends Component {
         });
     }
 
+    getSavedCocktails = () => {
+        let currentUserCocktails = this.state.userCocktails.filter(userCocktail => {
+            return userCocktail.userId === Number(sessionStorage.getItem("userId"));
+        });
+        let savedCocktails = this.state.cocktails.filter(cocktail => {
+            return currentUserCocktails.some(currentUserCocktail => {
+              return cocktail.id === currentUserCocktail.cocktailId
+            });
+        });
+        return savedCocktails;
+    }
+
     render() {
         return (
             <React.Fragment>
                 <Route exact path="/" render={props => {
                     return <ProfileBoard {...props}
-                    ibaCocktails={this.state.ibaCocktails}
+                    users={this.state.users}
                     cocktails={this.state.cocktails}
+                    ingredients={this.state.ingredients}
                     cocktailIngredients={this.state.cocktailIngredients}
                     userCocktails={this.state.userCocktails}
                     postItem={this.postItem}
-                    deleteItem={this.deleteItem} />
+                    deleteItem={this.deleteItem}
+                    getSavedCocktails={this.getSavedCocktails} />
                 }}
                 />
 
                 <Route exact path="/explore" render={props => {
                     return <ExploreBoard {...props}
-                    ibaCocktails={this.state.ibaCocktails}
+                    users={this.state.users}
                     cocktails={this.state.cocktails}
+                    ingredients={this.state.ingredients}
+                    cocktailIngredients={this.state.cocktailIngredients}
+                    postItem={this.postItem}
+                    getSavedCocktails={this.getSavedCocktails} />
+                }}
+                />
+
+                <Route exact path="/inventory" render={props => {
+                    return <InventoryBoard {...props}
+                    cocktails={this.state.cocktails}
+                    ingredients={this.state.ingredients}
                     postItem={this.postItem} />
                 }}
                 />
