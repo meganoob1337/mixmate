@@ -1,0 +1,268 @@
+
+Templates for objects:
+
+GETALL
+let fetchTest = {
+
+    "dataSet" : "users",
+    "fetchType" : "GETALL",
+    "dataBaseObject" : "",
+    "embedItem" : "?_embed=events"
+}
+
+GET
+let fetchTest = {
+
+    "dataSet" : "users",
+    "fetchType" : "GET",
+    "specificId" : 1
+}
+
+POST
+let fetchTest2 = {
+
+    "dataSet" : "events",
+    "fetchType" : "POST",
+    "dataBaseObject" : {
+      "userId": 1,
+      "eventName": "yet another toga party",
+      "eventDate": "2-12",
+      "eventTime": "3:00pm",
+      "eventLocation": "Vegas"
+    }
+}
+
+PUT
+let fetchTest3 = {
+
+    "putId" : 2,
+    "dataSet" : "events",
+    "fetchType" : "PUT",
+    "dataBaseObject" : {
+      "id" : 2,
+      "userId": 1,
+      "eventName": "another toga party",
+      "eventDate": "2-15",
+      "eventTime": "3:00pm",
+      "eventLocation": "Vegas"
+    }
+}
+
+DELETE
+let fetchTest4 = {
+
+    "deleteId" : 2,
+    "dataSet" : "events",
+    "fetchType" : "DELETE",
+    "dataBaseObject" : {
+      "userId": sessionStorage.getItem("userId")
+    }
+}
+
+For official ingredients data:
+
+Spirits:
+
+
+
+
+
+Ingredients from IBA data:
+
+Gin
+Vodka
+Lillet Blonde
+White rum
+Lime juice
+Syrup
+Campari
+Vermouth
+Kirsch
+Whiskey
+Cognac
+Ginger Ale
+Dark rum
+Orange juice
+Pineapple juice
+Lemon juice
+Cranberry juice
+Grapefruit juice
+Pisco
+Tequila
+Triple Sec
+Apricot brandy
+Calvados
+Champagne
+Cola
+Red Port
+Egg yolk
+Soda water
+Coffee liqueur
+Galliano
+Coconut milk
+Cherry liqueur
+Prosecco
+Peach puree
+Créme liqueur
+Cream
+Drambuie
+Cream liqueur
+DiSaronno
+Aperol
+Blackberry liqueur
+Raspberry liqueur
+Tomato juice
+Peach schnapps
+Hot coffee
+Absinthe
+DOM Bénédictine
+Ginger beer
+Dry White Wine
+Olive juice
+Orange Bitters
+Cachaca
+
+Specials from IBA Data:
+
+3 dashes Strawberry syrup
+2 dashes Angostura Bitters
+1 sugar cube
+Few dashes plain water
+1/2 bar spoon Maraschino
+1/4 bar spoon Absinthe
+3 dashes Orange Bitters
+6 Mint sprigs
+2 teaspoons white sugar
+Soda water
+Dash of Angostura bitters (optional)
+3 to 4 dashes Angostura bitters
+1 raw egg white (small egg)
+1 dash of Cola
+Few drops of Egg White
+1 dash Angostura Bitters
+Sugar syrup (according to individual preference of sweetness)
+1 short strong Espresso
+2 dashes Sugar syrup
+Splash of Soda water
+2 to 3 dashes of Worcestershire Sauce
+Tabasco
+Celery salt
+Pepper
+1 dash Lime juice
+Top with Prosecco
+2 drops Absinthe
+2 drops Grenadine
+2 drops Peach Bitters
+2 Fresh mint leaves
+1 teaspoon of brown sugar
+2 dashes Peychaud’s bitters
+A splash of soda water
+1 dash Angostura bitters
+1 slice lime
+4 fresh mint sprigs
+1 teaspoon powdered sugar
+2 teaspoons water
+2 bar spoons of Agave nectar
+1 Egg white
+3 dashes Orange flower water
+2 drops Vanilla extract
+half fresh lime cut into 4 wedges
+2 teaspoon sugar
+1 teaspoon clear honey
+Half slice onion finely chopped
+Few slices fresh red hot chili peppers
+Few drops Worcestershire sauce
+Salt
+
+Specials from IBA Data Parsed:
+
+Strawberry syrup
+Angostura Bitters
+sugar cube
+plain water
+Maraschino
+Absinthe
+Bitters
+Mint sprigs
+white sugar
+Soda water
+Angostura bitters
+Angostura bitters
+raw egg white (small egg)
+Cola
+Egg White
+Angostura Bitters
+Sugar syrup
+Espresso
+Sugar syrup
+Soda water
+Worcestershire Sauce
+Tabasco
+Celery salt
+Pepper
+Lime juice
+Prosecco
+Absinthe
+Grenadine
+Peach Bitters
+mint leaves
+brown sugar
+Peychaud’s bitters
+soda water
+Angostura bitters
+lime
+mint sprigs
+powdered sugar
+water
+Agave nectar
+Egg white
+Orange flower water
+Vanilla extract
+lime
+sugar
+clear honey
+onion
+red hot chili peppers
+Worcestershire sauce
+Salt
+
+Garnishes from IBA Data:
+
+Lemon twist
+Half an orange slice
+Orange slice and cherry
+Cherry and lemon twist
+Mint leaves and lemon slice
+Pineapple slice and a cherry
+Lime wedge
+Optional orange twist
+Half an orange slice and cherry
+Orange slice
+Cherry
+Lemon slice
+Orange slice and a cherry
+Lemon slice and two blackberries
+Celery and optionally lemon wedge
+Pineapple spear, mint leaves and lime wedge
+Mint leaves
+Lime slice
+Lemon slice and a cherry
+Mint spring
+Green olive
+Lemon slice and a blackberry
+Lemon twist and a cherry
+Lime wedge and a green or red chili
+
+Glasses from IBA Data:
+
+martini
+old-fashioned
+collins
+highball
+champagne-flute
+margarita
+champagne-tulip
+hurricane
+shot
+hot-drink
+white-wine

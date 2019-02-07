@@ -1,24 +1,14 @@
 import React, { Component } from 'react';
 
-export default class ExploreCocktail extends Component {
-
-    handleSaveButton = () => {
-        let objectToPost = {
-            userId: Number(sessionStorage.getItem("userId")),
-            cocktailId: this.props.ibaCocktail.id,
-            comment: ""
-        };
-        this.props.postItem("userCocktails", objectToPost);
-    }
-
+export default class IBACocktailDetail extends Component {
     render() {
         let i = 0;
-        return (
-            <section>
-                <h3>{this.props.ibaCocktail.name}</h3>
+            return (
+            <React.Fragment>
+                <h3>{this.props.cocktail.name}</h3>
                 <ul>Ingredients:
                 {
-                    this.props.ibaCocktail.ingredients.map(cocktailIngredient => {
+                    this.props.cocktail.ingredients.map(cocktailIngredient => {
                         i++;
                         let amount = "";
                         let unit = "";
@@ -39,10 +29,10 @@ export default class ExploreCocktail extends Component {
                     })
                 }
                 </ul>
-                <p>Glass: {this.props.ibaCocktail.glass}</p>
-                <p>Preparation: {this.props.ibaCocktail.preparation}</p>
-                <button type="button" onClick={this.handleSaveButton}>Save</button>
-            </section>
+                <p>Glass: {this.props.cocktail.glass}</p>
+                <p>Preparation: {this.props.cocktail.preparation}</p>
+                <p>IBA Official Cocktail</p>
+            </React.Fragment>
         )
     }
 }

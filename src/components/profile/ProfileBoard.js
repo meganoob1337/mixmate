@@ -1,35 +1,35 @@
 import React, { Component } from 'react';
-import ProfileCocktail from './ProfileCocktail';
+import ProfileCard from './ProfileCard';
 import ProfileForm from './ProfileForm';
 
 export default class ProfileBoard extends Component {
+    state = {
+        toggleCreateModal: false
+    }
+
+    toggleCreateModal = () => {
+        this.setState({
+            toggleCreateModal: !this.state.toggleCreateModal
+        })
+    }
+
     render() {
-        let currentUserCocktails = this.props.userCocktails.filter(userCocktail => {
-            return userCocktail.userId === Number(sessionStorage.getItem("userId"));
-        });
-        let savedCocktails = this.props.cocktails.filter(cocktail => {
-            return currentUserCocktails.some(currentUserCocktail => {
-              return cocktail.id === currentUserCocktail.cocktailId
-            });
-        });
-        let savedIbaCocktails = this.props.ibaCocktails.filter(ibaCocktail => {
-            return currentUserCocktails.some(currentUserCocktail => {
-              return ibaCocktail.id === currentUserCocktail.cocktailId
-            });
-        });
+        let savedCocktails = this.props.getSavedCocktails();
         return (
             <React.Fragment>
                 {
                     savedCocktails.map(cocktail => {
-                        return <ProfileCocktail key={cocktail.id} {...this.props} cocktail={cocktail} />
+                        return <ProfileCard key={cocktail.id} {...this.props} cocktail={cocktail} />
                     })
                 }
-                {
-                    savedIbaCocktails.map(ibaCocktail => {
-                        return <ProfileCocktail key={ibaCocktail.id} {...this.props} ibaCocktail={ibaCocktail} />
-                    })
+                {!this.state.toggleCreateModal &&
+                    <button type="button"
+                    className="createCocktailButton"
+                    onClick={this.toggleCreateModal}>Create New Cocktail</button>
                 }
-                <ProfileForm {...this.props} />
+                {this.state.toggleCreateModal &&
+                    <ProfileForm {...this.props} toggleCreateModal={this.toggleCreateModal} />
+                }
             </React.Fragment>
         )
     }

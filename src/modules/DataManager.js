@@ -5,7 +5,6 @@ export default {
 	dataManager(fetchObject) {
 
 		let databaseURL = "http://localhost:5002";
-		let ibaURL = "http://localhost:5003";
 		let dataSet = fetchObject.dataSet;
 		let embedItem = fetchObject.embedItem;
 		let fetchType = fetchObject.fetchType;
@@ -13,10 +12,6 @@ export default {
 		let specificId = fetchObject.specificId;
 
 		switch (fetchType) {
-
-			case "GET-ALL-IBA":
-				return fetch(`${ibaURL}/${dataSet}`)
-				.then(r => r.json())
 
 			case "GET-ALL":
 				return fetch(`${databaseURL}/${dataSet}${embedItem}`)
@@ -43,7 +38,6 @@ export default {
 				.then(r => r.json())
 
 			case "DELETE":
-				console.log(`deleted id${specificId}`)
 				return fetch(`${databaseURL}/${dataSet}/${specificId}`, {
 					method: `${fetchType}`
 				})
