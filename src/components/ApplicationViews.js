@@ -16,12 +16,12 @@ export default class ApplicationViews extends Component {
     }
 
     postItem = (dataSet, databaseObject) => {
-        DataManager.dataManager({
+        return (DataManager.dataManager({
             "dataSet": dataSet,
             "fetchType": "POST",
             "databaseObject": databaseObject
         })
-        .then(() => this.handleGetAlls(dataSet))
+        .then(() => this.handleGetAlls(dataSet)))
     }
 
     deleteItem = (dataSet, specificId) => {
@@ -35,7 +35,7 @@ export default class ApplicationViews extends Component {
 
     handleGetAlls = (stateName) => {
         if (stateName === "cocktailIngredients") {
-            DataManager.dataManager({
+            return (DataManager.dataManager({
                 "dataSet": stateName,
                 "fetchType": "GET-ALL",
                 "embedItem": "/?_expand=ingredient"
@@ -44,9 +44,9 @@ export default class ApplicationViews extends Component {
                 this.setState({
                     [stateName]: dataSet
                 });
-            });
+            }));
         } else {
-            DataManager.dataManager({
+            return (DataManager.dataManager({
                 "dataSet": stateName,
                 "fetchType": "GET-ALL",
                 "embedItem": ""
@@ -55,7 +55,7 @@ export default class ApplicationViews extends Component {
                 this.setState({
                     [stateName]: dataSet
                 });
-            });
+            }));
         }
     }
 
