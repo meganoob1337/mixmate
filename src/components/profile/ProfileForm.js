@@ -7,43 +7,72 @@ export default class ProfileForm extends Component {
         categorySelection: "",
         glassSelection: "",
         preparationInput: "",
-        ingredientSelectionFields: [],
-        ingredientTypeSelections: [],
-        ingredientIdSelections: [],
-        ingredientLabelInputs: [],
-        ingredientAmountInputs: [],
-        ingredientUnitSelections: [],
-        ingredientRequiredBooleans: []
+        additionalSelectionFields: [],
+        cocktailIngredientObjects: []
     }
 
     handleFieldChange = event => {
-        let editableArrays = [
-            "ingredientTypeSelections",
-            "ingredientIdSelections",
-            "ingredientLabelInputs",
-            "ingredientAmountInputs",
-            "ingredientUnitSelections"
-        ];
-        let stateToChange = event.target.name.split("--")[0];
-        let indexNumber = event.target.name.split("--")[1];
+        let stateChange = event.target.name.split("--")[0];
+        let objId = event.target.name.split("--")[1];
         let stateValue = event.target.value;
-
-        if (stateToChange === "ingredientRequiredBooleans") {
-            let newArray = this.state[stateToChange].slice();
-            newArray[indexNumber] = !this.state[stateToChange][indexNumber]
-            this.setState({[stateToChange]: newArray})
-        } else if ((editableArrays.find(arrayName => stateToChange === arrayName)) &&
-        !this.state[stateToChange][indexNumber] && this.state[stateToChange][indexNumber] !== "") {
+        const convertIngredientId = () => {
+            if (stateChange === "ingredientId") {
+                return this.props.ingredients.find(ingredient => {
+                    return ingredient.name === stateValue;
+                }).id;
+            }
+        };
+        let cocktailIngredientProps = [
+            "type",
+            "ingredientId",
+            "amount",
+            "unit",
+            "label",
+            "required"
+        ];
+        if (stateChange === "required") {
             this.setState({
-                [stateToChange]: this.state[stateToChange].concat([stateValue])
+                cocktailIngredientObjects: this.state.cocktailIngredientObjects.map(cocktailIngredientObject => {
+                    if (Number(objId) === cocktailIngredientObject.id) {
+                            return {
+                                ...cocktailIngredientObject,
+                                [stateChange]: !cocktailIngredientObject[stateChange]
+                            }
+                    } else {
+                        return cocktailIngredientObject;
+                    }
+                })
             })
-        } else if (editableArrays.find(arrayName => stateToChange === arrayName)) {
-            let newArray = this.state[stateToChange].slice();
-            newArray[indexNumber] = stateValue
-            this.setState({[stateToChange]: newArray})
+        } else if (stateChange === "ingredientId") {
+            this.setState({
+                cocktailIngredientObjects: this.state.cocktailIngredientObjects.map(cocktailIngredientObject => {
+                    if (Number(objId) === cocktailIngredientObject.id) {
+                            return {
+                                ...cocktailIngredientObject,
+                                [stateChange]: convertIngredientId(),
+                                ingredientName: stateValue
+                            }
+                    } else {
+                        return cocktailIngredientObject;
+                    }
+                })
+            })
+        } else if (cocktailIngredientProps.find(propName => stateChange === propName)) {
+            this.setState({
+                cocktailIngredientObjects: this.state.cocktailIngredientObjects.map(cocktailIngredientObject => {
+                    if (Number(objId) === cocktailIngredientObject.id) {
+                            return {
+                                ...cocktailIngredientObject,
+                                [stateChange]: stateValue
+                            }
+                    } else {
+                        return cocktailIngredientObject;
+                    }
+                })
+            })
         } else {
             this.setState({
-                [stateToChange]: stateValue
+                [stateChange]: stateValue
             });
         }
     }
@@ -53,15 +82,81 @@ export default class ProfileForm extends Component {
     }
 
     handleAddButton = () => {
-        const nextId = this.state.ingredientSelectionFields.length + 1;
-        console.log(nextId);
+        const nextId = this.state.additionalSelectionFields[0] ? Number(this.state.additionalSelectionFields.slice(-1)[0] + 1) : 2
+        console.log(nextId)
         this.setState({
-            ingredientSelectionFields: this.state.ingredientSelectionFields.concat([nextId])
+            cocktailIngredientObjects: this.state.cocktailIngredientObjects.concat({
+                id: nextId,
+                ingredientId: "",
+                ingredientName: "",
+                amount: "",
+                unit: "",
+                label: "",
+                required: false,
+                type: ""
+            }),
+            additionalSelectionFields: this.state.additionalSelectionFields.concat([nextId])
         })
     }
 
     handleSubmitButton = () => {
-        this.props.toggleCreateModal();
+        const cocktailObjToPost = {
+            userId: Number(sessionStorage.getItem("userId")),
+            name: this.state.cocktailNameInput,
+            glass: this.state.glassSelection,
+            category: this.state.categorySelection,
+            preparation: this.state.preparationInput
+        };
+        this.props.postItem("cocktails", cocktailObjToPost)
+        .then(() => {
+            console.log(this.props.cocktails.slice(-1)[0].id);
+            let userCocktailObjToPost = {
+                userId: Number(sessionStorage.getItem("userId")),
+                cocktailId: this.props.cocktails.slice(-1)[0].id,
+                comment: ""
+            };
+            this.props.postItem("userCocktails", userCocktailObjToPost)
+        })
+        .then(() => {
+            console.log(this.props.cocktails.slice(-1)[0].id)
+            debugger
+            let arrayToPost = [];
+            this.state.cocktailIngredientObjects.forEach(obj => {
+                arrayToPost.push({
+                    cocktailId: this.props.cocktails.slice(-1)[0].id,
+                    ingredientId: obj.ingredientId,
+                    amount: obj.amount,
+                    unit: obj.unit,
+                    label: obj.label,
+                    required: obj.required
+                })
+            })
+            console.log(arrayToPost)
+            debugger
+            arrayToPost.forEach(obj => {
+                console.log(obj);
+                debugger
+                this.props.postItem("cocktailIngredients", obj);
+            })
+        })
+        .then(() => {
+            this.props.toggleCreateModal();
+        })
+    }
+
+    componentWillMount() {
+        this.setState({
+            cocktailIngredientObjects: this.state.cocktailIngredientObjects.concat({
+                id: 1,
+                ingredientId: "",
+                amount: "",
+                unit: "",
+                label: "",
+                required: false,
+                type: ""
+            }),
+
+        })
     }
 
     render() {
@@ -149,9 +244,8 @@ export default class ProfileForm extends Component {
                     <h5>Ingredients:</h5>
                     {/* INITIAL INGREDIENT SELECTION - NOT REMOVABLE */}
                     <fieldset>Ingredient 1
-                        <select value={this.state.ingredientTypeSelections[0]}
-                        defaultValue=""
-                        name="ingredientTypeSelections--0"
+                        <select value={this.state.cocktailIngredientObjects[0].type}
+                        name="type--1"
                         onChange={this.handleFieldChange}>
                         <option value="" disabled default hidden>Select Type...</option>
                             {
@@ -161,21 +255,20 @@ export default class ProfileForm extends Component {
                                 })
                             }
                         </select>
-                        {(this.state.ingredientTypeSelections[0] && this.props.ingredients) &&
+                        {(this.state.cocktailIngredientObjects[0].type !== "" && this.props.ingredients) &&
                             <React.Fragment>
                                 <input type="text"
-                                name="ingredientLabelInputs--0"
+                                name="label--1"
                                 placeholder="Ingredient Label"
-                                defaultValue=""
                                 onChange={this.handleFieldChange} />
-                                <select value={this.state.ingredientIdSelections[0]}
-                                name="ingredientIdSelections--0"
+                                <select value={this.state.cocktailIngredientObjects[0].ingredientName}
+                                name="ingredientId--1"
                                 defaultValue=""
                                 onChange={this.handleFieldChange}>
                                     <option value="" disabled default hidden>Select Ingredient...</option>
                                     {
                                         this.props.ingredients.filter(ingredient => {
-                                            return ingredient.type === this.state.ingredientTypeSelections[0];
+                                            return ingredient.type === this.state.cocktailIngredientObjects[0].type;
                                         }).map(ingredient => {
                                             return <option key={ingredient.id}
                                             value={ingredient.name}>{ingredient.name}</option>
@@ -183,12 +276,12 @@ export default class ProfileForm extends Component {
                                     }
                                 </select>
                                 <input type="text"
-                                name="ingredientAmountInputs--0"
+                                name="amount--1"
                                 placeholder="Amount"
                                 defaultValue=""
                                 onChange={this.handleFieldChange} />
-                                <select value={this.state.ingredientUnitSelections[0]}
-                                name="ingredientUnitSelections--0"
+                                <select value={this.state.cocktailIngredientObjects[0].unit}
+                                name="unit--1"
                                 defaultValue=""
                                 onChange={this.handleFieldChange}>
                                     <option value="" disabled default hidden>Select Unit...</option>
@@ -199,23 +292,22 @@ export default class ProfileForm extends Component {
                                         })
                                     }
                                 </select>
-                                <label htmlFor="ingredientRequiredBooleans--0">Required?</label>
+                                <label htmlFor="required--1">Required?</label>
                                 <input type="checkbox"
-                                name="ingredientRequiredBooleans--0"
+                                name="required--1"
                                 onChange={this.handleFieldChange} />
                             </React.Fragment>
                         }
                     </fieldset>
                     {/* ADDITIONAL INGREDIENT FIELDS AS NEEDED */}
                     {
-                        this.state.ingredientSelectionFields.map(ingredientInputId => {
-                            const indexNumber = ingredientInputId
+                        this.state.additionalSelectionFields.map(ingredientInputId => {
+                            let indexNumber = ingredientInputId -1;
                             return <fieldset key={ingredientInputId}
                             className="ingredientFieldset">
-                            Ingredient {indexNumber+1}
-                                <select value={this.state.ingredientTypeSelections[indexNumber]}
-                                defaultValue=""
-                                name={"ingredientTypeSelections--"+indexNumber}
+                            Ingredient {ingredientInputId}
+                                <select value={this.state.cocktailIngredientObjects[indexNumber].type}
+                                name={"type--"+ingredientInputId}
                                 onChange={this.handleFieldChange}>
                                     <option value="" disabled default hidden>Select Type...</option>
                                     {
@@ -225,22 +317,21 @@ export default class ProfileForm extends Component {
                                         })
                                     }
                                 </select>
-                                {(this.state.ingredientTypeSelections[indexNumber] && this.props.ingredients) &&
+                                {(this.state.cocktailIngredientObjects[indexNumber].type && this.props.ingredients) &&
                                     <React.Fragment>
                                         <input
                                         type="text"
-                                        name={"ingredientLabelInputs--"+indexNumber}
+                                        name={"label--"+ingredientInputId}
                                         placeholder="Ingredient Label"
-                                        defaultValue=""
                                         onChange={this.handleFieldChange} />
-                                        <select value={this.state.ingredientIdSelections[indexNumber]}
+                                        <select value={this.state.cocktailIngredientObjects[indexNumber].ingredientName}
                                         defaultValue=""
-                                        name={"ingredientIdSelections--"+indexNumber}
+                                        name={"ingredientId--"+ingredientInputId}
                                         onChange={this.handleFieldChange}>
                                             <option value="" disabled default hidden>Select Ingredient...</option>
                                             {
                                                 this.props.ingredients.filter(ingredient => {
-                                                    return ingredient.type === this.state.ingredientTypeSelections[indexNumber];
+                                                    return ingredient.type === this.state.cocktailIngredientObjects[indexNumber].type;
                                                 }).map(ingredient => {
                                                     return <option key={ingredient.id}
                                                     value={ingredient.name}>{ingredient.name}</option>
@@ -248,13 +339,11 @@ export default class ProfileForm extends Component {
                                             }
                                         </select>
                                         <input type="text"
-                                        name={"ingredientAmountInputs--"+indexNumber}
+                                        name={"amount--"+ingredientInputId}
                                         placeholder="Amount"
-                                        defaultValue=""
                                         onChange={this.handleFieldChange} />
-                                        <select value={this.state.ingredientUnitSelections[indexNumber]}
-                                        name={"ingredientUnitSelections--0"+indexNumber}
-                                        defaultValue=""
+                                        <select value={this.state.cocktailIngredientObjects[indexNumber].unit}
+                                        name={"unit--"+ingredientInputId}
                                         onChange={this.handleFieldChange}>
                                             <option value="" disabled default hidden>Select Unit...</option>
                                             {
@@ -264,9 +353,9 @@ export default class ProfileForm extends Component {
                                                 })
                                             }
                                         </select>
-                                        <label htmlFor={"ingredientRequiredBooleans--"+indexNumber}>Required?</label>
+                                        <label htmlFor={"required--"+ingredientInputId}>Required?</label>
                                         <input type="checkbox"
-                                        name={"ingredientRequiredBooleans--"+indexNumber}
+                                        name={"required--"+ingredientInputId}
                                         onChange={this.handleFieldChange} />
                                         <button type="button">Remove Ingredient</button>
                                     </React.Fragment>
@@ -276,7 +365,7 @@ export default class ProfileForm extends Component {
                     }
                     <button type="button"
                     onClick={this.handleAddButton}>Add New Ingredient</button>
-                    <button type="submit"
+                    <button type="button"
                     onClick={this.handleSubmitButton}>Submit</button>
                 </form>
             </React.Fragment>

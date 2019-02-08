@@ -4,7 +4,7 @@ import ProfileForm from './ProfileForm';
 
 export default class ProfileBoard extends Component {
     state = {
-        toggleCreateModal: false
+        toggleCreateModal: ""
     }
 
     toggleCreateModal = () => {
@@ -13,7 +13,14 @@ export default class ProfileBoard extends Component {
         })
     }
 
+    componentDidMount() {
+        this.setState({
+            toggleCreateModal: false
+        })
+    }
+
     render() {
+        console.log(this.state.toggleCreateModal);
         let savedCocktails = this.props.getSavedCocktails();
         return (
             <React.Fragment>
