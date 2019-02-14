@@ -13,6 +13,7 @@ export default class ApplicationViews extends Component {
         ingredients: [],
         cocktailIngredients: [],
         userCocktails: [],
+        userIngredients: []
     }
 
     postItem = (dataSet, databaseObject) => {
@@ -33,8 +34,18 @@ export default class ApplicationViews extends Component {
         .then(() => this.handleGetAlls(dataSet));
     }
 
+    putItem = (dataSet, databaseObject, specificId) => {
+        return (DataManager.dataManager({
+            "dataSet": dataSet,
+            "specificId": specificId,
+            "fetchType": "PUT",
+            "databaseObject": databaseObject
+        })
+        .then(() => this.handleGetAlls(dataSet)));
+    }
+
     handleGetAlls = (stateName) => {
-        if (stateName === "cocktailIngredients") {
+        if (stateName === "cocktailIngredients" || stateName === "userIngredients") {
             return (DataManager.dataManager({
                 "dataSet": stateName,
                 "fetchType": "GET-ALL",
@@ -88,8 +99,10 @@ export default class ApplicationViews extends Component {
                     ingredients={this.state.ingredients}
                     cocktailIngredients={this.state.cocktailIngredients}
                     userCocktails={this.state.userCocktails}
+                    userIngredients={this.state.userIngredients}
                     postItem={this.postItem}
                     deleteItem={this.deleteItem}
+                    putItem={this.putItem}
                     getSavedCocktails={this.getSavedCocktails} />
                 }}
                 />
@@ -100,6 +113,8 @@ export default class ApplicationViews extends Component {
                     cocktails={this.state.cocktails}
                     ingredients={this.state.ingredients}
                     cocktailIngredients={this.state.cocktailIngredients}
+                    userCocktails={this.state.userCocktails}
+                    userIngredients={this.state.userIngredients}
                     postItem={this.postItem}
                     getSavedCocktails={this.getSavedCocktails} />
                 }}
@@ -109,6 +124,7 @@ export default class ApplicationViews extends Component {
                     return <InventoryBoard {...props}
                     cocktails={this.state.cocktails}
                     ingredients={this.state.ingredients}
+                    userIngredients={this.state.userIngredients}
                     postItem={this.postItem} />
                 }}
                 />

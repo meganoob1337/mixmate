@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Profile.css';
 
-export default class ProfileForm extends Component {
+export default class ProfileAdd extends Component {
     state = {
         cocktailNameInput: "",
         categorySelection: "",
@@ -77,13 +77,20 @@ export default class ProfileForm extends Component {
         }
     }
 
-    handleRemoveButton = () => {
-
+    handleRemoveButton = event => {
+        let idToRemove = Number(event.target.name.split("--")[1]);
+        this.setState({
+            additionalSelectionFields: this.state.additionalSelectionFields.filter(id => {
+                return id !== idToRemove
+            }),
+            cocktailIngredientObjects: this.state.cocktailIngredientObjects.filter(obj => {
+                return obj.id !== idToRemove
+            })
+        })
     }
 
     handleAddButton = () => {
         const nextId = this.state.additionalSelectionFields[0] ? Number(this.state.additionalSelectionFields.slice(-1)[0] + 1) : 2
-        console.log(nextId)
         this.setState({
             cocktailIngredientObjects: this.state.cocktailIngredientObjects.concat({
                 id: nextId,
@@ -109,7 +116,6 @@ export default class ProfileForm extends Component {
         };
         this.props.postItem("cocktails", cocktailObjToPost)
         .then(() => {
-            console.log(this.props.cocktails.slice(-1)[0].id);
             let userCocktailObjToPost = {
                 userId: Number(sessionStorage.getItem("userId")),
                 cocktailId: this.props.cocktails.slice(-1)[0].id,
@@ -118,8 +124,6 @@ export default class ProfileForm extends Component {
             this.props.postItem("userCocktails", userCocktailObjToPost)
         })
         .then(() => {
-            console.log(this.props.cocktails.slice(-1)[0].id)
-            debugger
             let arrayToPost = [];
             this.state.cocktailIngredientObjects.forEach(obj => {
                 arrayToPost.push({
@@ -131,11 +135,7 @@ export default class ProfileForm extends Component {
                     required: obj.required
                 })
             })
-            console.log(arrayToPost)
-            debugger
             arrayToPost.forEach(obj => {
-                console.log(obj);
-                debugger
                 this.props.postItem("cocktailIngredients", obj);
             })
         })
@@ -145,6 +145,7 @@ export default class ProfileForm extends Component {
     }
 
     componentWillMount() {
+        this.props.toggleCreateButton();
         this.setState({
             cocktailIngredientObjects: this.state.cocktailIngredientObjects.concat({
                 id: 1,
@@ -155,8 +156,11 @@ export default class ProfileForm extends Component {
                 required: false,
                 type: ""
             }),
-
         })
+    }
+
+    componentWillUnmount() {
+        this.props.toggleCreateButton();
     }
 
     render() {
@@ -202,7 +206,8 @@ export default class ProfileForm extends Component {
         ];
         return (
             <React.Fragment>
-                <form className="createCocktailModal">
+                <form className="formModal">
+                    <p onClick={this.props.toggleCreateModal}>Exit</p>
                     <h3>New Cocktail</h3>
                     <fieldset>
                         <input type="text"
@@ -242,7 +247,7 @@ export default class ProfileForm extends Component {
                         onChange={this.handleFieldChange} />
                     </fieldset>
                     <h5>Ingredients:</h5>
-                    {/* INITIAL INGREDIENT SELECTION - NOT REMOVABLE */}
+                    {/* INITIAL INGREDIENT SELECTION - NOT REMOVABLE FROM FORM */}
                     <fieldset>Ingredient 1
                         <select value={this.state.cocktailIngredientObjects[0].type}
                         name="type--1"
@@ -282,7 +287,6 @@ export default class ProfileForm extends Component {
                                 onChange={this.handleFieldChange} />
                                 <select value={this.state.cocktailIngredientObjects[0].unit}
                                 name="unit--1"
-                                defaultValue=""
                                 onChange={this.handleFieldChange}>
                                     <option value="" disabled default hidden>Select Unit...</option>
                                     {
@@ -357,8 +361,12 @@ export default class ProfileForm extends Component {
                                         <input type="checkbox"
                                         name={"required--"+ingredientInputId}
                                         onChange={this.handleFieldChange} />
-                                        <button type="button">Remove Ingredient</button>
                                     </React.Fragment>
+                                }
+                                {(this.state.additionalSelectionFields.slice(-1)[0] === ingredientInputId) &&
+                                    <button type="button"
+                                    name={"remove--"+ingredientInputId}
+                                    onClick={this.handleRemoveButton}>Remove Ingredient</button>
                                 }
                             </fieldset>
                         })

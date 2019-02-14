@@ -2096,24 +2096,16 @@
       "userId": 1,
       "name": "Classic Daiquiri",
       "glass": "Coupe",
-      "category": "Refreshing",
-      "preparation": "Combine ingredients in a shaker with ice, shake to chill and strain into a chilled glass."
+      "category": "All Day Cocktail",
+      "preparation": "Make it"
     },
     {
-      "id": 79,
       "userId": 2,
-      "name": "Sugar Water",
-      "glass": "Coupe",
-      "category": "Refreshing",
-      "preparation": "Combine ingredients in a shaker with ice, shake to chill and strain into a chilled glass."
-    },
-    {
-      "userId": 1,
-      "name": "Last Word",
-      "glass": "Coupe",
+      "name": "Bourbon",
+      "glass": "Double-rock",
       "category": "After Dinner Cocktail",
       "preparation": "Make it",
-      "id": 80
+      "id": 79
     }
   ],
   "ingredients": [
@@ -2560,108 +2552,57 @@
   ],
   "cocktailIngredients": [
     {
-      "id": 1,
-      "cocktailId": 78,
-      "ingredientId": 1,
-      "amount": 2,
-      "unit": "oz",
-      "label": "Smith & Cross Rum",
-      "required": true
-    },
-    {
       "id": 2,
       "cocktailId": 78,
-      "ingredientId": 2,
-      "amount": 1,
+      "ingredientId": 44,
+      "amount": "1",
       "unit": "oz",
-      "label": "Fresh lime juice",
+      "label": "Lime juice",
       "required": true
     },
     {
       "id": 3,
       "cocktailId": 78,
-      "ingredientId": 3,
-      "amount": 0.5,
+      "ingredientId": 4,
+      "amount": "2",
       "unit": "oz",
-      "label": "Simple syrup",
+      "label": "Smith & Cross Rum",
       "required": true
     },
     {
-      "id": 4,
       "cocktailId": 79,
-      "ingredientId": 3,
-      "amount": 0.5,
+      "ingredientId": 2,
+      "amount": "2",
       "unit": "oz",
-      "label": "Demarara syrup",
-      "required": true
-    },
-    {
-      "cocktailId": 80,
-      "ingredientId": 20,
-      "amount": "3/4",
-      "unit": "oz",
-      "label": "Green Chartreuse",
+      "label": "Bourbon",
       "required": true,
-      "id": 5
-    },
-    {
-      "cocktailId": 80,
-      "ingredientId": 29,
-      "amount": "3/4",
-      "unit": "oz",
-      "label": "Luxardo",
-      "required": true,
-      "id": 6
-    },
-    {
-      "cocktailId": 80,
-      "ingredientId": 44,
-      "amount": "3/4",
-      "unit": "oz",
-      "label": "Lime juice",
-      "required": true,
-      "id": 7
-    },
-    {
-      "cocktailId": 80,
-      "ingredientId": 5,
-      "amount": "3/4",
-      "unit": "oz",
-      "label": "Gin",
-      "required": true,
-      "id": 8
+      "id": 4
     }
   ],
   "userCocktails": [
     {
-      "id": 1,
+      "userId": 1,
+      "cocktailId": 3,
+      "comment": "",
+      "id": 8
+    },
+    {
       "userId": 1,
       "cocktailId": 78,
-      "comment": "It's good"
+      "comment": "",
+      "id": 10
     },
     {
       "userId": 1,
-      "cocktailId": 1,
+      "cocktailId": 5,
       "comment": "",
-      "id": 2
-    },
-    {
-      "userId": 1,
-      "cocktailId": 6,
-      "comment": "",
-      "id": 6
+      "id": 11
     },
     {
       "userId": 1,
       "cocktailId": 79,
       "comment": "",
-      "id": 7
-    },
-    {
-      "userId": 1,
-      "cocktailId": 80,
-      "comment": "",
-      "id": 8
+      "id": 13
     }
   ],
   "userIngredients": [
