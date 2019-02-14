@@ -1,8 +1,20 @@
 import React, { Component } from 'react';
 import CocktailDetail from '../cocktails/CocktailDetail';
 import IBACocktailDetail from '../cocktails/IBACocktailDetail';
+import ProfileEdit from './ProfileEdit';
+import './Profile.css';
 
 export default class ProfileCard extends Component {
+
+    state = {
+        toggleEditModal: ""
+    }
+
+    toggleEditModal = () => {
+        this.setState({
+            toggleEditModal: !this.state.toggleEditModal
+        })
+    }
 
     handleDeleteButton = () => {
         const idToDelete = this.props.cocktail.id;
@@ -10,11 +22,22 @@ export default class ProfileCard extends Component {
     }
 
     handleRemoveButton = () => {
-        let cocktailId = this.props.cocktail.id
-        let userCocktailToDelete = this.props.userCocktails.find(userCocktail =>{
+        let cocktailId = this.props.cocktail.id;
+        let userCocktailToDelete = this.props.userCocktails.find(userCocktail => {
             return userCocktail.cocktailId === cocktailId;
         });
+        console.log(userCocktailToDelete.id);
         this.props.deleteItem("userCocktails", userCocktailToDelete.id);
+    }
+
+    handleEditButton = () => {
+        this.toggleEditModal();
+    }
+
+    componentDidMount() {
+        this.setState({
+            toggleEditModal: false
+        })
     }
 
     render() {
@@ -33,8 +56,11 @@ export default class ProfileCard extends Component {
             return (
                 <section>
                     <CocktailDetail {...this.props} cocktailIngredients={cocktailIngredients} />
-                    <p>Create By You</p>
-                    <button type="button">Edit</button>
+                    <p>Created By You</p>
+                    <button type="button"onClick={this.handleEditButton}>Edit</button>
+                    {this.state.toggleEditModal &&
+                    <ProfileEdit {...this.props} toggleEditModal={this.toggleEditModal} />
+                    }
                     <button type="button" onClick={this.handleDeleteButton}>Delete</button>
                 </section>
             )

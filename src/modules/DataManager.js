@@ -1,4 +1,4 @@
-// This file is in charge of all interactions with the "external API" and the database.
+// This file is in charge of all interactions with the database.
 
 export default {
 
