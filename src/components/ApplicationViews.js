@@ -4,6 +4,9 @@ import DataManager from '../modules/DataManager';
 import ProfileBoard from './profile/ProfileBoard';
 import ExploreBoard from './explore/ExploreBoard';
 import InventoryBoard from './inventory/InventoryBoard';
+import Welcome from './welcome/Welcome';
+// import auth0Client from '../Auth';
+import Callback from '../Callback';
 
 export default class ApplicationViews extends Component {
 
@@ -13,8 +16,14 @@ export default class ApplicationViews extends Component {
         ingredients: [],
         cocktailIngredients: [],
         userCocktails: [],
-        userIngredients: []
+        userIngredients: [],
+        categoryOptions: [],
+        glassOptions: [],
+        ingredientTypeOptions: [],
+        unitOptions: []
     }
+
+    isAuthenticated = () => sessionStorage.getItem("credentials") !== null;
 
     postItem = (dataSet, databaseObject) => {
         return (DataManager.dataManager({
@@ -56,6 +65,17 @@ export default class ApplicationViews extends Component {
                     [stateName]: dataSet
                 });
             }));
+        } else if (stateName === "userCocktails") {
+            return (DataManager.dataManager({
+                "dataSet": stateName,
+                "fetchType": "GET-ALL",
+                "embedItem": `/?_expand=cocktail&userId=${Number(sessionStorage.getItem("userId"))}`
+            })
+            .then(dataSet => {
+                this.setState({
+                    [stateName]: dataSet
+                });
+            }));
         } else {
             return (DataManager.dataManager({
                 "dataSet": stateName,
@@ -78,33 +98,41 @@ export default class ApplicationViews extends Component {
     }
 
     getSavedCocktails = () => {
-        let currentUserCocktails = this.state.userCocktails.filter(userCocktail => {
+        return this.state.userCocktails.filter(userCocktail => {
             return userCocktail.userId === Number(sessionStorage.getItem("userId"));
-        });
-        let savedCocktails = this.state.cocktails.filter(cocktail => {
-            return currentUserCocktails.some(currentUserCocktail => {
-              return cocktail.id === currentUserCocktail.cocktailId
-            });
-        });
-        return savedCocktails;
+        }).map(userCocktail => {
+            return userCocktail.cocktail;
+        })
     }
 
     render() {
         return (
             <React.Fragment>
+                <Route exact path="/welcome" render={ () => {
+                    return <Welcome />
+                }} />
                 <Route exact path="/" render={props => {
-                    return <ProfileBoard {...props}
-                    users={this.state.users}
-                    cocktails={this.state.cocktails}
-                    ingredients={this.state.ingredients}
-                    cocktailIngredients={this.state.cocktailIngredients}
-                    userCocktails={this.state.userCocktails}
-                    userIngredients={this.state.userIngredients}
-                    postItem={this.postItem}
-                    deleteItem={this.deleteItem}
-                    putItem={this.putItem}
-                    getSavedCocktails={this.getSavedCocktails} />
+                    // if (auth0Client.isAuthenticated()) {
+                        return <ProfileBoard {...props}
+                        users={this.state.users}
+                        cocktails={this.state.cocktails}
+                        ingredients={this.state.ingredients}
+                        cocktailIngredients={this.state.cocktailIngredients}
+                        userCocktails={this.state.userCocktails}
+                        userIngredients={this.state.userIngredients}
+                        categoryOptions={this.state.categoryOptions}
+                        glassOptions={this.state.glassOptions}
+                        ingredientTypeOptions={this.state.ingredientTypeOptions}
+                        unitOptions={this.state.unitOptions}
+                        postItem={this.postItem}
+                        deleteItem={this.deleteItem}
+                        putItem={this.putItem}
+                        getSavedCocktails={this.getSavedCocktails} />
+                    // } else {
+                    //     return <Welcome />
+                    // }
                 }}
+
                 />
 
                 <Route exact path="/explore" render={props => {
@@ -115,6 +143,10 @@ export default class ApplicationViews extends Component {
                     cocktailIngredients={this.state.cocktailIngredients}
                     userCocktails={this.state.userCocktails}
                     userIngredients={this.state.userIngredients}
+                    categoryOptions={this.state.categoryOptions}
+                    glassOptions={this.state.glassOptions}
+                    ingredientTypeOptions={this.state.ingredientTypeOptions}
+                    unitOptions={this.state.unitOptions}
                     postItem={this.postItem}
                     getSavedCocktails={this.getSavedCocktails} />
                 }}
@@ -125,9 +157,15 @@ export default class ApplicationViews extends Component {
                     cocktails={this.state.cocktails}
                     ingredients={this.state.ingredients}
                     userIngredients={this.state.userIngredients}
+                    categoryOptions={this.state.categoryOptions}
+                    glassOptions={this.state.glassOptions}
+                    ingredientTypeOptions={this.state.ingredientTypeOptions}
+                    unitOptions={this.state.unitOptions}
                     postItem={this.postItem} />
                 }}
                 />
+
+                <Route exact path="/callback" component={Callback} />
 
             </React.Fragment>
         );

@@ -4,13 +4,15 @@
       "id": 1,
       "userName": "Cole",
       "email": "cobryant47@gmail.com",
-      "password": "abc"
+      "password": "abc",
+      "auth0Identifier": ""
     },
     {
       "id": 2,
       "userName": "Bill",
       "email": "bill@bill.com",
-      "password": "abc"
+      "password": "abc",
+      "auth0Identifier": ""
     }
   ],
   "cocktails": [
@@ -2093,7 +2095,7 @@
     },
     {
       "id": 78,
-      "userId": 1,
+      "userId": 2,
       "name": "Classic Daiquiri",
       "glass": "Coupe",
       "category": "All Day Cocktail",
@@ -2106,6 +2108,22 @@
       "category": "After Dinner Cocktail",
       "preparation": "Make it",
       "id": 79
+    },
+    {
+      "id": 80,
+      "userId": 1,
+      "name": "Last Word",
+      "glass": "Coupe",
+      "category": "All Day Cocktail",
+      "preparation": "Make it"
+    },
+    {
+      "id": 81,
+      "userId": 1,
+      "name": "Manhattan",
+      "glass": "Double-rock",
+      "category": "After Dinner Cocktail",
+      "preparation": "Make it"
     }
   ],
   "ingredients": [
@@ -2577,15 +2595,54 @@
       "label": "Bourbon",
       "required": true,
       "id": 4
+    },
+    {
+      "id": 5,
+      "cocktailId": 80,
+      "ingredientId": 5,
+      "amount": "3/4",
+      "unit": "oz",
+      "label": "Plymouth Gin",
+      "required": true
+    },
+    {
+      "id": 6,
+      "cocktailId": 80,
+      "ingredientId": 44,
+      "amount": "3/4",
+      "unit": "oz",
+      "label": "Lime juice",
+      "required": true
+    },
+    {
+      "id": 7,
+      "cocktailId": 80,
+      "ingredientId": 62,
+      "amount": "3/4",
+      "unit": "oz",
+      "label": "Simple syrup",
+      "required": false
+    },
+    {
+      "id": 8,
+      "cocktailId": 80,
+      "ingredientId": 20,
+      "amount": "3/4",
+      "unit": "oz",
+      "label": "Green Chartreuse",
+      "required": true
+    },
+    {
+      "id": 9,
+      "cocktailId": 81,
+      "ingredientId": 8,
+      "amount": "2",
+      "unit": "oz",
+      "label": "Rye",
+      "required": true
     }
   ],
   "userCocktails": [
-    {
-      "userId": 1,
-      "cocktailId": 3,
-      "comment": "",
-      "id": 8
-    },
     {
       "userId": 1,
       "cocktailId": 78,
@@ -2594,15 +2651,33 @@
     },
     {
       "userId": 1,
-      "cocktailId": 5,
-      "comment": "",
-      "id": 11
-    },
-    {
-      "userId": 1,
       "cocktailId": 79,
       "comment": "",
       "id": 13
+    },
+    {
+      "userId": 1,
+      "cocktailId": 3,
+      "comment": "",
+      "id": 15
+    },
+    {
+      "userId": 1,
+      "cocktailId": 80,
+      "comment": "",
+      "id": 16
+    },
+    {
+      "userId": 1,
+      "cocktailId": 81,
+      "comment": "",
+      "id": 17
+    },
+    {
+      "userId": 1,
+      "cocktailId": 1,
+      "comment": "",
+      "id": 18
     }
   ],
   "userIngredients": [
@@ -2620,6 +2695,182 @@
       "id": 3,
       "userId": 1,
       "ingredientId": 3
+    },
+    {
+      "id": 4,
+      "userId": 1,
+      "ingredientId": 4
+    },
+    {
+      "id": 5,
+      "userId": 1,
+      "ingredientId": 44
+    },
+    {
+      "id": 6,
+      "userId": 1,
+      "ingredientId": 81
+    },
+    {
+      "id": 7,
+      "userId": 1,
+      "ingredientId": 63
+    },
+    {
+      "id": 8,
+      "userId": 1,
+      "ingredientId": 62
+    },
+    {
+      "id": 9,
+      "userId": 1,
+      "ingredientId": 49
+    },
+    {
+      "id": 10,
+      "userId": 1,
+      "ingredientId": 12
+    },
+    {
+      "id": 11,
+      "userId": 1,
+      "ingredientId": 13
+    }
+  ],
+  "categoryOptions": [
+    {
+      "id": 1,
+      "name": "After Dinner Cocktail"
+    },
+    {
+      "id": 2,
+      "name": "All Day Cocktail"
+    },
+    {
+      "id": 3,
+      "name": "Before Dinner Cocktail"
+    },
+    {
+      "id": 4,
+      "name": "Hot Drink"
+    },
+    {
+      "id": 5,
+      "name": "Longdrink"
+    },
+    {
+      "id": 6,
+      "name": "Sparkling Cocktail"
+    }
+  ],
+  "glassOptions": [
+    {
+      "id": 1,
+      "name": "Champagne-flute"
+    },
+    {
+      "id": 2,
+      "name": "Champagne-tulip"
+    },
+    {
+      "id": 3,
+      "name": "Collins"
+    },
+    {
+      "id": 4,
+      "name": "Coupe"
+    },
+    {
+      "id": 5,
+      "name": "Double-rock"
+    },
+    {
+      "id": 6,
+      "name": "Highball"
+    },
+    {
+      "id": 7,
+      "name": "Hot-drink"
+    },
+    {
+      "id": 8,
+      "name": "Hurricane"
+    },
+    {
+      "id": 9,
+      "name": "Margarita"
+    },
+    {
+      "id": 10,
+      "name": "Martini"
+    },
+    {
+      "id": 11,
+      "name": "Old-fashioned"
+    },
+    {
+      "id": 12,
+      "name": "Shot"
+    },
+    {
+      "id": 13,
+      "name": "Single-rock"
+    },
+    {
+      "id": 14,
+      "name": "White-wine"
+    }
+  ],
+  "ingredientTypeOptions": [
+    {
+      "id": 1,
+      "name": "Liquor"
+    },
+    {
+      "id": 2,
+      "name": "Liqueur"
+    },
+    {
+      "id": 3,
+      "name": "Wine/Fortified Wine"
+    },
+    {
+      "id": 4,
+      "name": "Juice"
+    },
+    {
+      "id": 5,
+      "name": "Bitters"
+    },
+    {
+      "id": 6,
+      "name": "Sweetener"
+    },
+    {
+      "id": 7,
+      "name": "Other"
+    }
+  ],
+  "unitOptions": [
+    {
+      "id": 1,
+      "name": "oz"
+    },
+    {
+      "id": 2,
+      "name": "cl"
+    },
+    {
+      "id": 3,
+      "name": "dash(es)"
+    },
+    {
+      "id": 4,
+      "name": "tsp"
+    },
+    {
+      "id": 5,
+      "name": "Tbl"
     }
   ]
 }

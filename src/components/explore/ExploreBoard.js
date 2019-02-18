@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ExploreCard from './ExploreCard';
 // import Filters from '../filters/Filters';
+import './Explore.css'
 
 export default class ExploreBoard extends Component {
     state = {
@@ -14,17 +15,31 @@ export default class ExploreBoard extends Component {
         });
         this.setState({
             filteredCocktails: this.state.filteredCocktails.filter(cocktail => {
-                let cocktailIngredients = this.props.cocktailIngredients.filter(ingr => {
-                    return ingr.cocktailId === cocktail.id;
-                });
-                let canMake = false;
-                cocktailIngredients.forEach(cocktailIngr => {
-                    if (userIngredients.find(ingr => ingr.ingredientId === cocktailIngr.ingredientId)) {
-                        canMake = true;
+                if (cocktail.id > 77) {
+                    let cocktailIngredients = this.props.cocktailIngredients.filter(ingr => {
+                        return ingr.cocktailId === cocktail.id;
+                    });
+                    let canMake = cocktailIngredients.every(cocktailIngr => {
+                        return userIngredients.find(ingr => ingr.ingredientId === cocktailIngr.ingredientId)
+                    });
+                    if (canMake) {
+                        return cocktail
+                    } else {
+                        return null
                     }
-                });
-                if (canMake) {
-                    return cocktail
+                } else {
+                    let canMake = cocktail.ingredients.every(cocktailIngr => {
+                        if (userIngredients.find(ingr => ingr.ingredient.name === cocktailIngr.ingredient) || cocktailIngr.special) {
+                            return true
+                        } else {
+                            return false
+                        }
+                    });
+                    if (canMake) {
+                        return cocktail
+                    } else {
+                        return null
+                    }
                 }
             })
         });
@@ -54,6 +69,7 @@ export default class ExploreBoard extends Component {
     render() {
         return (
             <React.Fragment>
+                <h1 className="exploreHeader">Find New Cocktails</h1>
                 <label htmlFor="ingredientFilter">Filter By Available Ingredients:</label>
                 <input type="checkbox"
                 name="ingredientFilter"

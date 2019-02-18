@@ -54,29 +54,29 @@ export default class ProfileCard extends Component {
 
         if (this.props.cocktail.id > 77 && this.props.cocktail.userId === Number(sessionStorage.getItem("userId"))) {
             return (
-                <section>
+                <section className="cocktailCard">
                     <CocktailDetail {...this.props} cocktailIngredients={cocktailIngredients} />
                     <p>Created By You</p>
-                    <button type="button"onClick={this.handleEditButton}>Edit</button>
+                    <button type="button" className="btn btn-secondary" onClick={this.handleEditButton}>Edit</button>
                     {this.state.toggleEditModal &&
                     <ProfileEdit {...this.props} toggleEditModal={this.toggleEditModal} />
                     }
-                    <button type="button" onClick={this.handleDeleteButton}>Delete</button>
+                    <button type="button"  className="btn btn-secondary" onClick={this.handleDeleteButton}>Delete</button>
                 </section>
             )
         } else if (this.props.cocktail.id > 77) {
             return (
-                <section>
+                <section className="cocktailCard">
                     <CocktailDetail {...this.props} cocktailIngredients={cocktailIngredients} />
                     <p>Created By {cocktailCreator}</p>
-                    <button type="button" onClick={this.handleRemoveButton}>Remove</button>
+                    <button type="button"  className="btn btn-secondary" onClick={this.handleRemoveButton}>Remove</button>
                 </section>
             )
         } else {
             return (
-                <section>
+                <section className="cocktailCard">
                     <IBACocktailDetail {...this.props} />
-                    <button type="button" onClick={this.handleRemoveButton}>Remove</button>
+                    <button type="button"  className="btn btn-secondary" onClick={this.handleRemoveButton}>Remove</button>
                 </section>
             )
         }
