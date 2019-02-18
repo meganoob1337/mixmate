@@ -1,9 +1,4 @@
-.ye {
-    display: flex;
-}
-
-.yo {
-    display: flex;
-    width: 30%;
-    flex-direction: column;
+.inventoryHeader {
+    font-size: 1.5rem;
+    text-align: center;
 }

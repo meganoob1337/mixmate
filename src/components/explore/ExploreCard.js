@@ -31,7 +31,7 @@ export default class ExploreCard extends Component {
         this.props.cocktail.userId !== Number(sessionStorage.getItem("userId")) &&
         !savedCocktails.some(savedCocktail => savedCocktail.id !== this.props.cocktail.id)) {
         return (
-            <section>
+            <section className="cocktailCard">
                 <CocktailDetail {...this.props} cocktailIngredients={cocktailIngredients} />
                 <p>Created By {cocktailCreator}</p>
                 <button type="button" onClick={this.handleSaveButton}>Save</button>
@@ -40,7 +40,7 @@ export default class ExploreCard extends Component {
     } else if (this.props.cocktail.id > 77 &&
         this.props.cocktail.userId !== Number(sessionStorage.getItem("userId"))) {
         return (
-            <section>
+            <section className="cocktailCard">
                 <CocktailDetail {...this.props} cocktailIngredients={cocktailIngredients} />
                 <p>Created By {cocktailCreator}</p>
                 <p>Saved in Profile</p>
@@ -49,14 +49,14 @@ export default class ExploreCard extends Component {
         } else if (this.props.cocktail.id <= 77 &&
             !savedCocktails.some(savedCocktail => savedCocktail.id === this.props.cocktail.id)) {
             return (
-                <section>
+                <section className="cocktailCard">
                     <IBACocktailDetail {...this.props} />
-                    <button type="button" onClick={this.handleSaveButton}>Save</button>
+                    <button type="button" className="btn btn-secondary" onClick={this.handleSaveButton}>Save</button>
                 </section>
             )
         } else if (this.props.cocktail.id <= 77) {
             return (
-                <section>
+                <section className="cocktailCard">
                     <IBACocktailDetail {...this.props} />
                     <p>Saved in Profile</p>
                 </section>

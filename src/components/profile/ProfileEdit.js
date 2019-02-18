@@ -101,7 +101,6 @@ export default class ProfileEdit extends Component {
     }
 
     handleAddButton = () => {
-        console.log(Number(this.state.cocktailIngredientObjects.slice(-1)[0].id + 1))
         const nextId = this.state.additionalSelectionFields[0] ? Number(this.state.additionalSelectionFields.slice(-1)[0] + 1) : Number(this.state.cocktailIngredientObjects.slice(-1)[0].id + 1)
         this.setState({
             cocktailIngredientObjects: this.state.cocktailIngredientObjects.concat({
@@ -198,46 +197,6 @@ export default class ProfileEdit extends Component {
     }
 
     render() {
-        const categories = [
-            "After Dinner Cocktail",
-            "All Day Cocktail",
-            "Before Dinner Cocktail",
-            "Hot Drink",
-            "Longdrink",
-            "Sparkling Cocktail"
-        ];
-        const glasses = [
-            "Champagne-flute",
-            "Champagne-tulip",
-            "Collins",
-            "Coupe",
-            "Double-rock",
-            "Highball",
-            "Hot-drink",
-            "Hurricane",
-            "Margarita",
-            "Martini",
-            "Old-fashioned",
-            "Shot",
-            "Single-rock",
-            "White-wine"
-        ];
-        const ingredientTypes = [
-            "Liquor",
-            "Liqueur",
-            "Wine/Fortified Wine",
-            "Juice",
-            "Bitters",
-            "Sweetener",
-            "Other"
-        ];
-        const units = [
-            "oz",
-            "cl",
-            "dash(es)",
-            "tsp",
-            "Tbl"
-        ];
         return (
             <React.Fragment>
                 <form className="formModal">
@@ -256,9 +215,9 @@ export default class ProfileEdit extends Component {
                         name="categorySelection"
                         onChange={this.handleFieldChange}>
                         {
-                            categories.map(category => {
-                                return <option key={categories.indexOf(category)}
-                                value={category}>{category}</option>
+                            this.props.categoryOptions.map(category => {
+                                return <option key={category.id}
+                                value={category.name}>{category.name}</option>
                             })
                         }
                         </select>
@@ -269,9 +228,9 @@ export default class ProfileEdit extends Component {
                         name="glassSelection"
                         onChange={this.handleFieldChange}>
                         {
-                            glasses.map(glass => {
-                                return <option key={glasses.indexOf(glass)}
-                                value={glass}>{glass}</option>
+                            this.props.glassOptions.map(glass => {
+                                return <option key={glass.id}
+                                value={glass.name}>{glass.name}</option>
                             })
                         }
                         </select>
@@ -295,9 +254,9 @@ export default class ProfileEdit extends Component {
                                     name={"type--"+obj.id}
                                     onChange={this.handleFieldChange}>
                                         {
-                                            ingredientTypes.map(ingredientType => {
-                                                return <option key={ingredientTypes.indexOf(ingredientType)}
-                                                value={ingredientType}>{ingredientType}</option>
+                                            this.props.ingredientTypeOptions.map(ingredientType => {
+                                                return <option key={ingredientType.id}
+                                                value={ingredientType.name}>{ingredientType.name}</option>
                                             })
                                         }
                                     </select>
@@ -333,9 +292,9 @@ export default class ProfileEdit extends Component {
                                             name={"unit--"+obj.id}
                                             onChange={this.handleFieldChange}>
                                                 {
-                                                    units.map(unit => {
-                                                        return <option key={units.indexOf(unit)}
-                                                        value={unit}>{unit}</option>
+                                                    this.props.unitOptions.map(unit => {
+                                                        return <option key={unit.id}
+                                                        value={unit.name}>{unit.name}</option>
                                                     })
                                                 }
                                             </select>
@@ -345,6 +304,7 @@ export default class ProfileEdit extends Component {
                                             name={"required--"+obj.id}
                                             onChange={this.handleFieldChange} />
                                             <button type="button"
+                                            className="btn btn-secondary"
                                             name={"delete--"+obj.id}
                                             onClick={this.handleDeleteButton}>Delete Ingredient</button>
                                         </React.Fragment>
@@ -367,9 +327,9 @@ export default class ProfileEdit extends Component {
                                 onChange={this.handleFieldChange}>
                                     <option value="" disabled default hidden>Select Type...</option>
                                     {
-                                        ingredientTypes.map(ingredientType => {
-                                            return <option key={ingredientTypes.indexOf(ingredientType)}
-                                            value={ingredientType}>{ingredientType}</option>
+                                        this.props.ingredientTypeOptions.map(ingredientType => {
+                                            return <option key={ingredientType.id}
+                                            value={ingredientType.name}>{ingredientType.name}</option>
                                         })
                                     }
                                 </select>
@@ -402,9 +362,9 @@ export default class ProfileEdit extends Component {
                                         onChange={this.handleFieldChange}>
                                             <option value="" disabled default hidden>Select Unit...</option>
                                             {
-                                                units.map(unit => {
-                                                    return <option key={units.indexOf(unit)}
-                                                    value={unit}>{unit}</option>
+                                                this.props.unitOptions.map(unit => {
+                                                    return <option key={unit.id}
+                                                    value={unit.name}>{unit.name}</option>
                                                 })
                                             }
                                         </select>
@@ -416,6 +376,7 @@ export default class ProfileEdit extends Component {
                                 }
                                 {(this.state.additionalSelectionFields.slice(-1)[0] === ingredientInputId) &&
                                     <button type="button"
+                                    className="btn btn-secondary"
                                     name={"remove--"+ingredientInputId}
                                     onClick={this.handleRemoveButton}>Remove Ingredient</button>
                                 }
@@ -423,8 +384,10 @@ export default class ProfileEdit extends Component {
                         })
                     }
                     <button type="button"
+                    className="btn btn-secondary"
                     onClick={this.handleAddButton}>Add New Ingredient</button>
                     <button type="button"
+                    className="btn btn-secondary"
                     onClick={this.handleSaveButton}>Save Changes</button>
                 </form>
             </React.Fragment>
