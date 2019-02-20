@@ -2645,18 +2645,6 @@
   "userCocktails": [
     {
       "userId": 1,
-      "cocktailId": 78,
-      "comment": "",
-      "id": 10
-    },
-    {
-      "userId": 1,
-      "cocktailId": 79,
-      "comment": "",
-      "id": 13
-    },
-    {
-      "userId": 1,
       "cocktailId": 3,
       "comment": "",
       "id": 15
@@ -2678,63 +2666,25 @@
       "cocktailId": 1,
       "comment": "",
       "id": 18
+    },
+    {
+      "userId": 1,
+      "cocktailId": 78,
+      "comment": "",
+      "id": 19
+    },
+    {
+      "userId": 1,
+      "cocktailId": 79,
+      "comment": "",
+      "id": 20
     }
   ],
   "userIngredients": [
     {
-      "id": 1,
       "userId": 1,
-      "ingredientId": 1
-    },
-    {
-      "id": 2,
-      "userId": 1,
-      "ingredientId": 2
-    },
-    {
-      "id": 3,
-      "userId": 1,
-      "ingredientId": 3
-    },
-    {
-      "id": 4,
-      "userId": 1,
-      "ingredientId": 4
-    },
-    {
-      "id": 5,
-      "userId": 1,
-      "ingredientId": 44
-    },
-    {
-      "id": 6,
-      "userId": 1,
-      "ingredientId": 81
-    },
-    {
-      "id": 7,
-      "userId": 1,
-      "ingredientId": 63
-    },
-    {
-      "id": 8,
-      "userId": 1,
-      "ingredientId": 62
-    },
-    {
-      "id": 9,
-      "userId": 1,
-      "ingredientId": 49
-    },
-    {
-      "id": 10,
-      "userId": 1,
-      "ingredientId": 12
-    },
-    {
-      "id": 11,
-      "userId": 1,
-      "ingredientId": 13
+      "ingredientId": 2,
+      "id": 1
     }
   ],
   "categoryOptions": [

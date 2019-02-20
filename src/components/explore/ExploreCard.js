@@ -13,6 +13,18 @@ export default class ExploreCard extends Component {
         this.props.postItem("userCocktails", objectToPost);
     }
 
+    componentWillReceiveProps() {
+        this.setState({
+            filteredCocktails: this.props.getSavedCocktails(),
+        })
+    }
+
+    componentDidMount() {
+        this.setState({
+
+        })
+    }
+
     render() {
 
         let savedCocktails = this.props.getSavedCocktails();

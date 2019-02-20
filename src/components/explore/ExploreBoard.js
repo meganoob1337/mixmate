@@ -59,6 +59,12 @@ export default class ExploreBoard extends Component {
         }
     }
 
+    componentWillReceiveProps() {
+        this.setState({
+            filteredCocktails: this.props.cocktails,
+        })
+    }
+
     componentWillMount() {
         this.setState({
             filteredCocktails: this.props.cocktails,

@@ -11,17 +11,37 @@ export default class InventoryBoard extends Component {
         selectedJuice: [],
         selectedBitters: [],
         selectedSweetener: [],
-        selectedOther: []
+        selectedOther: [],
+        itemsToDelete: []
     }
 
     handleFieldChange = (value, target) => {
+        let difference = this.state[target.name].filter(x => !value.includes(x));
+        this.setState({
+            itemsToDelete: this.state.itemsToDelete.concat(difference.filter(diff => diff.id))
+        });
         this.setState({
             [target.name]: value
-        })
+        });
     }
 
     handleSubmitButton = () => {
-
+        Object.keys(this.state).forEach(stateName => {
+            this.state[stateName].forEach(item => {
+                if (stateName === "itemsToDelete") {
+                    this.props.deleteItem("userIngredients", item.id)
+                    .then(() => this.setState({itemsToDelete: this.state.itemsToDelete.filter(x => x !== item)}))
+                } else if (!item.id) {
+                    let objToPost = {
+                        userId: Number(sessionStorage.getItem("userId")),
+                        ingredientId: this.props.ingredients.find(ingredient => {
+                            return ingredient.name === item.label;
+                        }).id
+                    };
+                    this.props.postItem("userIngredients", objToPost)
+                }
+            })
+        })
     }
 
     componentDidMount() {
@@ -29,32 +49,36 @@ export default class InventoryBoard extends Component {
             return ingr.userId === Number(sessionStorage.getItem("userId"))
         });
         Object.keys(this.state).forEach(stateName => {
-            this.setState({
-                [stateName]: currentUserIngredients.filter(ingr => ingr.ingredient.type === stateName.split("selected")[1]).map(ingr => {
-                    return {
-                        value: ingr.ingredient.name,
-                        label: ingr.ingredient.name,
-                        id: ingr.ingredient.id
-                    }
-                }),
-            })
+            if (stateName !== "itemsToDelete") {
+                this.setState({
+                    [stateName]: currentUserIngredients.filter(ingr => ingr.ingredient.type === stateName.split("selected")[1]).map(ingr => {
+                        return {
+                            value: ingr.ingredient.name,
+                            label: ingr.ingredient.name,
+                            id: ingr.id
+                        }
+                    }),
+                })
+            }
         })
     }
 
-    componentWillReceiveProps() {
-        let currentUserIngredients = this.props.userIngredients.filter(ingr => {
+    componentWillReceiveProps(nextProps) {
+        let currentUserIngredients = nextProps.userIngredients.filter(ingr => {
             return ingr.userId === Number(sessionStorage.getItem("userId"))
         });
         Object.keys(this.state).forEach(stateName => {
-            this.setState({
-                [stateName]: currentUserIngredients.filter(ingr => ingr.ingredient.type === stateName.split("selected")[1]).map(ingr => {
-                    return {
-                        value: ingr.ingredient.name,
-                        label: ingr.ingredient.name,
-                        id: ingr.ingredient.id
-                    }
-                }),
-            })
+            if (stateName !== "itemsToDelete") {
+                this.setState({
+                    [stateName]: currentUserIngredients.filter(ingr => ingr.ingredient.type === stateName.split("selected")[1]).map(ingr => {
+                        return {
+                            value: ingr.ingredient.name,
+                            label: ingr.ingredient.name,
+                            id: ingr.id,
+                        }
+                    }),
+                })
+            }
         })
     }
 
@@ -69,9 +93,10 @@ export default class InventoryBoard extends Component {
                         }).map(ingredient => {
                             return { value: ingredient.name, label: ingredient.name }
                         });
-                        if (ingredientType === "Wine/Fortified Wine") {
+                        if (ingredientType.name === "Wine/Fortified Wine") {
                             return <Select
                             value={this.state.selectedWine ? this.state.selectedWine : ""}
+                            closeMenuOnSelect={false}
                             name="selectedWine"
                             key={ingredientType.id}
                             onChange={this.handleFieldChange}
@@ -82,6 +107,7 @@ export default class InventoryBoard extends Component {
                         } else {
                             return <Select
                             value={this.state["selected"+ingredientType.name] ? this.state["selected"+ingredientType.name] : ""}
+                            closeMenuOnSelect={false}
                             name={"selected"+ingredientType.name}
                             key={ingredientType.id}
                             onChange={this.handleFieldChange}
@@ -94,7 +120,7 @@ export default class InventoryBoard extends Component {
                 }
                 <button type="button"
                 className="btn btn-secondary"
-                onChange={this.handleSubmitButton}>Submit</button>
+                onClick={this.handleSubmitButton}>Submit</button>
             </React.Fragment>
         )
     }
