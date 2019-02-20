@@ -1,5 +1,6 @@
 import { Route } from 'react-router-dom';
 import React, { Component } from 'react';
+import NavBar from './nav/NavBar';
 import DataManager from '../modules/DataManager';
 import ProfileBoard from './profile/ProfileBoard';
 import ExploreBoard from './explore/ExploreBoard';
@@ -25,6 +26,12 @@ export default class ApplicationViews extends Component {
 
     isAuthenticated = () => sessionStorage.getItem("credentials") !== null;
 
+    showNav = () => {
+        if (this.isAuthenticated()) {
+            return <NavBar />
+        }
+    }
+
     postItem = (dataSet, databaseObject) => {
         return (DataManager.dataManager({
             "dataSet": dataSet,
@@ -35,7 +42,7 @@ export default class ApplicationViews extends Component {
     }
 
     deleteItem = (dataSet, specificId) => {
-        DataManager.dataManager({
+        return DataManager.dataManager({
             "dataSet": dataSet,
             "specificId": specificId,
             "fetchType": "DELETE",
@@ -108,10 +115,11 @@ export default class ApplicationViews extends Component {
     render() {
         return (
             <React.Fragment>
-                <Route exact path="/welcome" render={ () => {
+                {/* {this.showNav} */}
+                <Route exact path="/" render={ () => {
                     return <Welcome />
                 }} />
-                <Route exact path="/" render={props => {
+                <Route exact path="/profile" render={props => {
                     // if (auth0Client.isAuthenticated()) {
                         return <ProfileBoard {...props}
                         users={this.state.users}
@@ -161,7 +169,9 @@ export default class ApplicationViews extends Component {
                     glassOptions={this.state.glassOptions}
                     ingredientTypeOptions={this.state.ingredientTypeOptions}
                     unitOptions={this.state.unitOptions}
-                    postItem={this.postItem} />
+                    postItem={this.postItem}
+                    deleteItem={this.deleteItem}
+                    putItem={this.putItem} />
                 }}
                 />
 
