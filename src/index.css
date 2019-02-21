@@ -16,3 +16,7 @@ code {
 input[type=checkbox] {
   transform: scale(1.5);
 }
+
+ul {
+  list-style-type: disc;
+}

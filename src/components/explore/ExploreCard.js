@@ -4,6 +4,16 @@ import CocktailDetail from '../cocktails/CocktailDetail';
 
 export default class ExploreCard extends Component {
 
+    state = {
+        toggleDetailModal: ""
+    }
+
+    toggleDetailModal = () => {
+        this.setState({
+            toggleDetailModal: !this.state.toggleDetailModal
+        })
+    }
+
     handleSaveButton = () => {
         let objectToPost = {
             userId: Number(sessionStorage.getItem("userId")),
@@ -13,15 +23,9 @@ export default class ExploreCard extends Component {
         this.props.postItem("userCocktails", objectToPost);
     }
 
-    componentWillReceiveProps() {
-        this.setState({
-            filteredCocktails: this.props.getSavedCocktails(),
-        })
-    }
-
     componentDidMount() {
         this.setState({
-
+            toggleDetailModal: false
         })
     }
 
@@ -39,42 +43,49 @@ export default class ExploreCard extends Component {
             return user.id === this.props.cocktail.userId;
         }).userName : "";
 
-    if (this.props.cocktail.id > 77 &&
-        this.props.cocktail.userId !== Number(sessionStorage.getItem("userId")) &&
-        !savedCocktails.some(savedCocktail => savedCocktail.id !== this.props.cocktail.id)) {
-        return (
-            <section className="cocktailCard">
-                <CocktailDetail {...this.props} cocktailIngredients={cocktailIngredients} />
-                <p>Created By {cocktailCreator}</p>
-                <button type="button" onClick={this.handleSaveButton}>Save</button>
-            </section>
-        )
-    } else if (this.props.cocktail.id > 77 &&
-        this.props.cocktail.userId !== Number(sessionStorage.getItem("userId"))) {
-        return (
-            <section className="cocktailCard">
-                <CocktailDetail {...this.props} cocktailIngredients={cocktailIngredients} />
-                <p>Created By {cocktailCreator}</p>
-                <p>Saved in Profile</p>
-            </section>
-        )
-        } else if (this.props.cocktail.id <= 77 &&
-            !savedCocktails.some(savedCocktail => savedCocktail.id === this.props.cocktail.id)) {
+        if (this.props.cocktail.id > 77 &&
+            this.props.cocktail.userId !== Number(sessionStorage.getItem("userId"))) {
             return (
-                <section className="cocktailCard">
-                    <IBACocktailDetail {...this.props} />
-                    <button type="button" className="btn btn-secondary" onClick={this.handleSaveButton}>Save</button>
+                <section className="card">
+                    <div onClick={this.toggleDetailModal}>
+                        <p className="title is-4">{this.props.cocktail.name}</p>
+                        {this.state.toggleDetailModal &&
+                            <CocktailDetail {...this.props} toggleDetailModal={this.toggleDetailModal} cocktailIngredients={cocktailIngredients} />
+                        }
+                        <p>Created By {cocktailCreator}</p>
+                    </div>
+                    <footer className="card-footer">
+                        {!savedCocktails.some(savedCocktail => savedCocktail.id === this.props.cocktail.id) &&
+                            <button type="button" className="button is-light" onClick={this.handleSaveButton}>Save</button>
+                        }
+                        {savedCocktails.some(savedCocktail => savedCocktail.id === this.props.cocktail.id) &&
+                            <p>Saved in Profile</p>
+                        }
+                    </footer>
                 </section>
             )
         } else if (this.props.cocktail.id <= 77) {
-            return (
-                <section className="cocktailCard">
-                    <IBACocktailDetail {...this.props} />
-                    <p>Saved in Profile</p>
-                </section>
-            )
-        } else {
-            return null;
-        }
+                return (
+                    <section className="card">
+                        <div onClick={this.toggleDetailModal}>
+                            <p className="title is-4">{this.props.cocktail.name}</p>
+                            {this.state.toggleDetailModal &&
+                                <IBACocktailDetail {...this.props} toggleDetailModal={this.toggleDetailModal} />
+                            }
+                            <p>IBA Official Cocktail</p>
+                        </div>
+                        <footer className="card-footer">
+                            {!savedCocktails.some(savedCocktail => savedCocktail.id === this.props.cocktail.id) &&
+                                <button type="button" className="button is-light" onClick={this.handleSaveButton}>Save</button>
+                            }
+                            {savedCocktails.some(savedCocktail => savedCocktail.id === this.props.cocktail.id) &&
+                                <p>Saved in Profile</p>
+                            }
+                        </footer>
+                    </section>
+                )
+            } else {
+                return null;
+            }
     }
 }

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 import auth0Client from '../../Auth';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './NavBar.css';
 
 class NavBar extends Component {
@@ -14,8 +13,10 @@ class NavBar extends Component {
     render() {
         return (
             <React.Fragment>
-                <nav className="navbar fixed-top navbar-light bg-light navbar-custom">
-                    <span className="navbar-brand mb-0 h1 mx-auto">MixMate</span>
+                <nav className="navbar is-fixed-top">
+                    <div className="navbar-brand navbar-custom">
+                        <span>MIXMATE</span>
+                    </div>
                     {
                             auth0Client.isAuthenticated() &&
                             <div>
@@ -24,18 +25,18 @@ class NavBar extends Component {
                             </div>
                     }
                 </nav>
-                <nav className="navbar fixed-bottom navbar-light bg-light navbar-custom">
-                    <ul className="nav nav-pills nav-fill mx-auto">
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/inventory">Inventory</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/profile">Profile</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/explore">Explore</Link>
-                        </li>
-                    </ul>
+                <nav className="navbar is-fixed-bottom">
+                    <div className="navbar-brand">
+                        <div className="navbar-item-custom">
+                            <NavLink className="navbar-custom-link" activeClassName="selected" to="/inventory">Inventory</NavLink>
+                        </div>
+                        <div className="navbar-item-custom">
+                            <NavLink className="navbar-custom-link" activeClassName="selected" to="/profile">Profile</NavLink>
+                        </div>
+                        <div className="navbar-item-custom">
+                            <NavLink className="navbar-custom-link" activeClassName="selected" to="/explore">Explore</NavLink>
+                        </div>
+                    </div>
                 </nav>
             </React.Fragment>
         )

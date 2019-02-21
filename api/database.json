@@ -2645,12 +2645,6 @@
   "userCocktails": [
     {
       "userId": 1,
-      "cocktailId": 3,
-      "comment": "",
-      "id": 15
-    },
-    {
-      "userId": 1,
       "cocktailId": 80,
       "comment": "",
       "id": 16
@@ -2663,30 +2657,18 @@
     },
     {
       "userId": 1,
-      "cocktailId": 1,
-      "comment": "",
-      "id": 18
-    },
-    {
-      "userId": 1,
-      "cocktailId": 78,
-      "comment": "",
-      "id": 19
-    },
-    {
-      "userId": 1,
       "cocktailId": 79,
       "comment": "",
-      "id": 20
-    }
-  ],
-  "userIngredients": [
+      "id": 27
+    },
     {
       "userId": 1,
-      "ingredientId": 2,
-      "id": 1
+      "cocktailId": 3,
+      "comment": "",
+      "id": 28
     }
   ],
+  "userIngredients": [],
   "categoryOptions": [
     {
       "id": 1,

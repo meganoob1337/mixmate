@@ -105,7 +105,7 @@ export default class ProfileBoard extends Component {
                 }
                 {this.state.toggleCreateButton &&
                     <button type="button"
-                    className="createCocktailButton btn btn-secondary"
+                    className="createCocktailButton"
                     onClick={this.toggleCreateModal}>Create New Cocktail</button>
                 }
                 {this.state.toggleCreateModal &&

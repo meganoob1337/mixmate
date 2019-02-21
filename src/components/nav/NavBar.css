@@ -1,3 +1,41 @@
-.nav-link {
-    color: black;
+.navbar-brand {
+    justify-content: space-around;
+    background-color: #523866;
+    border: none;
+    color: white;
+}
+
+.navbar-custom {
+    font-family: 'Montserrat';
+    font-size: 2em;
+}
+
+.navbar-item-custom {
+    width: 33.33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0rem;
+}
+
+.navbar-custom-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    width: 100%;
+    height: 100%;
+}
+
+.navbar-custom-link:hover {
+    color: white;
+}
+
+.selected {
+    background-color: #9f72c1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
 }

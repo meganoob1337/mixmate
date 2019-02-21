@@ -95,8 +95,9 @@ export default class InventoryBoard extends Component {
                         });
                         if (ingredientType.name === "Wine/Fortified Wine") {
                             return <Select
-                            value={this.state.selectedWine ? this.state.selectedWine : ""}
                             closeMenuOnSelect={false}
+                            blurInputOnSelect={false}
+                            value={this.state.selectedWine ? this.state.selectedWine : ""}
                             name="selectedWine"
                             key={ingredientType.id}
                             onChange={this.handleFieldChange}
@@ -106,8 +107,9 @@ export default class InventoryBoard extends Component {
                             options={options} />
                         } else {
                             return <Select
-                            value={this.state["selected"+ingredientType.name] ? this.state["selected"+ingredientType.name] : ""}
                             closeMenuOnSelect={false}
+                            blurInputOnSelect={false}
+                            value={this.state["selected"+ingredientType.name] ? this.state["selected"+ingredientType.name] : ""}
                             name={"selected"+ingredientType.name}
                             key={ingredientType.id}
                             onChange={this.handleFieldChange}
@@ -119,7 +121,7 @@ export default class InventoryBoard extends Component {
                     })
                 }
                 <button type="button"
-                className="btn btn-secondary"
+                className="button"
                 onClick={this.handleSubmitButton}>Submit</button>
             </React.Fragment>
         )
