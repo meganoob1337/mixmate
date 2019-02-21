@@ -63,6 +63,9 @@ export default class ExploreBoard extends Component {
         this.setState({
             filteredCocktails: this.props.cocktails,
         })
+        if (this.state.checkboxValue) {
+            this.filterCocktails();
+        }
     }
 
     componentWillMount() {

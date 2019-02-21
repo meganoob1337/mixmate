@@ -7,12 +7,19 @@ import './Profile.css';
 export default class ProfileCard extends Component {
 
     state = {
-        toggleEditModal: ""
+        toggleEditModal: "",
+        toggleDetailModal: ""
     }
 
     toggleEditModal = () => {
         this.setState({
             toggleEditModal: !this.state.toggleEditModal
+        })
+    }
+
+    toggleDetailModal = () => {
+        this.setState({
+            toggleDetailModal: !this.state.toggleDetailModal
         })
     }
 
@@ -34,9 +41,14 @@ export default class ProfileCard extends Component {
         this.toggleEditModal();
     }
 
+    handleDetailsClick = () => {
+        this.toggleDetailModal();
+    }
+
     componentDidMount() {
         this.setState({
-            toggleEditModal: false
+            toggleEditModal: false,
+            toggleDetailModal: false
         })
     }
 
@@ -54,29 +66,47 @@ export default class ProfileCard extends Component {
 
         if (this.props.cocktail.id > 77 && this.props.cocktail.userId === Number(sessionStorage.getItem("userId"))) {
             return (
-                <section className="cocktailCard">
-                    <CocktailDetail {...this.props} cocktailIngredients={cocktailIngredients} />
-                    <p>Created By You</p>
-                    <button type="button" className="btn btn-secondary" onClick={this.handleEditButton}>Edit</button>
-                    {this.state.toggleEditModal &&
-                    <ProfileEdit {...this.props} toggleEditModal={this.toggleEditModal} />
-                    }
-                    <button type="button"  className="btn btn-secondary" onClick={this.handleDeleteButton}>Delete</button>
+                <section className="card">
+                    <div onClick={this.toggleDetailModal}>
+                        <p className="title is-4">{this.props.cocktail.name}</p>
+                        {this.state.toggleDetailModal &&
+                            <CocktailDetail {...this.props} toggleDetailModal={this.toggleDetailModal} cocktailIngredients={cocktailIngredients} />
+                        }
+                        <p>Created By You</p>
+                    </div>
+                    <footer className="card-footer">
+                        <button type="button" className="button is-light" onClick={this.handleEditButton}>Edit</button>
+                        {this.state.toggleEditModal &&
+                            <ProfileEdit {...this.props} toggleEditModal={this.toggleEditModal} />
+                        }
+                        <button type="button"  className="button is-light" onClick={this.handleDeleteButton}>Delete</button>
+                    </footer>
                 </section>
             )
         } else if (this.props.cocktail.id > 77) {
             return (
-                <section className="cocktailCard">
-                    <CocktailDetail {...this.props} cocktailIngredients={cocktailIngredients} />
-                    <p>Created By {cocktailCreator}</p>
-                    <button type="button"  className="btn btn-secondary" onClick={this.handleRemoveButton}>Remove</button>
+                <section className="card card-custom">
+                    <div onClick={this.toggleDetailModal} className="card-custom-detail">
+                        <p className="title is-4">{this.props.cocktail.name}</p>
+                        {this.state.toggleDetailModal &&
+                            <CocktailDetail {...this.props} toggleDetailModal={this.toggleDetailModal} cocktailIngredients={cocktailIngredients} />
+                        }
+                        <p>Created By {cocktailCreator}</p>
+                    </div>
+                    <button className="delete is-medium card-custom-delete" onClick={this.handleRemoveButton} />
                 </section>
             )
         } else {
             return (
-                <section className="cocktailCard">
-                    <IBACocktailDetail {...this.props} />
-                    <button type="button"  className="btn btn-secondary" onClick={this.handleRemoveButton}>Remove</button>
+                <section className="card card-custom">
+                    <div onClick={this.toggleDetailModal} className="card-custom-detail">
+                        <h2 className="title is-4">{this.props.cocktail.name}</h2>
+                        {this.state.toggleDetailModal &&
+                            <IBACocktailDetail {...this.props} toggleDetailModal={this.toggleDetailModal} />
+                        }
+                        <p>IBA Official Cocktail</p>
+                    </div>
+                    <button className="delete is-medium card-custom-delete" onClick={this.handleRemoveButton} />
                 </section>
             )
         }

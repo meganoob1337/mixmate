@@ -1,0 +1,24 @@
+.modal-card-head {
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.5em;
+}
+
+.modal-card-body-custom {
+    max-height: 65vh;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.25em;
+    background: white;
+    padding: 1em;
+}
+
+.modal-card-body-custom > ul {
+    padding: 1em 2em;
+    border: 1px solid grey;
+    border-radius: .5em;
+}
+
+.modal-card-body-custom > p {
+    padding: .5em;
+}
