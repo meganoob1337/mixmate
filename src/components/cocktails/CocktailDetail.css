@@ -13,10 +13,15 @@
     padding: 1em;
 }
 
-.modal-card-body-custom > ul {
+.modal-card-body > ul {
     padding: 1em 2em;
-    border: 1px solid grey;
+    border: 2px solid grey;
     border-radius: .5em;
+}
+
+.modal-card-body > .lacking-ingredients {
+    border: 2px solid red;
+    color: red;
 }
 
 .modal-card-body-custom > p {

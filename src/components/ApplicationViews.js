@@ -21,7 +21,8 @@ export default class ApplicationViews extends Component {
         categoryOptions: [],
         glassOptions: [],
         ingredientTypeOptions: [],
-        unitOptions: []
+        unitOptions: [],
+        savedCocktails: []
     }
 
     isAuthenticated = () => sessionStorage.getItem("credentials") !== null;
@@ -83,7 +84,7 @@ export default class ApplicationViews extends Component {
                     [stateName]: dataSet
                 });
             }));
-        } else {
+        } else if (stateName !== "savedCocktails") {
             return (DataManager.dataManager({
                 "dataSet": stateName,
                 "fetchType": "GET-ALL",
@@ -135,7 +136,8 @@ export default class ApplicationViews extends Component {
                         postItem={this.postItem}
                         deleteItem={this.deleteItem}
                         putItem={this.putItem}
-                        getSavedCocktails={this.getSavedCocktails} />
+                        getSavedCocktails={this.getSavedCocktails}
+                        handleGetAlls={this.handleGetAlls} />
                     // } else {
                     //     return <Welcome />
                     // }

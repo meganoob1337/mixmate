@@ -12,8 +12,8 @@ export default class IBACocktailDetail extends Component {
                 <div className="modal-card">
                     <button className="modal-close is-large"
                         onClick={this.props.toggleDetailModal}></button>
-                    <h2 className="modal-card-head">{this.props.cocktail.name}</h2>
-                    <section className="modal-card-body-custom">
+                    <p className="modal-card-head">{this.props.cocktail.name}</p>
+                    <section className="modal-card-body">
                         <ul>Ingredients:
                         {
                             this.props.cocktail.ingredients.map(cocktailIngredient => {
@@ -37,8 +37,23 @@ export default class IBACocktailDetail extends Component {
                             })
                         }
                         </ul>
+                        {this.props.lackingIngredients[0] &&
+                            <ul className="lacking-ingredients">Ingredients Lacking:
+                            {
+                                this.props.lackingIngredients.map(lackingIngredient => {
+                                    return <li key={this.props.lackingIngredients.indexOf(lackingIngredient)}>{lackingIngredient.ingredient}</li>
+                                })
+                            }
+                            </ul>
+                        }
                         <p>Glass: {this.props.cocktail.glass}</p>
                         <p>Preparation: {this.props.cocktail.preparation}</p>
+                    </section>
+                    <section className="modal-card-foot">
+                    {!this.props.lackingIngredients[0] &&
+                        <button type="button"
+                            className="button is-success"> Make Cocktail</button>
+                    }
                     </section>
                 </div>
             </div>

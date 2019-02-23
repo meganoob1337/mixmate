@@ -1,11 +1,43 @@
 import React, { Component } from 'react';
 import IBACocktailDetail from '../cocktails/IBACocktailDetail';
 import CocktailDetail from '../cocktails/CocktailDetail';
+import setCardBackground from '../backgrounds';
 
 export default class ExploreCard extends Component {
 
     state = {
-        toggleDetailModal: ""
+        toggleDetailModal: "",
+        lackingIngredients: []
+    }
+
+    ingredientsFilter = () => {
+        let userIngredients = this.props.userIngredients.filter(ingr => {
+            return ingr.userId === Number(sessionStorage.getItem("userId"));
+        });
+        if (this.props.cocktail.id > 77) {
+            let cocktailIngredients = this.props.cocktailIngredients.filter(ingr => {
+                return ingr.cocktailId === this.props.cocktail.id;
+            });
+            this.setState({
+                lackingIngredients: cocktailIngredients.filter(cocktailIngr => {
+                    if (!userIngredients.find(ingr => ingr.ingredientId === cocktailIngr.ingredientId)) {
+                        return cocktailIngr
+                    } else {
+                        return null
+                    }
+                })
+            })
+        } else {
+            this.setState({
+                lackingIngredients: this.props.cocktail.ingredients.filter(cocktailIngr => {
+                    if (!(userIngredients.find(ingr => ingr.ingredient.name === cocktailIngr.ingredient) || cocktailIngr.special)) {
+                        return cocktailIngr.ingredient
+                    } else {
+                        return null
+                    }
+                })
+            });
+        }
     }
 
     toggleDetailModal = () => {
@@ -23,10 +55,15 @@ export default class ExploreCard extends Component {
         this.props.postItem("userCocktails", objectToPost);
     }
 
+    componentWillReceiveProps() {
+        this.ingredientsFilter();
+    }
+
     componentDidMount() {
         this.setState({
             toggleDetailModal: false
         })
+        this.ingredientsFilter();
     }
 
     render() {
@@ -46,11 +83,15 @@ export default class ExploreCard extends Component {
         if (this.props.cocktail.id > 77 &&
             this.props.cocktail.userId !== Number(sessionStorage.getItem("userId"))) {
             return (
-                <section className="card">
+                <section className="card"
+                id={setCardBackground(this.props.cocktail)}>
                     <div onClick={this.toggleDetailModal}>
                         <p className="title is-4">{this.props.cocktail.name}</p>
                         {this.state.toggleDetailModal &&
-                            <CocktailDetail {...this.props} toggleDetailModal={this.toggleDetailModal} cocktailIngredients={cocktailIngredients} />
+                            <CocktailDetail {...this.props} toggleDetailModal={this.toggleDetailModal} cocktailIngredients={cocktailIngredients} lackingIngredients={this.state.lackingIngredients} />
+                        }
+                        {this.state.lackingIngredients[0] &&
+                            <p>*Lacking Necessary Ingredients</p>
                         }
                         <p>Created By {cocktailCreator}</p>
                     </div>
@@ -66,11 +107,15 @@ export default class ExploreCard extends Component {
             )
         } else if (this.props.cocktail.id <= 77) {
                 return (
-                    <section className="card">
+                    <section className="card"
+                    id={setCardBackground(this.props.cocktail)}>
                         <div onClick={this.toggleDetailModal}>
                             <p className="title is-4">{this.props.cocktail.name}</p>
                             {this.state.toggleDetailModal &&
-                                <IBACocktailDetail {...this.props} toggleDetailModal={this.toggleDetailModal} />
+                                <IBACocktailDetail {...this.props} toggleDetailModal={this.toggleDetailModal} lackingIngredients={this.state.lackingIngredients} />
+                            }
+                            {this.state.lackingIngredients[0] &&
+                                <p>*Lacking Necessary Ingredients</p>
                             }
                             <p>IBA Official Cocktail</p>
                         </div>

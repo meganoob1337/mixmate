@@ -49,7 +49,17 @@ export default class InventoryBoard extends Component {
             return ingr.userId === Number(sessionStorage.getItem("userId"))
         });
         Object.keys(this.state).forEach(stateName => {
-            if (stateName !== "itemsToDelete") {
+            if (stateName === "selectedWine") {
+                this.setState({
+                    [stateName]: currentUserIngredients.filter(ingr => ingr.ingredient.type === "Wine/Fortified Wine").map(ingr => {
+                        return {
+                            value: ingr.ingredient.name,
+                            label: ingr.ingredient.name,
+                            id: ingr.id
+                        }
+                    }),
+                })
+            } else if (stateName !== "itemsToDelete") {
                 this.setState({
                     [stateName]: currentUserIngredients.filter(ingr => ingr.ingredient.type === stateName.split("selected")[1]).map(ingr => {
                         return {
@@ -68,13 +78,23 @@ export default class InventoryBoard extends Component {
             return ingr.userId === Number(sessionStorage.getItem("userId"))
         });
         Object.keys(this.state).forEach(stateName => {
-            if (stateName !== "itemsToDelete") {
+            if (stateName === "selectedWine") {
+                this.setState({
+                    [stateName]: currentUserIngredients.filter(ingr => ingr.ingredient.type === "Wine/Fortified Wine").map(ingr => {
+                        return {
+                            value: ingr.ingredient.name,
+                            label: ingr.ingredient.name,
+                            id: ingr.id
+                        }
+                    }),
+                })
+            } else if (stateName !== "itemsToDelete") {
                 this.setState({
                     [stateName]: currentUserIngredients.filter(ingr => ingr.ingredient.type === stateName.split("selected")[1]).map(ingr => {
                         return {
                             value: ingr.ingredient.name,
                             label: ingr.ingredient.name,
-                            id: ingr.id,
+                            id: ingr.id
                         }
                     }),
                 })
@@ -85,7 +105,7 @@ export default class InventoryBoard extends Component {
     render() {
         return(
             <React.Fragment>
-            <h1 className="inventoryHeader">Inventory</h1>
+            <p className="inventoryHeader">Inventory</p>
                 {this.props.ingredients &&
                     this.props.ingredientTypeOptions.map(ingredientType => {
                         let options = this.props.ingredients.filter(ingredient => {
@@ -123,6 +143,7 @@ export default class InventoryBoard extends Component {
                 <button type="button"
                 className="button"
                 onClick={this.handleSubmitButton}>Submit</button>
+                <p>Amounts</p>
             </React.Fragment>
         )
     }

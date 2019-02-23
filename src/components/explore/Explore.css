@@ -8,3 +8,14 @@
     margin: 2em 0;
     padding: 1em;
 }
+
+.filters-section {
+    display: flex;
+    flex-direction: column;
+    margin: 1em;
+    padding: 1em;
+    border: 1px grey solid;
+    border-radius: .5em;
+    background-color: #9f72c1;
+    color: white;
+}

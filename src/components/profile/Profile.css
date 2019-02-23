@@ -4,12 +4,50 @@
     font-size: 1.5em;
 }
 
-.modal-card-body-add {
+.modal-card-body {
     max-height: 65vh;
     display: flex;
     flex-direction: column;
     font-size: 1.25em;
     background-color: white;
+    padding: 1em;
+    max-height: 60vh;
+}
+
+.button-fixer {
+    margin: 1em;
+}
+
+.details-section {
+    border: 1px solid grey;
+    border-radius: .5em;
+    padding: 1em 2em;
+}
+
+.details-section > fieldset > input, select, textarea {
+    font-size: 1em;
+    margin: .5em 0;
+}
+
+.ingredients-section {
+    border: 1px solid grey;
+    border-radius: .5em;
+    padding: 1em 2em;
+}
+
+.ingredients-section > fieldset > input, select {
+    font-size: 1em;
+    margin: .5em 0;
+}
+
+.ingredient-input {
+    border: 1px solid grey;
+    border-radius: .5em;
+    padding: 1em 2em;
+}
+
+.option-custom {
+    font-size: .75em;
 }
 
 .modal-card-body > fieldset {
@@ -60,5 +98,29 @@
 
 .card-custom-delete {
     margin-left: auto;
+}
+
+#after-dinner-background {
+    background-color: #ebdeef;
+}
+
+#all-day-background {
+    background-color: #e1e3f2;
+}
+
+#before-dinner-background {
+    background-color: #e1f1e0;
+}
+
+#hot-drink-background {
+    background-color: #f1e0e2;
+}
+
+#longdrink-background {
+    background-color: #f0e9df;
+}
+
+#sparkling-background {
+    background-color: #efefde;
 }
 
