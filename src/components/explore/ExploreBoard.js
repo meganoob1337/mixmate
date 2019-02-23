@@ -1,15 +1,47 @@
 import React, { Component } from 'react';
 import ExploreCard from './ExploreCard';
-// import Filters from '../filters/Filters';
 import './Explore.css'
 
 export default class ExploreBoard extends Component {
     state = {
         filteredCocktails: [],
-        checkboxValue: ""
+        checkboxValue: "",
+        categorySelection: "",
+        searchInput: ""
     }
 
-    filterCocktails = () => {
+    handleSearchInput = () => {
+
+    }
+
+    handleClearFilters = () => {
+        this.setState({
+            checkboxValue: false,
+            categorySelection: "",
+            searchInput: "",
+            filteredCocktails: this.props.cocktails
+        })
+    }
+
+    handleCategorySelection = event => {
+        let categoryValue = event.target.value;
+        if (this.state.checkboxValue) {
+            this.setState({
+                categorySelection: categoryValue,
+                filteredCocktails: this.state.filteredCocktails.filter(cocktail => {
+                    return cocktail.category === categoryValue;
+                })
+            })
+        }
+        this.setState({
+            categorySelection: categoryValue,
+            filteredCocktails: this.props.cocktails.filter(cocktail => {
+                return cocktail.category === categoryValue;
+            })
+        })
+    }
+
+    filterByIngredients = () => {
         let userIngredients = this.props.userIngredients.filter(ingr => {
             return ingr.userId === Number(sessionStorage.getItem("userId"));
         });
@@ -47,7 +79,7 @@ export default class ExploreBoard extends Component {
 
     handleFilterCheckbox = () => {
         if (this.state.checkboxValue === false) {
-            this.filterCocktails();
+            this.filterByIngredients();
             this.setState({
                 checkboxValue: !this.state.checkboxValue
             });
@@ -64,7 +96,7 @@ export default class ExploreBoard extends Component {
             filteredCocktails: this.props.cocktails,
         })
         if (this.state.checkboxValue) {
-            this.filterCocktails();
+            this.filterByIngredients();
         }
     }
 
@@ -78,11 +110,37 @@ export default class ExploreBoard extends Component {
     render() {
         return (
             <React.Fragment>
-                <h1 className="exploreHeader">Find New Cocktails</h1>
-                <label htmlFor="ingredientFilter">Filter By Available Ingredients:</label>
-                <input type="checkbox"
-                name="ingredientFilter"
-                onChange={this.handleFilterCheckbox} />
+                <p className="exploreHeader">Find New Cocktails</p>
+                <section className="filters-section">
+                    <input type="text"
+                    placeholder="Search..."
+                    name="searchInput"
+                    onChange={this.handleSearchInput} />
+                    <fieldset>
+                        <label htmlFor="ingredientFilter">Filter By Available Ingredients:</label>
+                        <span />
+                        <input type="checkbox"
+                        checked={this.state.checkboxValue}
+                        name="ingredientFilter"
+                        onChange={this.handleFilterCheckbox} />
+                    </fieldset>
+                    <select value={this.state.categorySelection}
+                    name="categorySelection"
+                    onChange={this.handleCategorySelection}>
+                    <option value="" disabled default hidden>Filter By Category...</option>
+                    {
+                        this.props.categoryOptions.map(category => {
+                            return <option key={category.id}
+                            className="option-custom"
+                            value={category.name}>{category.name}</option>
+                        })
+                    }
+                    </select>
+                    <button type="button"
+                    className="button is-light   "
+                    onClick={this.handleClearFilters}>Clear Filters
+                    </button>
+                </section>
                 {
                     this.state.filteredCocktails.map(cocktail => {
                         return <ExploreCard key={cocktail.id} {...this.props} cocktail={cocktail} />

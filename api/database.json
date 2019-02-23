@@ -2657,18 +2657,23 @@
     },
     {
       "userId": 1,
-      "cocktailId": 79,
+      "cocktailId": 5,
       "comment": "",
-      "id": 27
+      "id": 18
+    }
+  ],
+  "userIngredients": [
+    {
+      "userId": 1,
+      "ingredientId": 2,
+      "id": 1
     },
     {
       "userId": 1,
-      "cocktailId": 3,
-      "comment": "",
-      "id": 28
+      "ingredientId": 4,
+      "id": 2
     }
   ],
-  "userIngredients": [],
   "categoryOptions": [
     {
       "id": 1,

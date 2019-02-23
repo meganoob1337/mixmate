@@ -172,174 +172,188 @@ export default class ProfileAdd extends Component {
                     <div className="modal-card">
                         <button className="modal-close is-large"
                             onClick={this.props.toggleCreateModal}></button>
-                        <h2 className="modal-card-head">New Cocktail</h2>
-                        <section className="modal-card-body-add">
-                            <fieldset>
-                                <input type="text"
-                                name="cocktailNameInput"
-                                placeholder="Cocktail Name"
-                                onChange={this.handleFieldChange} />
-                            </fieldset>
-                            <fieldset>
-                                <select value={this.state.categorySelection}
-                                name="categorySelection"
-                                onChange={this.handleFieldChange}>
-                                <option value="" disabled default hidden>Select Category...</option>
-                                {
-                                    this.props.categoryOptions.map(category => {
-                                        return <option key={category.id}
-                                        value={category.name}>{category.name}</option>
-                                    })
-                                }
-                                </select>
-                            </fieldset>
-                            <fieldset>
-                                <select value={this.state.glassSelection}
-                                name="glassSelection"
-                                onChange={this.handleFieldChange}>
-                                <option value="" disabled default hidden>Select Glass...</option>
-                                {
-                                    this.props.glassOptions.map(glass => {
-                                        return <option key={glass.id}
-                                        value={glass.name}>{glass.name}</option>
-                                    })
-                                }
-                                </select>
-                            </fieldset>
-                            <fieldset>
-                                <textarea name="preparationInput"
-                                placeholder="Instructions..."
-                                onChange={this.handleFieldChange} />
-                            </fieldset>
-                            <h5>Ingredients:</h5>
-                            {/* INITIAL INGREDIENT SELECTION - NOT REMOVABLE FROM FORM */}
-                            <fieldset>Ingredient 1
-                                <select value={this.state.cocktailIngredientObjects[0].type}
-                                name="type--1"
-                                onChange={this.handleFieldChange}>
-                                <option value="" disabled default hidden>Select Type...</option>
+                        <p className="modal-card-head">New Cocktail</p>
+                        <section className="modal-card-body">
+                            <section className="details-section">General Details:
+                                <fieldset>
+                                    <input type="text"
+                                    name="cocktailNameInput"
+                                    placeholder="Cocktail Name"
+                                    onChange={this.handleFieldChange} />
+                                </fieldset>
+                                <fieldset>
+                                    <select value={this.state.categorySelection}
+                                    name="categorySelection"
+                                    onChange={this.handleFieldChange}>
+                                    <option value="" disabled default hidden>Select Category...</option>
                                     {
-                                        this.props.ingredientTypeOptions.map(ingredientType => {
-                                            return <option key={ingredientType.id}
-                                            value={ingredientType.name}>{ingredientType.name}</option>
+                                        this.props.categoryOptions.map(category => {
+                                            return <option key={category.id}
+                                            className="option-custom"
+                                            value={category.name}>{category.name}</option>
                                         })
                                     }
-                                </select>
-                                {(this.state.cocktailIngredientObjects[0].type !== "" && this.props.ingredients) &&
-                                    <React.Fragment>
-                                        <input type="text"
-                                        name="label--1"
-                                        placeholder="Ingredient Label"
-                                        onChange={this.handleFieldChange} />
-                                        <select value={this.state.cocktailIngredientObjects[0].ingredientName}
-                                        name="ingredientId--1"
-                                        defaultValue=""
-                                        onChange={this.handleFieldChange}>
-                                            <option value="" disabled default hidden>Select Ingredient...</option>
-                                            {
-                                                this.props.ingredients.filter(ingredient => {
-                                                    return ingredient.type === this.state.cocktailIngredientObjects[0].type;
-                                                }).map(ingredient => {
-                                                    return <option key={ingredient.id}
-                                                    value={ingredient.name}>{ingredient.name}</option>
-                                                })
+                                    </select>
+                                </fieldset>
+                                <fieldset>
+                                    <select value={this.state.glassSelection}
+                                    name="glassSelection"
+                                    onChange={this.handleFieldChange}>
+                                    <option value="" disabled default hidden>Select Glass...</option>
+                                    {
+                                        this.props.glassOptions.map(glass => {
+                                            return <option key={glass.id}
+                                            className="option-custom"
+                                            value={glass.name}>{glass.name}</option>
+                                        })
+                                    }
+                                    </select>
+                                </fieldset>
+                                <fieldset>
+                                    <textarea name="preparationInput"
+                                    placeholder="Instructions..."
+                                    onChange={this.handleFieldChange} />
+                                </fieldset>
+                            </section>
+                            <section className="ingredients-section">
+                                <p>Ingredients:</p>
+                                {/* INITIAL INGREDIENT SELECTION - NOT REMOVABLE FROM FORM */}
+                                <fieldset className="ingredient-input">Ingredient 1
+                                    <select value={this.state.cocktailIngredientObjects[0].type}
+                                    name="type--1"
+                                    onChange={this.handleFieldChange}>
+                                    <option value="" disabled default hidden>Select Type...</option>
+                                        {
+                                            this.props.ingredientTypeOptions.map(ingredientType => {
+                                                return <option key={ingredientType.id}
+                                                className="option-custom"
+                                                value={ingredientType.name}>{ingredientType.name}</option>
+                                            })
+                                        }
+                                    </select>
+                                    {(this.state.cocktailIngredientObjects[0].type !== "" && this.props.ingredients) &&
+                                        <React.Fragment>
+                                            <input type="text"
+                                            name="label--1"
+                                            placeholder="Ingredient Label"
+                                            onChange={this.handleFieldChange} />
+                                            <select value={this.state.cocktailIngredientObjects[0].ingredientName}
+                                            name="ingredientId--1"
+                                            defaultValue=""
+                                            onChange={this.handleFieldChange}>
+                                                <option value="" disabled default hidden>Select Ingredient...</option>
+                                                {
+                                                    this.props.ingredients.filter(ingredient => {
+                                                        return ingredient.type === this.state.cocktailIngredientObjects[0].type;
+                                                    }).map(ingredient => {
+                                                        return <option key={ingredient.id}
+                                                        className="option-custom"
+                                                        value={ingredient.name}>{ingredient.name}</option>
+                                                    })
+                                                }
+                                            </select>
+                                            <input type="text"
+                                            name="amount--1"
+                                            placeholder="Amount"
+                                            defaultValue=""
+                                            onChange={this.handleFieldChange} />
+                                            <select value={this.state.cocktailIngredientObjects[0].unit}
+                                            name="unit--1"
+                                            onChange={this.handleFieldChange}>
+                                                <option value="" disabled default hidden>Select Unit...</option>
+                                                {
+                                                    this.props.unitOptions.map(unit => {
+                                                        return <option key={unit.id}
+                                                        className="option-custom"
+                                                        value={unit.name}>{unit.name}</option>
+                                                    })
+                                                }
+                                            </select>
+                                            <label htmlFor="required--1">Required?</label>
+                                            <input type="checkbox"
+                                            name="required--1"
+                                            onChange={this.handleFieldChange} />
+                                        </React.Fragment>
+                                    }
+                                </fieldset>
+                                {/* ADDITIONAL INGREDIENT FIELDS AS NEEDED */}
+                                {
+                                    this.state.additionalSelectionFields.map(ingredientInputId => {
+                                        let indexNumber = ingredientInputId -1;
+                                        return <fieldset key={ingredientInputId}
+                                        className="ingredient-input">
+                                        Ingredient {ingredientInputId}
+                                            <select value={this.state.cocktailIngredientObjects[indexNumber].type}
+                                            name={"type--"+ingredientInputId}
+                                            onChange={this.handleFieldChange}>
+                                                <option value="" disabled default hidden>Select Type...</option>
+                                                {
+                                                    this.props.ingredientTypeOptions.map(ingredientType => {
+                                                        return <option key={ingredientType.id}
+                                                        className="option-custom"
+                                                        value={ingredientType.name}>{ingredientType.name}</option>
+                                                    })
+                                                }
+                                            </select>
+                                            {(this.state.cocktailIngredientObjects[indexNumber].type && this.props.ingredients) &&
+                                                <React.Fragment>
+                                                    <input
+                                                    type="text"
+                                                    name={"label--"+ingredientInputId}
+                                                    placeholder="Ingredient Label"
+                                                    onChange={this.handleFieldChange} />
+                                                    <select value={this.state.cocktailIngredientObjects[indexNumber].ingredientName}
+                                                    defaultValue=""
+                                                    name={"ingredientId--"+ingredientInputId}
+                                                    onChange={this.handleFieldChange}>
+                                                        <option value="" disabled default hidden>Select Ingredient...</option>
+                                                        {
+                                                            this.props.ingredients.filter(ingredient => {
+                                                                return ingredient.type === this.state.cocktailIngredientObjects[indexNumber].type;
+                                                            }).map(ingredient => {
+                                                                return <option key={ingredient.id}
+                                                                className="option-custom"
+                                                                value={ingredient.name}>{ingredient.name}</option>
+                                                            })
+                                                        }
+                                                    </select>
+                                                    <input type="text"
+                                                    name={"amount--"+ingredientInputId}
+                                                    placeholder="Amount"
+                                                    onChange={this.handleFieldChange} />
+                                                    <select value={this.state.cocktailIngredientObjects[indexNumber].unit}
+                                                    name={"unit--"+ingredientInputId}
+                                                    onChange={this.handleFieldChange}>
+                                                        <option value="" disabled default hidden>Select Unit...</option>
+                                                        {
+                                                            this.props.unitOptions.map(unit => {
+                                                                return <option key={unit.id}
+                                                                className="option-custom"
+                                                                value={unit.name}>{unit.name}</option>
+                                                            })
+                                                        }
+                                                    </select>
+                                                    <label htmlFor={"required--"+ingredientInputId}>Required?</label>
+                                                    <input type="checkbox"
+                                                    name={"required--"+ingredientInputId}
+                                                    onChange={this.handleFieldChange} />
+                                                </React.Fragment>
                                             }
-                                        </select>
-                                        <input type="text"
-                                        name="amount--1"
-                                        placeholder="Amount"
-                                        defaultValue=""
-                                        onChange={this.handleFieldChange} />
-                                        <select value={this.state.cocktailIngredientObjects[0].unit}
-                                        name="unit--1"
-                                        onChange={this.handleFieldChange}>
-                                            <option value="" disabled default hidden>Select Unit...</option>
-                                            {
-                                                this.props.unitOptions.map(unit => {
-                                                    return <option key={unit.id}
-                                                    value={unit.name}>{unit.name}</option>
-                                                })
+                                            {(this.state.additionalSelectionFields.slice(-1)[0] === ingredientInputId) &&
+                                                <button type="button"
+                                                className="button is-light"
+                                                name={"remove--"+ingredientInputId}
+                                                onClick={this.handleRemoveButton}>Remove Ingredient</button>
                                             }
-                                        </select>
-                                        <label htmlFor="required--1">Required?</label>
-                                        <input type="checkbox"
-                                        name="required--1"
-                                        onChange={this.handleFieldChange} />
-                                    </React.Fragment>
+                                        </fieldset>
+                                    })
                                 }
-                            </fieldset>
-                            {/* ADDITIONAL INGREDIENT FIELDS AS NEEDED */}
-                            {
-                                this.state.additionalSelectionFields.map(ingredientInputId => {
-                                    let indexNumber = ingredientInputId -1;
-                                    return <fieldset key={ingredientInputId}
-                                    className="ingredientFieldset">
-                                    Ingredient {ingredientInputId}
-                                        <select value={this.state.cocktailIngredientObjects[indexNumber].type}
-                                        name={"type--"+ingredientInputId}
-                                        onChange={this.handleFieldChange}>
-                                            <option value="" disabled default hidden>Select Type...</option>
-                                            {
-                                                this.props.ingredientTypeOptions.map(ingredientType => {
-                                                    return <option key={ingredientType.id}
-                                                    value={ingredientType.name}>{ingredientType.name}</option>
-                                                })
-                                            }
-                                        </select>
-                                        {(this.state.cocktailIngredientObjects[indexNumber].type && this.props.ingredients) &&
-                                            <React.Fragment>
-                                                <input
-                                                type="text"
-                                                name={"label--"+ingredientInputId}
-                                                placeholder="Ingredient Label"
-                                                onChange={this.handleFieldChange} />
-                                                <select value={this.state.cocktailIngredientObjects[indexNumber].ingredientName}
-                                                defaultValue=""
-                                                name={"ingredientId--"+ingredientInputId}
-                                                onChange={this.handleFieldChange}>
-                                                    <option value="" disabled default hidden>Select Ingredient...</option>
-                                                    {
-                                                        this.props.ingredients.filter(ingredient => {
-                                                            return ingredient.type === this.state.cocktailIngredientObjects[indexNumber].type;
-                                                        }).map(ingredient => {
-                                                            return <option key={ingredient.id}
-                                                            value={ingredient.name}>{ingredient.name}</option>
-                                                        })
-                                                    }
-                                                </select>
-                                                <input type="text"
-                                                name={"amount--"+ingredientInputId}
-                                                placeholder="Amount"
-                                                onChange={this.handleFieldChange} />
-                                                <select value={this.state.cocktailIngredientObjects[indexNumber].unit}
-                                                name={"unit--"+ingredientInputId}
-                                                onChange={this.handleFieldChange}>
-                                                    <option value="" disabled default hidden>Select Unit...</option>
-                                                    {
-                                                        this.props.unitOptions.map(unit => {
-                                                            return <option key={unit.id}
-                                                            value={unit.name}>{unit.name}</option>
-                                                        })
-                                                    }
-                                                </select>
-                                                <label htmlFor={"required--"+ingredientInputId}>Required?</label>
-                                                <input type="checkbox"
-                                                name={"required--"+ingredientInputId}
-                                                onChange={this.handleFieldChange} />
-                                            </React.Fragment>
-                                        }
-                                        {(this.state.additionalSelectionFields.slice(-1)[0] === ingredientInputId) &&
-                                            <button type="button"
-                                            className="btn btn-secondary"
-                                            name={"remove--"+ingredientInputId}
-                                            onClick={this.handleRemoveButton}>Remove Ingredient</button>
-                                        }
-                                    </fieldset>
-                                })
-                            }
-                            <button type="button"
-                            className="btn btn-secondary"
-                            onClick={this.handleAddButton}>Add New Ingredient</button>
+                                <span classname="button-fixer">
+                                    <button type="button"
+                                    className="button is-light"
+                                    onClick={this.handleAddButton}>Add New Ingredient</button>
+                                </span>
+                            </section>
                         </section>
                         <section className="modal-card-foot">
                             <button type="button"

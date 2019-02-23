@@ -1,5 +1,5 @@
 import auth0 from 'auth0-js';
-import { AUTH_CONFIG } from './Auth0Variables';
+import {AUTH_CONFIG} from "./Auth0Variables";
 
 class Auth {
   constructor() {

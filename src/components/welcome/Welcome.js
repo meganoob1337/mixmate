@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import auth0Client from '../../Auth';
+import auth0Client from '../../auth/Auth';
 
 export default class Welcome extends Component {
   render() {
@@ -8,7 +8,7 @@ export default class Welcome extends Component {
         <h1>Welcome</h1>
         {
           !auth0Client.isAuthenticated() &&
-          <button className="btn btn-secondary" onClick={auth0Client.signIn}>Sign In</button>
+          <button className="button is-light" onClick={auth0Client.signIn}>Sign In</button>
         }
       </React.Fragment>
     );
