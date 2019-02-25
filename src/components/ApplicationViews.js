@@ -75,7 +75,7 @@ export default class ApplicationViews extends Component {
             return (DataManager.dataManager({
                 "dataSet": stateName,
                 "fetchType": "GET-ALL",
-                "embedItem": `/?_expand=cocktail&userId=${Number(sessionStorage.getItem("userId"))}`
+                "embedItem": `/?_expand=cocktail&userId=${Number(localStorage.getItem("userId"))}`
             })
             .then(dataSet => {
                 this.setState({
@@ -104,7 +104,7 @@ export default class ApplicationViews extends Component {
 
     getSavedCocktails = () => {
         return this.state.userCocktails.filter(userCocktail => {
-            return userCocktail.userId === Number(sessionStorage.getItem("userId"));
+            return userCocktail.userId === Number(localStorage.getItem("userId"));
         }).map(userCocktail => {
             return userCocktail.cocktail;
         })

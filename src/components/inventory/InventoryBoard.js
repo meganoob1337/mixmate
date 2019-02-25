@@ -33,7 +33,7 @@ export default class InventoryBoard extends Component {
                     .then(() => this.setState({itemsToDelete: this.state.itemsToDelete.filter(x => x !== item)}))
                 } else if (!item.id) {
                     let objToPost = {
-                        userId: Number(sessionStorage.getItem("userId")),
+                        userId: Number(localStorage.getItem("userId")),
                         ingredientId: this.props.ingredients.find(ingredient => {
                             return ingredient.name === item.label;
                         }).id
@@ -46,7 +46,7 @@ export default class InventoryBoard extends Component {
 
     componentDidMount() {
         let currentUserIngredients = this.props.userIngredients.filter(ingr => {
-            return ingr.userId === Number(sessionStorage.getItem("userId"))
+            return ingr.userId === Number(localStorage.getItem("userId"))
         });
         Object.keys(this.state).forEach(stateName => {
             if (stateName === "selectedWine") {
@@ -75,7 +75,7 @@ export default class InventoryBoard extends Component {
 
     componentWillReceiveProps(nextProps) {
         let currentUserIngredients = nextProps.userIngredients.filter(ingr => {
-            return ingr.userId === Number(sessionStorage.getItem("userId"))
+            return ingr.userId === Number(localStorage.getItem("userId"))
         });
         Object.keys(this.state).forEach(stateName => {
             if (stateName === "selectedWine") {

@@ -13,7 +13,7 @@ export default class ProfileBoard extends Component {
 
     filterCocktails = () => {
         let userIngredients = this.props.userIngredients.filter(ingr => {
-            return ingr.userId === Number(sessionStorage.getItem("userId"));
+            return ingr.userId === Number(localStorage.getItem("userId"));
         });
         this.setState({
             filteredCocktails: this.state.filteredCocktails.filter(cocktail => {
@@ -75,11 +75,8 @@ export default class ProfileBoard extends Component {
 
     getUserName = () => {
         if (this.props.users[0]) {
-            console.log(this.props.users.find(user => {
-                return user.id === Number(sessionStorage.getItem("userId"))
-            }).name)
             return this.props.users.find(user => {
-                return user.id === Number(sessionStorage.getItem("userId"))
+                return user.id === Number(localStorage.getItem("userId"))
             }).name;
         }
     }
@@ -90,8 +87,11 @@ export default class ProfileBoard extends Component {
         })
     }
 
+    componentWillMount() {
+        this.props.handleGetAlls("userCocktails");
+    }
+
     componentDidMount() {
-        sessionStorage.setItem("userId", 1)
         this.setState({
             toggleCreateModal: false,
             toggleCreateButton: true,

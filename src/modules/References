@@ -55,7 +55,7 @@ let fetchTest4 = {
     "dataSet" : "events",
     "fetchType" : "DELETE",
     "dataBaseObject" : {
-      "userId": sessionStorage.getItem("userId")
+      "userId": localStorage.getItem("userId")
     }
 }
 

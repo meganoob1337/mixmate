@@ -60,7 +60,7 @@ export default class ExploreBoard extends Component {
 
     filterByIngredients = () => {
         let userIngredients = this.props.userIngredients.filter(ingr => {
-            return ingr.userId === Number(sessionStorage.getItem("userId"));
+            return ingr.userId === Number(localStorage.getItem("userId"));
         });
         this.setState({
             filteredCocktails: this.state.filteredCocktails.filter(cocktail => {

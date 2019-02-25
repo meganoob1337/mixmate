@@ -27,7 +27,7 @@ export default class ProfileCard extends Component {
 
     ingredientsFilter = () => {
         let userIngredients = this.props.userIngredients.filter(ingr => {
-            return ingr.userId === Number(sessionStorage.getItem("userId"));
+            return ingr.userId === Number(localStorage.getItem("userId"));
         });
         if (this.props.cocktail.id > 77) {
             let cocktailIngredients = this.props.cocktailIngredients.filter(ingr => {
@@ -98,16 +98,16 @@ export default class ProfileCard extends Component {
             return user.id === this.props.cocktail.userId;
             }) ? this.props.users.find(user => {
             return user.id === this.props.cocktail.userId;
-        }).userName : "";
+        }).name : "";
 
-        if (this.props.cocktail.id > 77 && this.props.cocktail.userId === Number(sessionStorage.getItem("userId"))) {
+        if (this.props.cocktail.id > 77 && this.props.cocktail.userId === Number(localStorage.getItem("userId"))) {
             return (
                 <section className="card"
                 id={setCardBackground(this.props.cocktail)}>
                     <div onClick={this.toggleDetailModal}>
                         <p className="title is-4">{this.props.cocktail.name}</p>
                         {this.state.lackingIngredients[0] &&
-                            <p>*Lacking Necessary Ingredients</p>
+                            <p className="lacking-text">*Lacking Necessary Ingredients</p>
                         }
                         <p>Created By You</p>
                     </div>
@@ -130,7 +130,7 @@ export default class ProfileCard extends Component {
                     <div onClick={this.toggleDetailModal} className="card-custom-detail">
                         <p className="title is-4">{this.props.cocktail.name}</p>
                         {this.state.lackingIngredients[0] &&
-                            <p>*Lacking Necessary Ingredients</p>
+                            <p className="lacking-text">*Lacking Necessary Ingredients</p>
                         }
                         <p>Created By {cocktailCreator}</p>
                     </div>
@@ -147,7 +147,7 @@ export default class ProfileCard extends Component {
                     <div onClick={this.toggleDetailModal} className="card-custom-detail">
                         <h2 className="title is-4">{this.props.cocktail.name}</h2>
                         {this.state.lackingIngredients[0] &&
-                            <p>*Lacking Necessary Ingredients</p>
+                            <p className="lacking-text">*Lacking Necessary Ingredients</p>
                         }
                         <p>IBA Official Cocktail</p>
                     </div>

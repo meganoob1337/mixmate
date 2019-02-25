@@ -122,7 +122,7 @@ export default class ProfileEdit extends Component {
     handleSaveButton = () => {
         const cocktailObjToPut = {
             id: this.props.cocktail.id,
-            userId: Number(sessionStorage.getItem("userId")),
+            userId: Number(localStorage.getItem("userId")),
             name: this.state.cocktailNameEdit,
             glass: this.state.glassSelection,
             category: this.state.categorySelection,
@@ -407,7 +407,7 @@ export default class ProfileEdit extends Component {
                         <section className="modal-card-foot"
                         id={setCardBackground(this.props.cocktail)}>
                         <button type="button"
-                            className="button is-dark"
+                            className="button is-light"
                             onClick={this.handleSaveButton}>Save Changes</button>
                         </section>
                     </div>
