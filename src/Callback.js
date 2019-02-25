@@ -8,7 +8,7 @@ class Callback extends Component {
     // The getProfile method allows you to get information about the logged in user
     // Use the "sub" property to tie the user in your database to the user in Auth0. This
     // Means you will add a new property called "auth0Identifier" to your user object.
-    this.props.history.replace('/');
+    this.props.history.replace('/profile');
   }
 
   render() {

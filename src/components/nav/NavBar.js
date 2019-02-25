@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
 import auth0Client from '../../auth/Auth';
+import logoutIcon from '../images/logout.png';
 import inventoryIcon from '../images/lime-white.png';
 import profileIcon from '../images/profile-white.png';
 import exploreIcon from '../images/compass-white.png';
@@ -20,11 +21,7 @@ class NavBar extends Component {
                     <div className="navbar-brand navbar-custom">
                         <span>MIXMATE</span>
                         {auth0Client.isAuthenticated() &&
-
-                            <div className="logout-custom">
-                                <label className="mr-2 text-white">{auth0Client.getProfile().name}</label>
-                                <button className="button button-light" onClick={() => {this.signOut()}}>Sign Out</button>
-                            </div>
+                            <img src={logoutIcon} className="logout-icon" alt="logout-icon" onClick={() => {this.signOut()}} />
                         }
                     </div>
                 </nav>

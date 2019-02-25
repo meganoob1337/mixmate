@@ -8,6 +8,22 @@
 .navbar-custom {
     font-family: 'Montserrat';
     font-size: 2em;
+    display: flex;
+    position: relative;
+}
+
+.navbar-custom > span {
+    position: absolute;
+    right: 48%;
+    transform: translate(50%)
+}
+
+.logout-icon {
+    width: 1em;
+    height: 1em;
+    margin-top: .3em;
+    position: absolute;
+    right: 8%;
 }
 
 .navbar-item-custom {

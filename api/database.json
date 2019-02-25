@@ -1,18 +1,10 @@
 {
   "users": [
     {
-      "id": 1,
-      "userName": "Cole",
+      "name": "cobryant47",
       "email": "cobryant47@gmail.com",
-      "password": "abc",
-      "auth0Identifier": ""
-    },
-    {
-      "id": 2,
-      "userName": "Bill",
-      "email": "bill@bill.com",
-      "password": "abc",
-      "auth0Identifier": ""
+      "sub": "google-oauth2|116833788682917290895",
+      "id": 1
     }
   ],
   "cocktails": [
@@ -2094,22 +2086,6 @@
       "preparation": "Build vodka and orange juice into a highball glass filled with ice. Stir gently and float Galliano on top."
     },
     {
-      "id": 78,
-      "userId": 2,
-      "name": "Classic Daiquiri",
-      "glass": "Coupe",
-      "category": "All Day Cocktail",
-      "preparation": "Make it"
-    },
-    {
-      "userId": 2,
-      "name": "Bourbon",
-      "glass": "Double-rock",
-      "category": "After Dinner Cocktail",
-      "preparation": "Make it",
-      "id": 79
-    },
-    {
       "id": 80,
       "userId": 1,
       "name": "Last Word",
@@ -2570,33 +2546,6 @@
   ],
   "cocktailIngredients": [
     {
-      "id": 2,
-      "cocktailId": 78,
-      "ingredientId": 44,
-      "amount": "1",
-      "unit": "oz",
-      "label": "Lime juice",
-      "required": true
-    },
-    {
-      "id": 3,
-      "cocktailId": 78,
-      "ingredientId": 4,
-      "amount": "2",
-      "unit": "oz",
-      "label": "Smith & Cross Rum",
-      "required": true
-    },
-    {
-      "cocktailId": 79,
-      "ingredientId": 2,
-      "amount": "2",
-      "unit": "oz",
-      "label": "Bourbon",
-      "required": true,
-      "id": 4
-    },
-    {
       "id": 5,
       "cocktailId": 80,
       "ingredientId": 5,
@@ -2657,21 +2606,137 @@
     },
     {
       "userId": 1,
-      "cocktailId": 5,
+      "cocktailId": 15,
       "comment": "",
-      "id": 18
+      "id": 20
+    },
+    {
+      "userId": 1,
+      "cocktailId": 31,
+      "comment": "",
+      "id": 22
     }
   ],
   "userIngredients": [
     {
       "userId": 1,
       "ingredientId": 2,
-      "id": 1
+      "id": 2
     },
     {
       "userId": 1,
       "ingredientId": 4,
-      "id": 2
+      "id": 3
+    },
+    {
+      "userId": 1,
+      "ingredientId": 44,
+      "id": 4
+    },
+    {
+      "userId": 1,
+      "ingredientId": 62,
+      "id": 5
+    },
+    {
+      "userId": 1,
+      "ingredientId": 13,
+      "id": 6
+    },
+    {
+      "userId": 1,
+      "ingredientId": 5,
+      "id": 7
+    },
+    {
+      "userId": 1,
+      "ingredientId": 8,
+      "id": 8
+    },
+    {
+      "userId": 1,
+      "ingredientId": 40,
+      "id": 9
+    },
+    {
+      "userId": 1,
+      "ingredientId": 20,
+      "id": 10
+    },
+    {
+      "userId": 1,
+      "ingredientId": 25,
+      "id": 11
+    },
+    {
+      "userId": 1,
+      "ingredientId": 49,
+      "id": 12
+    },
+    {
+      "userId": 1,
+      "ingredientId": 51,
+      "id": 13
+    },
+    {
+      "userId": 1,
+      "ingredientId": 50,
+      "id": 14
+    },
+    {
+      "userId": 1,
+      "ingredientId": 69,
+      "id": 15
+    },
+    {
+      "userId": 1,
+      "ingredientId": 70,
+      "id": 16
+    },
+    {
+      "userId": 1,
+      "ingredientId": 81,
+      "id": 17
+    },
+    {
+      "userId": 1,
+      "ingredientId": 83,
+      "id": 18
+    },
+    {
+      "userId": 1,
+      "ingredientId": 80,
+      "id": 19
+    },
+    {
+      "userId": 1,
+      "ingredientId": 81,
+      "id": 20
+    },
+    {
+      "userId": 1,
+      "ingredientId": 83,
+      "id": 21
+    },
+    {
+      "userId": 1,
+      "ingredientId": 69,
+      "id": 22
+    },
+    {
+      "userId": 1,
+      "ingredientId": 50,
+      "id": 23
+    },
+    {
+      "userId": 1,
+      "ingredientId": 70,
+      "id": 24
+    },
+    {
+      "userId": 1,
+      "ingredientId": 80,
+      "id": 25
     }
   ],
   "categoryOptions": [

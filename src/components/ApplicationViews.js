@@ -6,7 +6,7 @@ import ProfileBoard from './profile/ProfileBoard';
 import ExploreBoard from './explore/ExploreBoard';
 import InventoryBoard from './inventory/InventoryBoard';
 import Welcome from './welcome/Welcome';
-// import auth0Client from '../Auth';
+import auth0Client from '../auth/Auth';
 import Callback from '../Callback';
 
 export default class ApplicationViews extends Component {
@@ -25,10 +25,8 @@ export default class ApplicationViews extends Component {
         savedCocktails: []
     }
 
-    isAuthenticated = () => sessionStorage.getItem("credentials") !== null;
-
     showNav = () => {
-        if (this.isAuthenticated()) {
+        if (auth0Client.isAuthenticated()) {
             return <NavBar />
         }
     }
@@ -99,7 +97,6 @@ export default class ApplicationViews extends Component {
     }
 
     componentDidMount() {
-        sessionStorage.setItem("userId", 1);
         Object.keys(this.state).forEach(stateName => {
             this.handleGetAlls(stateName);
         });
@@ -116,12 +113,12 @@ export default class ApplicationViews extends Component {
     render() {
         return (
             <React.Fragment>
-                {/* {this.showNav} */}
+                {this.showNav()}
                 <Route exact path="/" render={ () => {
                     return <Welcome />
                 }} />
                 <Route exact path="/profile" render={props => {
-                    // if (auth0Client.isAuthenticated()) {
+                    if (auth0Client.isAuthenticated()) {
                         return <ProfileBoard {...props}
                         users={this.state.users}
                         cocktails={this.state.cocktails}
@@ -138,42 +135,48 @@ export default class ApplicationViews extends Component {
                         putItem={this.putItem}
                         getSavedCocktails={this.getSavedCocktails}
                         handleGetAlls={this.handleGetAlls} />
-                    // } else {
-                    //     return <Welcome />
-                    // }
-                }}
-
-                />
+                    } else {
+                        return <Welcome />
+                    }
+                }} />
 
                 <Route exact path="/explore" render={props => {
-                    return <ExploreBoard {...props}
-                    users={this.state.users}
-                    cocktails={this.state.cocktails}
-                    ingredients={this.state.ingredients}
-                    cocktailIngredients={this.state.cocktailIngredients}
-                    userCocktails={this.state.userCocktails}
-                    userIngredients={this.state.userIngredients}
-                    categoryOptions={this.state.categoryOptions}
-                    glassOptions={this.state.glassOptions}
-                    ingredientTypeOptions={this.state.ingredientTypeOptions}
-                    unitOptions={this.state.unitOptions}
-                    postItem={this.postItem}
-                    getSavedCocktails={this.getSavedCocktails} />
+                    if (auth0Client.isAuthenticated()) {
+                        return <ExploreBoard {...props}
+                        users={this.state.users}
+                        cocktails={this.state.cocktails}
+                        ingredients={this.state.ingredients}
+                        cocktailIngredients={this.state.cocktailIngredients}
+                        userCocktails={this.state.userCocktails}
+                        userIngredients={this.state.userIngredients}
+                        categoryOptions={this.state.categoryOptions}
+                        glassOptions={this.state.glassOptions}
+                        ingredientTypeOptions={this.state.ingredientTypeOptions}
+                        unitOptions={this.state.unitOptions}
+                        postItem={this.postItem}
+                        getSavedCocktails={this.getSavedCocktails} />
+                    } else {
+                        return <Welcome />
+                    }
                 }}
                 />
 
                 <Route exact path="/inventory" render={props => {
-                    return <InventoryBoard {...props}
-                    cocktails={this.state.cocktails}
-                    ingredients={this.state.ingredients}
-                    userIngredients={this.state.userIngredients}
-                    categoryOptions={this.state.categoryOptions}
-                    glassOptions={this.state.glassOptions}
-                    ingredientTypeOptions={this.state.ingredientTypeOptions}
-                    unitOptions={this.state.unitOptions}
-                    postItem={this.postItem}
-                    deleteItem={this.deleteItem}
-                    putItem={this.putItem} />
+                    if (auth0Client.isAuthenticated()) {
+                        return <InventoryBoard {...props}
+                        cocktails={this.state.cocktails}
+                        ingredients={this.state.ingredients}
+                        userIngredients={this.state.userIngredients}
+                        categoryOptions={this.state.categoryOptions}
+                        glassOptions={this.state.glassOptions}
+                        ingredientTypeOptions={this.state.ingredientTypeOptions}
+                        unitOptions={this.state.unitOptions}
+                        postItem={this.postItem}
+                        deleteItem={this.deleteItem}
+                        putItem={this.putItem} />
+                    } else {
+                        return <Welcome />
+                    }
                 }}
                 />
 

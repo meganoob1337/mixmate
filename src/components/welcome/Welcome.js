@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
 import auth0Client from '../../auth/Auth';
+import './Welcome.css';
 
 export default class Welcome extends Component {
   render() {
+    localStorage.removeItem("userId");
     return (
-      <React.Fragment>
-        <h1>Welcome</h1>
+      <div className="welcome-container">
+        <p className="welcome-header">Welcome to MixMate</p>
         {
           !auth0Client.isAuthenticated() &&
-          <button className="button is-light" onClick={auth0Client.signIn}>Sign In</button>
+          <button className="login-button" onClick={auth0Client.signIn}>Log In With Auth0</button>
         }
-      </React.Fragment>
+      </div>
     );
   }
 }

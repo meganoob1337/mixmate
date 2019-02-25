@@ -10,8 +10,24 @@ export default class ExploreBoard extends Component {
         searchInput: ""
     }
 
-    handleSearchInput = () => {
-
+    handleSearchInput = event => {
+        let searchValue = event.target.value;
+        this.setState({
+            searchInput: searchValue
+        });
+        if (this.state.checkboxValue || this.state.categorySelection !== "") {
+            this.setState({
+                filteredCocktails: this.state.filteredCocktails.filter(cocktail => {
+                    return cocktail.name.includes(searchValue);
+                })
+            })
+        } else {
+            this.setState({
+                filteredCocktails: this.props.cocktails.filter(cocktail => {
+                    return cocktail.name.includes(searchValue);
+                })
+            })
+        }
     }
 
     handleClearFilters = () => {
@@ -32,13 +48,14 @@ export default class ExploreBoard extends Component {
                     return cocktail.category === categoryValue;
                 })
             })
-        }
-        this.setState({
-            categorySelection: categoryValue,
-            filteredCocktails: this.props.cocktails.filter(cocktail => {
-                return cocktail.category === categoryValue;
+        } else {
+            this.setState({
+                categorySelection: categoryValue,
+                filteredCocktails: this.props.cocktails.filter(cocktail => {
+                    return cocktail.category === categoryValue;
+                })
             })
-        })
+        }
     }
 
     filterByIngredients = () => {
@@ -110,12 +127,17 @@ export default class ExploreBoard extends Component {
     render() {
         return (
             <React.Fragment>
-                <p className="exploreHeader">Find New Cocktails</p>
+                <p className="exploreHeader">Explore</p>
+                <hr className="custom-hr" />
                 <section className="filters-section">
+                    <p className="exploreSubHeader">Filters</p>
+                    <span />
                     <input type="text"
-                    placeholder="Search..."
+                    value={this.state.searchInput}
+                    placeholder="Search by Name..."
                     name="searchInput"
                     onChange={this.handleSearchInput} />
+                    <span />
                     <fieldset>
                         <label htmlFor="ingredientFilter">Filter By Available Ingredients:</label>
                         <span />
@@ -124,6 +146,7 @@ export default class ExploreBoard extends Component {
                         name="ingredientFilter"
                         onChange={this.handleFilterCheckbox} />
                     </fieldset>
+                    <span />
                     <select value={this.state.categorySelection}
                     name="categorySelection"
                     onChange={this.handleCategorySelection}>
@@ -136,8 +159,9 @@ export default class ExploreBoard extends Component {
                         })
                     }
                     </select>
+                    <span />
                     <button type="button"
-                    className="button is-light   "
+                    className="button is-light clear-filters-button"
                     onClick={this.handleClearFilters}>Clear Filters
                     </button>
                 </section>

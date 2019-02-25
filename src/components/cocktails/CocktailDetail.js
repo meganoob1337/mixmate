@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import setCardBackground from '../backgrounds';
 import './CocktailDetail.css';
 
 export default class CocktailDetail extends Component {
@@ -11,8 +12,10 @@ export default class CocktailDetail extends Component {
                 <div className="modal-card">
                     <button className="modal-close is-large"
                         onClick={this.props.toggleDetailModal}></button>
-                    <p className="modal-card-head">{this.props.cocktail.name}</p>
+                    <p className="modal-card-head"
+                    id={setCardBackground(this.props.cocktail)}>{this.props.cocktail.name}</p>
                     <section className="modal-card-body">
+                        <p>Category: {this.props.cocktail.category}</p>
                         <ul>Ingredients:
                         {
                             this.props.cocktailIngredients.map(cocktailIngredient => {
@@ -30,13 +33,10 @@ export default class CocktailDetail extends Component {
                             </ul>
                         }
                         <p>Glass: {this.props.cocktail.glass}</p>
-                        <p>Preparation: {this.props.cocktail.preparation}</p>
+                        <p>Directions: {this.props.cocktail.preparation}</p>
                     </section>
-                    <section className="modal-card-foot">
-                    {!this.props.lackingIngredients[0] &&
-                        <button type="button"
-                            className="button is-success"> Make Cocktail</button>
-                    }
+                    <section className="modal-card-foot"
+                    id={setCardBackground(this.props.cocktail)}>
                     </section>
                 </div>
             </div>

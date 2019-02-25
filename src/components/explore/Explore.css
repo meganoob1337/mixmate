@@ -1,6 +1,19 @@
 .exploreHeader {
     font-size: 1.5rem;
+    font-family: 'Montserrat';
     text-align: center;
+}
+
+.exploreSubHeader {
+    font-size: 1.25em;
+    font-family: 'Montserrat';
+    text-align: center;
+}
+
+.custom-hr {
+    margin: .5em 0;
+    height: .3em;
+    background-color: lightgrey;
 }
 
 .cocktailCard {
@@ -12,10 +25,33 @@
 .filters-section {
     display: flex;
     flex-direction: column;
+    align-items: center;
     margin: 1em;
     padding: 1em;
     border: 1px grey solid;
     border-radius: .5em;
     background-color: #9f72c1;
     color: white;
+}
+
+.filters-section > select, input[type=text] {
+    width: 100%;
+    font-size: 1em;
+}
+
+.filters-section > fieldset > input[type=checkbox] {
+    position: relative;
+    top: .2em;
+}
+
+.clear-filters-button {
+    width: 100%;
+}
+
+.filters-section > span {
+    margin: .25em 0;
+}
+
+.filters-section > fieldset > span {
+    margin: 0 .3em;
 }

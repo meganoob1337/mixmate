@@ -17,13 +17,14 @@
     padding: 1em 2em;
     border: 2px solid grey;
     border-radius: .5em;
+    margin-bottom: 1em;
 }
 
 .modal-card-body > .lacking-ingredients {
     border: 2px solid red;
     color: red;
 }
+ .modal-card-body > p {
+     margin-bottom: 1em;
+ }
 
-.modal-card-body-custom > p {
-    padding: .5em;
-}
