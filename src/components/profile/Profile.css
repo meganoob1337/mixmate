@@ -14,6 +14,10 @@
     max-height: 60vh;
 }
 
+span {
+    margin: 0 .25em;
+}
+
 .button-fixer {
     margin: 1em;
 }
@@ -22,11 +26,17 @@
     border: 1px solid grey;
     border-radius: .5em;
     padding: 1em 2em;
+    margin-bottom: 1em;
+}
+
+.details-section-add {
+    background-color: whitesmoke;
 }
 
 .details-section > fieldset > input, select, textarea {
     font-size: 1em;
-    margin: .5em 0;
+    width: 100%;
+    border: 1px solid grey;
 }
 
 .ingredients-section {
@@ -35,15 +45,28 @@
     padding: 1em 2em;
 }
 
+.ingredients-section-add {
+    background-color: whitesmoke;
+}
+
 .ingredients-section > fieldset > input, select {
     font-size: 1em;
     margin: .5em 0;
+    border: 1px solid grey;
 }
 
 .ingredient-input {
     border: 1px solid grey;
     border-radius: .5em;
     padding: 1em 2em;
+    margin-bottom: 1em;
+}
+
+.ingredient-fieldset {
+    border: 1px solid grey;
+    border-radius: .5em;
+    padding: 1em 2em;
+    margin-bottom: 1em;
 }
 
 .option-custom {
@@ -57,34 +80,41 @@
 }
 
 .createCocktailButton {
-    background-color: #3273dc;
-    border-color: #dbdbdb;
-    border-width: 1px;
-    color: white;
-    cursor: pointer;
-    justify-content: center;
-    padding: .375em .75em;
-    text-align: center;
-    white-space: nowrap;
     position: fixed;
-    left: 50%;
-    bottom: 6%;
+    width: 3.25em;
+    left: 83.5%;
+    bottom: 8%;
     transform: translate(-50%, -50%);
-    border: 1px solid transparent;
-    border-radius: 4px;
-    box-shadow: none;
-    font-size: 1rem;
-    height: 2.25em;
 }
 
 .profileHeader {
     font-size: 1.5rem;
+    font-family: 'Montserrat';
     text-align: center;
+}
+
+.profileSubHeader {
+    font-size: 1rem;
+    font-family: 'Montserrat';
+    text-align: center;
+    margin: 1em;
+    font-weight: bold;
+}
+
+
+.custom-hr {
+    margin: .5em 0;
+    height: .3em;
+    background-color: lightgrey;
 }
 
 .card {
     margin: 1em;
     padding: 1em;
+}
+
+.card-footer > button {
+    margin-right: .5em;
 }
 
 .card-custom {

@@ -106,6 +106,8 @@ export default class InventoryBoard extends Component {
         return(
             <React.Fragment>
             <p className="inventoryHeader">Inventory</p>
+            <hr className="custom-hr" />
+            <p className="inventorySubHeader">Select Your Ingredients:</p>
                 {this.props.ingredients &&
                     this.props.ingredientTypeOptions.map(ingredientType => {
                         let options = this.props.ingredients.filter(ingredient => {
@@ -141,9 +143,8 @@ export default class InventoryBoard extends Component {
                     })
                 }
                 <button type="button"
-                className="button"
+                className="submit-button"
                 onClick={this.handleSubmitButton}>Submit</button>
-                <p>Amounts</p>
             </React.Fragment>
         )
     }

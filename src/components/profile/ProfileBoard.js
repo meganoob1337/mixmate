@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ProfileCard from './ProfileCard';
 import ProfileAdd from './ProfileAdd';
+import add from '../images/add.png';
 
 export default class ProfileBoard extends Component {
     state = {
@@ -21,7 +22,7 @@ export default class ProfileBoard extends Component {
                         return ingr.cocktailId === cocktail.id;
                     });
                     let canMake = cocktailIngredients.every(cocktailIngr => {
-                        return userIngredients.find(ingr => ingr.ingredientId === cocktailIngr.ingredientId)
+                        return (userIngredients.find(ingr => ingr.ingredientId === cocktailIngr.ingredientId) || cocktailIngr.required === false)
                     });
                     if (canMake) {
                         return cocktail
@@ -72,6 +73,17 @@ export default class ProfileBoard extends Component {
         })
     }
 
+    getUserName = () => {
+        if (this.props.users[0]) {
+            console.log(this.props.users.find(user => {
+                return user.id === Number(sessionStorage.getItem("userId"))
+            }).name)
+            return this.props.users.find(user => {
+                return user.id === Number(sessionStorage.getItem("userId"))
+            }).name;
+        }
+    }
+
     componentWillReceiveProps() {
         this.setState({
             filteredCocktails: this.props.getSavedCocktails(),
@@ -79,6 +91,7 @@ export default class ProfileBoard extends Component {
     }
 
     componentDidMount() {
+        sessionStorage.setItem("userId", 1)
         this.setState({
             toggleCreateModal: false,
             toggleCreateButton: true,
@@ -88,13 +101,21 @@ export default class ProfileBoard extends Component {
     }
 
     render() {
+        this.getUserName();
         return (
             <React.Fragment>
-                <h1 className="profileHeader">Saved Cocktails</h1>
-                <label htmlFor="ingredientFilter">Filter By Available Ingredients:</label>
-                <input type="checkbox"
-                name="ingredientFilter"
-                onChange={this.handleFilterCheckbox} />
+                <p className="profileHeader">Profile</p>
+                <hr className="custom-hr" />
+                <p className="profileSubHeader">Welcome, {this.getUserName()}</p>
+                <section className="filters-section">
+                    <fieldset>
+                        <label htmlFor="ingredientFilter">Filter By Available Ingredients:</label>
+                        <span />
+                        <input type="checkbox"
+                        name="ingredientFilter"
+                        onChange={this.handleFilterCheckbox} />
+                    </fieldset>
+                </section>
                 {
                     this.state.filteredCocktails.map(cocktail => {
                         return <ProfileCard key={cocktail.id}
@@ -104,9 +125,11 @@ export default class ProfileBoard extends Component {
                     })
                 }
                 {this.state.toggleCreateButton &&
-                    <button type="button"
+                    <img
+                    src={add}
+                    alt="create-cocktail-button"
                     className="createCocktailButton"
-                    onClick={this.toggleCreateModal}>Create New Cocktail</button>
+                    onClick={this.toggleCreateModal} />
                 }
                 {this.state.toggleCreateModal &&
                     <ProfileAdd {...this.props}

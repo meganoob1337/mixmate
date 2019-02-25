@@ -33,6 +33,7 @@ class Auth {
   }
 
   signIn() {
+    console.log("sign in")
     this.auth0.authorize();
   }
 
@@ -47,9 +48,47 @@ class Auth {
         this.profile = authResult.idTokenPayload;
         // set the time that the id token will expire at
         this.expiresAt = authResult.idTokenPayload.exp * 1000;
-        resolve();
+        this.getCurrentUser()
+        .then(() => resolve());
       });
     })
+  }
+
+  getCurrentUser() {
+    return new Promise((resolve, reject) => {
+      const userId = localStorage.getItem("userId");
+      if (userId !== null) {
+        resolve(userId);
+      } else if (this.profile) {
+          fetch(`http://localhost:5002/users?sub=${this.profile.sub}`)
+            .then(u => u.json())
+            .then(users => {
+              if (users.length) {
+                localStorage.setItem("userId", users[0].id)
+                resolve(users[0].id);
+              } else {
+                let obj = {
+                  "name": this.profile.nickname,
+                  "email": this.profile.email,
+                  "sub": this.profile.sub
+                };
+                console.log(obj);
+                fetch(`http://localhost:5002/users`, {
+                  method: "POST",
+                  headers: {
+                    "Content-Type": "application/json"
+                  },
+                  body: JSON.stringify(obj)
+                })
+                  .then(user => user.json())
+                  .then(user => {
+                    localStorage.setItem("userId", user.id);
+                    resolve(user.id);
+                  });
+              }
+            });
+      }
+    });
   }
 
   signOut() {
@@ -57,6 +96,7 @@ class Auth {
     this.idToken = null;
     this.profile = null;
     this.expiresAt = null;
+    localStorage.removeItem("userId");
   }
 }
 

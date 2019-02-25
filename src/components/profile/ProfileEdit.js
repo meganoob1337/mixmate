@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import setCardBackground from '../backgrounds';
 import './Profile.css';
 
 export default class ProfileEdit extends Component {
@@ -206,9 +207,12 @@ export default class ProfileEdit extends Component {
                     <div className="modal-card">
                         <button className="modal-close is-large"
                         onClick={this.props.toggleEditModal}></button>
-                        <p className="modal-card-head">Edit Cocktail</p>
+                        <p className="modal-card-head"
+                        id={setCardBackground(this.props.cocktail)}>Edit Cocktail</p>
                         <section className="modal-card-body">
-                            <section className="details-section">General Details:
+                            <section className="details-section"
+                            id={setCardBackground(this.props.cocktail)}>
+                                <b>General Details:</b>
                                 <fieldset>
                                     <label htmlFor="cockTailNameEdit">Name:</label>
                                     <input type="text"
@@ -249,15 +253,16 @@ export default class ProfileEdit extends Component {
                                     onChange={this.handleFieldChange} />
                                 </fieldset>
                             </section>
-                            <section className="ingredients-section">
-                                <h5>Ingredients:</h5>
+                            <section className="ingredients-section"
+                            id={setCardBackground(this.props.cocktail)}>
+                                <b>Ingredients:</b>
                                 <p>Current Ingredients</p>
                                 {
                                     this.state.cocktailIngredientObjects.map(obj => {
                                         let currentIngredients;
                                         if (obj.existing === true) {
                                             currentIngredients = <fieldset key={obj.id}
-                                            className="ingredientFieldset">
+                                            className="ingredient-fieldset">
                                                 <label htmlFor={"type--"+obj.id}>Type:</label>
                                                 <select value={obj.type}
                                                 name={"type--"+obj.id}
@@ -308,12 +313,13 @@ export default class ProfileEdit extends Component {
                                                             }
                                                         </select>
                                                         <label htmlFor={"required--"+obj.id}>Required?</label>
+                                                        <span />
                                                         <input type="checkbox"
                                                         checked={obj.required}
                                                         name={"required--"+obj.id}
                                                         onChange={this.handleFieldChange} />
                                                         <button type="button"
-                                                        className="btn btn-secondary"
+                                                        className="button is-light"
                                                         name={"delete--"+obj.id}
                                                         onClick={this.handleDeleteButton}>Delete Ingredient</button>
                                                     </React.Fragment>
@@ -330,7 +336,7 @@ export default class ProfileEdit extends Component {
                                 {this.state.additionalSelectionFields[0] &&
                                     this.state.additionalSelectionFields.map(ingredientInputId => {
                                         return <fieldset key={ingredientInputId}
-                                        className="ingredientFieldset">
+                                        className="ingredient-fieldset">
                                             <select value={this.state.cocktailIngredientObjects.find(obj => obj.id === ingredientInputId).type}
                                             name={"type--"+ingredientInputId}
                                             onChange={this.handleFieldChange}>
@@ -378,6 +384,7 @@ export default class ProfileEdit extends Component {
                                                         }
                                                     </select>
                                                     <label htmlFor={"required--"+ingredientInputId}>Required?</label>
+                                                    <span />
                                                     <input type="checkbox"
                                                     name={"required--"+ingredientInputId}
                                                     onChange={this.handleFieldChange} />
@@ -385,7 +392,7 @@ export default class ProfileEdit extends Component {
                                             }
                                             {(this.state.additionalSelectionFields.slice(-1)[0] === ingredientInputId) &&
                                                 <button type="button"
-                                                className="btn btn-secondary"
+                                                className="button is-light"
                                                 name={"remove--"+ingredientInputId}
                                                 onClick={this.handleRemoveButton}>Remove Ingredient</button>
                                             }
@@ -393,12 +400,14 @@ export default class ProfileEdit extends Component {
                                     })
                                 }
                                 <button type="button"
+                                className="button is-light"
                                 onClick={this.handleAddButton}>Add New Ingredient</button>
                             </section>
                         </section>
-                        <section className="modal-card-foot">
+                        <section className="modal-card-foot"
+                        id={setCardBackground(this.props.cocktail)}>
                         <button type="button"
-                            className="button is-success"
+                            className="button is-dark"
                             onClick={this.handleSaveButton}>Save Changes</button>
                         </section>
                     </div>

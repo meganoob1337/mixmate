@@ -174,7 +174,8 @@ export default class ProfileAdd extends Component {
                             onClick={this.props.toggleCreateModal}></button>
                         <p className="modal-card-head">New Cocktail</p>
                         <section className="modal-card-body">
-                            <section className="details-section">General Details:
+                            <section className="details-section details-section-add">
+                                <b>General Details:</b>
                                 <fieldset>
                                     <input type="text"
                                     name="cocktailNameInput"
@@ -215,8 +216,8 @@ export default class ProfileAdd extends Component {
                                     onChange={this.handleFieldChange} />
                                 </fieldset>
                             </section>
-                            <section className="ingredients-section">
-                                <p>Ingredients:</p>
+                            <section className="ingredients-section ingredients-section-add">
+                                <b>Ingredients:</b>
                                 {/* INITIAL INGREDIENT SELECTION - NOT REMOVABLE FROM FORM */}
                                 <fieldset className="ingredient-input">Ingredient 1
                                     <select value={this.state.cocktailIngredientObjects[0].type}
@@ -270,6 +271,7 @@ export default class ProfileAdd extends Component {
                                                 }
                                             </select>
                                             <label htmlFor="required--1">Required?</label>
+                                            <span />
                                             <input type="checkbox"
                                             name="required--1"
                                             onChange={this.handleFieldChange} />
@@ -334,6 +336,7 @@ export default class ProfileAdd extends Component {
                                                         }
                                                     </select>
                                                     <label htmlFor={"required--"+ingredientInputId}>Required?</label>
+                                                    <span />
                                                     <input type="checkbox"
                                                     name={"required--"+ingredientInputId}
                                                     onChange={this.handleFieldChange} />
@@ -357,7 +360,7 @@ export default class ProfileAdd extends Component {
                         </section>
                         <section className="modal-card-foot">
                             <button type="button"
-                            className="button is-success"
+                            className="button is-dark"
                             onClick={this.handleSubmitButton}>Submit</button>
                         </section>
                     </div>
