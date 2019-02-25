@@ -130,6 +130,10 @@ span {
     margin-left: auto;
 }
 
+.lacking-text {
+    color: red;
+}
+
 #after-dinner-background {
     background-color: #ebdeef;
 }
@@ -153,4 +157,5 @@ span {
 #sparkling-background {
     background-color: #efefde;
 }
+
 

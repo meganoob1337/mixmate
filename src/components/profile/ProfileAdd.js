@@ -108,7 +108,7 @@ export default class ProfileAdd extends Component {
 
     handleSubmitButton = () => {
         const cocktailObjToPost = {
-            userId: Number(sessionStorage.getItem("userId")),
+            userId: Number(localStorage.getItem("userId")),
             name: this.state.cocktailNameInput,
             glass: this.state.glassSelection,
             category: this.state.categorySelection,
@@ -117,7 +117,7 @@ export default class ProfileAdd extends Component {
         this.props.postItem("cocktails", cocktailObjToPost)
         .then(() => {
             let userCocktailObjToPost = {
-                userId: Number(sessionStorage.getItem("userId")),
+                userId: Number(localStorage.getItem("userId")),
                 cocktailId: this.props.cocktails.slice(-1)[0].id,
                 comment: ""
             };
@@ -344,7 +344,7 @@ export default class ProfileAdd extends Component {
                                             }
                                             {(this.state.additionalSelectionFields.slice(-1)[0] === ingredientInputId) &&
                                                 <button type="button"
-                                                className="button is-light"
+                                                className="button is-dark"
                                                 name={"remove--"+ingredientInputId}
                                                 onClick={this.handleRemoveButton}>Remove Ingredient</button>
                                             }
@@ -353,7 +353,7 @@ export default class ProfileAdd extends Component {
                                 }
                                 <span classname="button-fixer">
                                     <button type="button"
-                                    className="button is-light"
+                                    className="button is-dark"
                                     onClick={this.handleAddButton}>Add New Ingredient</button>
                                 </span>
                             </section>

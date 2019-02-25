@@ -1,5 +1,5 @@
 import auth0 from 'auth0-js';
-import {AUTH_CONFIG} from "./Auth0Variables";
+import {AUTH_CONFIG} from './Auth0Variables';
 
 class Auth {
   constructor() {
@@ -33,7 +33,6 @@ class Auth {
   }
 
   signIn() {
-    console.log("sign in")
     this.auth0.authorize();
   }
 
@@ -64,7 +63,7 @@ class Auth {
             .then(u => u.json())
             .then(users => {
               if (users.length) {
-                localStorage.setItem("userId", users[0].id)
+                localStorage.setItem("userId", users[0].id);
                 resolve(users[0].id);
               } else {
                 let obj = {
@@ -72,7 +71,6 @@ class Auth {
                   "email": this.profile.email,
                   "sub": this.profile.sub
                 };
-                console.log(obj);
                 fetch(`http://localhost:5002/users`, {
                   method: "POST",
                   headers: {
