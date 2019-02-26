@@ -1,17 +1,19 @@
 .welcome-container {
     position: fixed;
     left: 50%;
-    bottom: 25%;
+    bottom: 15%;
     transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 .welcome-header {
     font-family: "Montserrat";
     font-size: 3em;
+    color: white;
 }
 
 .login-button {
@@ -30,4 +32,16 @@
     padding-top: calc(0.375em - 1px);
     text-align: center;
     white-space: nowrap;
+    margin-top: 2em;
 }
+
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    object-fit: cover;
+    height: 100vh;
+    /* width: auto;
+    height: 100%;
+    min-height: 100%; */
+  }
