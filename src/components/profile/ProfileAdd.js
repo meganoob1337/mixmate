@@ -351,7 +351,7 @@ export default class ProfileAdd extends Component {
                                         </fieldset>
                                     })
                                 }
-                                <span classname="button-fixer">
+                                <span className="button-fixer">
                                     <button type="button"
                                     className="button is-dark"
                                     onClick={this.handleAddButton}>Add New Ingredient</button>
