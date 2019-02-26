@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {withRouter} from 'react-router-dom';
 import auth0Client from './auth/Auth';
+import MixMateIcon from '../src/components/images/cocktail-shaker.png'
 
 class Callback extends Component {
   async componentDidMount() {
@@ -13,7 +14,10 @@ class Callback extends Component {
 
   render() {
     return (
-      <p>Loading profile...</p>
+      <div className="callback-content">
+        <p>Loading profile...</p>
+        <img src={MixMateIcon} alt="MixMate Icon" />
+      </div>
     );
   }
 }
