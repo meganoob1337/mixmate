@@ -2092,36 +2092,20 @@
       "preparation": "Build vodka and orange juice into a highball glass filled with ice. Stir gently and float Galliano on top."
     },
     {
-      "id": 80,
-      "userId": 1,
-      "name": "First Word",
-      "glass": "Coupe",
-      "category": "All Day Cocktail",
-      "preparation": "Shake all ingredients together with ice, then strain into a coupe."
-    },
-    {
-      "id": 82,
       "userId": 2,
       "name": "Hunter's Special",
-      "glass": "Old-fashioned",
+      "glass": "Coupe",
       "category": "Before Dinner Cocktail",
-      "preparation": "Stir all ingredients over ice, then strain into the glass. Garnish with orange peel."
+      "preparation": "Mix it and make it",
+      "id": 78
     },
     {
-      "id": 83,
-      "userId": 1,
-      "name": "A Better Martini",
-      "glass": "Martini",
-      "category": "Before Dinner Cocktail",
-      "preparation": "STIR (don't shake- Bond had it wrong) all ingredients over ice, then strain into a martini glass. Garnish with a lemon twist."
-    },
-    {
+      "id": 79,
       "userId": 1,
       "name": "Classic Daiquiri",
       "glass": "Coupe",
       "category": "All Day Cocktail",
-      "preparation": "Shake all ingredients over ice then strain into a coupe.",
-      "id": 84
+      "preparation": "Shake all ingredients together with ice and strain into a coupe."
     }
   ],
   "ingredients": [
@@ -2566,240 +2550,207 @@
       "id": 88
     }
   ],
+  "userIngredients": [
+    {
+      "userId": 1,
+      "ingredientId": 2,
+      "id": 1
+    },
+    {
+      "userId": 1,
+      "ingredientId": 14,
+      "id": 2
+    },
+    {
+      "userId": 1,
+      "ingredientId": 4,
+      "id": 3
+    },
+    {
+      "userId": 1,
+      "ingredientId": 20,
+      "id": 4
+    },
+    {
+      "userId": 1,
+      "ingredientId": 29,
+      "id": 5
+    },
+    {
+      "userId": 1,
+      "ingredientId": 40,
+      "id": 6
+    },
+    {
+      "userId": 1,
+      "ingredientId": 44,
+      "id": 7
+    },
+    {
+      "userId": 1,
+      "ingredientId": 43,
+      "id": 8
+    },
+    {
+      "userId": 1,
+      "ingredientId": 49,
+      "id": 9
+    },
+    {
+      "userId": 1,
+      "ingredientId": 50,
+      "id": 10
+    },
+    {
+      "userId": 1,
+      "ingredientId": 51,
+      "id": 11
+    },
+    {
+      "userId": 1,
+      "ingredientId": 57,
+      "id": 12
+    },
+    {
+      "userId": 1,
+      "ingredientId": 62,
+      "id": 13
+    },
+    {
+      "userId": 1,
+      "ingredientId": 69,
+      "id": 14
+    },
+    {
+      "userId": 1,
+      "ingredientId": 76,
+      "id": 15
+    },
+    {
+      "userId": 1,
+      "ingredientId": 81,
+      "id": 16
+    },
+    {
+      "userId": 1,
+      "ingredientId": 83,
+      "id": 17
+    },
+    {
+      "userId": 1,
+      "ingredientId": 84,
+      "id": 18
+    },
+    {
+      "userId": 1,
+      "ingredientId": 12,
+      "id": 19
+    },
+    {
+      "userId": 1,
+      "ingredientId": 8,
+      "id": 20
+    },
+    {
+      "userId": 1,
+      "ingredientId": 5,
+      "id": 21
+    },
+    {
+      "userId": 1,
+      "ingredientId": 19,
+      "id": 22
+    }
+  ],
   "cocktailIngredients": [
     {
-      "id": 5,
-      "cocktailId": 80,
-      "ingredientId": 5,
-      "amount": "3/4",
+      "cocktailId": 78,
+      "ingredientId": 20,
+      "amount": "1",
       "unit": "oz",
-      "label": "Plymouth Gin",
+      "label": "Green Chartreuse",
+      "required": true,
+      "id": 1
+    },
+    {
+      "cocktailId": 78,
+      "ingredientId": 44,
+      "amount": "1",
+      "unit": "oz",
+      "label": "Lime Juice",
+      "required": true,
+      "id": 2
+    },
+    {
+      "id": 3,
+      "cocktailId": 79,
+      "ingredientId": 4,
+      "amount": "2",
+      "unit": "oz",
+      "label": "Smith & Cross Rum",
       "required": true
     },
     {
-      "id": 6,
-      "cocktailId": 80,
+      "id": 4,
+      "cocktailId": 79,
       "ingredientId": 44,
-      "amount": "3/4",
+      "amount": "1",
       "unit": "oz",
       "label": "Lime juice",
       "required": true
     },
     {
-      "id": 7,
-      "cocktailId": 80,
+      "id": 5,
+      "cocktailId": 79,
       "ingredientId": 62,
-      "amount": "3/4",
-      "unit": "oz",
-      "label": "Simple syrup",
-      "required": false
-    },
-    {
-      "id": 8,
-      "cocktailId": 80,
-      "ingredientId": 20,
-      "amount": "3/4",
-      "unit": "oz",
-      "label": "Green Chartreuse",
-      "required": true
-    },
-    {
-      "id": 11,
-      "cocktailId": 82,
-      "ingredientId": 6,
-      "amount": "1.5",
-      "unit": "oz",
-      "label": "Mezcal",
-      "required": true
-    },
-    {
-      "id": 12,
-      "cocktailId": 82,
-      "ingredientId": 53,
-      "amount": "1",
-      "unit": "tsp",
-      "label": "Agave nectar",
-      "required": true
-    },
-    {
-      "id": 13,
-      "cocktailId": 82,
-      "ingredientId": 33,
-      "amount": "1",
-      "unit": "oz",
-      "label": "Triple Sec",
-      "required": true
-    },
-    {
-      "id": 14,
-      "cocktailId": 82,
-      "ingredientId": 50,
-      "amount": "2",
-      "unit": "dash(es)",
-      "label": "Orange bitters",
-      "required": true
-    },
-    {
-      "id": 15,
-      "cocktailId": 83,
-      "ingredientId": 5,
-      "amount": "2.5",
-      "unit": "oz",
-      "label": "Plymouth or Beefeater Gin",
-      "required": true
-    },
-    {
-      "id": 16,
-      "cocktailId": 83,
-      "ingredientId": 50,
-      "amount": "1",
-      "unit": "dash(es)",
-      "label": "Orange Bitters",
-      "required": true
-    },
-    {
-      "id": 17,
-      "cocktailId": 83,
-      "ingredientId": 40,
       "amount": "0.75",
       "unit": "oz",
-      "label": "Dolin Dry Vermouth",
+      "label": "Simple syrup",
       "required": true
-    },
-    {
-      "cocktailId": 84,
-      "ingredientId": 4,
-      "amount": "2",
-      "unit": "oz",
-      "label": "Smith & Cross Rum",
-      "required": true,
-      "id": 18
     }
   ],
   "userCocktails": [
     {
       "userId": 1,
-      "cocktailId": 80,
+      "cocktailId": 3,
       "comment": "",
-      "id": 16
+      "id": 2
+    },
+    {
+      "userId": 1,
+      "cocktailId": 5,
+      "comment": "",
+      "id": 3
+    },
+    {
+      "userId": 1,
+      "cocktailId": 7,
+      "comment": "",
+      "id": 4
+    },
+    {
+      "userId": 1,
+      "cocktailId": 24,
+      "comment": "",
+      "id": 5
     },
     {
       "userId": 2,
-      "cocktailId": 82,
+      "cocktailId": 78,
       "comment": "",
-      "id": 23
+      "id": 6
     },
     {
       "userId": 1,
-      "cocktailId": 82,
+      "cocktailId": 79,
       "comment": "",
-      "id": 24
+      "id": 7
     },
     {
       "userId": 1,
-      "cocktailId": 27,
+      "cocktailId": 78,
       "comment": "",
-      "id": 25
-    },
-    {
-      "userId": 1,
-      "cocktailId": 83,
-      "comment": "",
-      "id": 26
-    },
-    {
-      "userId": 1,
-      "cocktailId": 84,
-      "comment": "",
-      "id": 28
-    },
-    {
-      "userId": 1,
-      "cocktailId": 51,
-      "comment": "",
-      "id": 29
-    }
-  ],
-  "userIngredients": [
-    {
-      "userId": 2,
-      "ingredientId": 2,
-      "id": 26
-    },
-    {
-      "userId": 2,
-      "ingredientId": 4,
-      "id": 27
-    },
-    {
-      "userId": 2,
-      "ingredientId": 5,
-      "id": 28
-    },
-    {
-      "userId": 1,
-      "ingredientId": 5,
-      "id": 29
-    },
-    {
-      "userId": 1,
-      "ingredientId": 4,
-      "id": 30
-    },
-    {
-      "userId": 1,
-      "ingredientId": 20,
-      "id": 31
-    },
-    {
-      "userId": 1,
-      "ingredientId": 49,
-      "id": 33
-    },
-    {
-      "userId": 1,
-      "ingredientId": 62,
-      "id": 34
-    },
-    {
-      "userId": 1,
-      "ingredientId": 69,
-      "id": 35
-    },
-    {
-      "userId": 1,
-      "ingredientId": 83,
-      "id": 36
-    },
-    {
-      "userId": 1,
-      "ingredientId": 81,
-      "id": 37
-    },
-    {
-      "userId": 1,
-      "ingredientId": 81,
-      "id": 38
-    },
-    {
-      "userId": 1,
-      "ingredientId": 83,
-      "id": 39
-    },
-    {
-      "userId": 1,
-      "ingredientId": 44,
-      "id": 40
-    },
-    {
-      "userId": 1,
-      "ingredientId": 43,
-      "id": 41
-    },
-    {
-      "userId": 1,
-      "ingredientId": 29,
-      "id": 42
+      "id": 8
     }
   ],
   "categoryOptions": [
