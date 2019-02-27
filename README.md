@@ -12,7 +12,7 @@ MixMate is built to simplify the process of at-home cocktail-making. The app ena
 - Bulma
 - Auth0
 
-## Nashville Software School Front End Capstone
+### Nashville Software School Front End Capstone
 
-## &copy; Cole Bryant 2019
+### &copy; Cole Bryant 2019
 
