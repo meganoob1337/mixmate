@@ -9,3 +9,5 @@ MixMate is an application made to simplify the process of at-home cocktail-makin
 - React-Select
 - Bulma
 - Auth0
+
+![](MixMateClip.gif)
