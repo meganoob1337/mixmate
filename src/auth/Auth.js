@@ -57,12 +57,15 @@ class Auth {
   }
 
   getCurrentUser() {
+    let databaseURL = process.env.NODE_ENV === 'production'
+    ? "/"
+    : "http://localhost:5002";
     return new Promise((resolve, reject) => {
       const userId = localStorage.getItem("userId");
       if (userId !== null) {
         resolve(userId);
       } else if (this.profile) {
-          fetch(`http://localhost:5002/users?sub=${this.profile.sub}`)
+          fetch(`${databaseURL}/users?sub=${this.profile.sub}`)
             .then(u => u.json())
             .then(users => {
               if (users.length) {
@@ -74,7 +77,7 @@ class Auth {
                   "email": this.profile.email,
                   "sub": this.profile.sub
                 };
-                fetch(`http://localhost:5002/users`, {
+                fetch(`${databaseURL}/users`, {
                   method: "POST",
                   headers: {
                     "Content-Type": "application/json"
