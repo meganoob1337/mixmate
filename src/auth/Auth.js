@@ -3,6 +3,7 @@ import {AUTH_CONFIG} from './Auth0Variables';
 
 class Auth {
   constructor() {
+    console.log(process.env.NODE_ENV)
     let databaseURL = process.env.NODE_ENV === 'production'
     ? "/"
     : "http://localhost:5002";
