@@ -3,12 +3,15 @@ import {AUTH_CONFIG} from './Auth0Variables';
 
 class Auth {
   constructor() {
+    let databaseURL = process.env.NODE_ENV === 'production'
+    ? "/"
+    : "http://localhost:5002";
     this.auth0 = new auth0.WebAuth({
       // the following three lines MUST be updated
       domain: AUTH_CONFIG.domain,
       audience: `https://${AUTH_CONFIG.domain}/userinfo`,
       clientID: AUTH_CONFIG.clientId,
-      redirectUri: 'http://localhost:3000/callback',
+      redirectUri: `${databaseURL}/callback`,
       responseType: 'id_token',
       scope: 'openid profile email'
     });
