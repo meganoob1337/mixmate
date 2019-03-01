@@ -3,12 +3,16 @@ import {AUTH_CONFIG} from './Auth0Variables';
 
 class Auth {
   constructor() {
+    console.log(process.env.NODE_ENV)
+    let databaseURL = process.env.NODE_ENV === 'production'
+    ? "/"
+    : "http://localhost:5002";
     this.auth0 = new auth0.WebAuth({
       // the following three lines MUST be updated
       domain: AUTH_CONFIG.domain,
       audience: `https://${AUTH_CONFIG.domain}/userinfo`,
       clientID: AUTH_CONFIG.clientId,
-      redirectUri: 'http://localhost:3000/callback',
+      redirectUri: `${databaseURL}/callback`,
       responseType: 'id_token',
       scope: 'openid profile email'
     });
@@ -54,12 +58,15 @@ class Auth {
   }
 
   getCurrentUser() {
+    let databaseURL = process.env.NODE_ENV === 'production'
+    ? "/"
+    : "http://localhost:5002";
     return new Promise((resolve, reject) => {
       const userId = localStorage.getItem("userId");
       if (userId !== null) {
         resolve(userId);
       } else if (this.profile) {
-          fetch(`http://localhost:5002/users?sub=${this.profile.sub}`)
+          fetch(`${databaseURL}/users?sub=${this.profile.sub}`)
             .then(u => u.json())
             .then(users => {
               if (users.length) {
@@ -71,7 +78,7 @@ class Auth {
                   "email": this.profile.email,
                   "sub": this.profile.sub
                 };
-                fetch(`http://localhost:5002/users`, {
+                fetch(`${databaseURL}/users`, {
                   method: "POST",
                   headers: {
                     "Content-Type": "application/json"

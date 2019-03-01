@@ -12,6 +12,15 @@ MixMate is built to simplify the process of at-home cocktail-making. The app ena
 - Bulma
 - Auth0
 
+### Wire Frame:
+
+![](wireFrame.PNG)
+![](wireFrameArrows.PNG)
+
+### ERD:
+
+![](mixMateERD.PNG)
+
 ### Directions to Use:
 1. Clone this repo with the "Clone or download" button above this README.
 1. Copy the URL generated when the button is clicked.
