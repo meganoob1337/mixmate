@@ -5,7 +5,7 @@ export default {
 	dataManager(fetchObject) {
 
 		let databaseURL = process.env.NODE_ENV === 'production'
-    	? "/"
+    	? ""
     	: "http://localhost:5002";
 		let dataSet = fetchObject.dataSet;
 		let embedItem = fetchObject.embedItem;
