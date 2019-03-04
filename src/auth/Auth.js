@@ -6,13 +6,13 @@ class Auth {
     console.log(process.env.NODE_ENV)
     let databaseURL = process.env.NODE_ENV === 'production'
     ? window.location.href
-    : "http://localhost:5002";
+    : "http://localhost:5002/";
     this.auth0 = new auth0.WebAuth({
       // the following three lines MUST be updated
       domain: AUTH_CONFIG.domain,
       audience: `https://${AUTH_CONFIG.domain}/userinfo`,
       clientID: AUTH_CONFIG.clientId,
-      redirectUri: `${databaseURL}/callback`,
+      redirectUri: `${databaseURL}callback`,
       responseType: 'id_token',
       scope: 'openid profile email'
     });
