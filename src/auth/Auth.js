@@ -5,7 +5,7 @@ class Auth {
   constructor() {
     console.log(process.env.NODE_ENV)
     let databaseURL = process.env.NODE_ENV === 'production'
-    ? ""
+    ? window.location.href
     : "http://localhost:5002";
     this.auth0 = new auth0.WebAuth({
       // the following three lines MUST be updated
@@ -59,7 +59,7 @@ class Auth {
 
   getCurrentUser() {
     let databaseURL = process.env.NODE_ENV === 'production'
-    ? "/"
+    ? ""
     : "http://localhost:5002";
     return new Promise((resolve, reject) => {
       const userId = localStorage.getItem("userId");
