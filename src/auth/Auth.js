@@ -5,7 +5,7 @@ class Auth {
   constructor() {
     console.log(process.env.NODE_ENV)
     let databaseURL = process.env.NODE_ENV === 'production'
-    ? "https://mixmate.herokuapp.com"
+    ? ""
     : "http://localhost:5002";
     this.auth0 = new auth0.WebAuth({
       // the following three lines MUST be updated
