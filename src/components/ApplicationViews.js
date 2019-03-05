@@ -114,7 +114,7 @@ export default class ApplicationViews extends Component {
         return (
             <React.Fragment>
                 {this.showNav()}
-                <Route exact path="/" render={ () => {
+                <Route exact path="/welcome" render={ () => {
                     return <Welcome />
                 }} />
                 <Route exact path="/profile" render={props => {
@@ -180,7 +180,7 @@ export default class ApplicationViews extends Component {
                 }}
                 />
 
-                <Route exact path="/callback" component={Callback} />
+                <Route exact path="/" component={Callback} />
 
             </React.Fragment>
         );
