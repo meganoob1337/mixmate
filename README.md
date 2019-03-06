@@ -22,6 +22,8 @@ MixMate is built to simplify the process of at-home cocktail-making. The app ena
 ![](mixMateERD.PNG)
 
 ### Directions to Use:
+Visit https://mixmate.herokuapp.com/, or:
+
 1. Clone this repo with the "Clone or download" button above this README.
 1. Copy the URL generated when the button is clicked.
 1. Open your terminal.
@@ -34,8 +36,6 @@ MixMate is built to simplify the process of at-home cocktail-making. The app ena
 1. Navigate to localhost:3000.
 1. Once in the broswer, open developer tools and toggle the device toolbar. Set the view to any device.
 1. After steps listed above are complete you should be ready to use the app!
-
-*Please note, this app is currently in pre-deployment stage.
 
 ### Nashville Software School Front End Capstone
 ### &copy; Cole Bryant 2019
