@@ -1,3 +1,5 @@
+// This component is responsible for the inventory section of the app - ingredient selection
+
 import React, { Component } from 'react';
 import Select from 'react-select';
 import makeAnimated from 'react-select/lib/animated';

@@ -1,3 +1,5 @@
+// This component is responsible for functionality and rendering of the explore section cocktail cards
+
 import React, { Component } from 'react';
 import IBACocktailDetail from '../cocktails/IBACocktailDetail';
 import CocktailDetail from '../cocktails/CocktailDetail';

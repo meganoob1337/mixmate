@@ -1,3 +1,5 @@
+// This component is responsible for rendering and funcionality of the edit modal for editing a specific cocktail a user has created
+
 import React, { Component } from 'react';
 import setCardBackground from '../backgrounds';
 import './Profile.css';

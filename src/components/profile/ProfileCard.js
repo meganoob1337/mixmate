@@ -1,3 +1,5 @@
+// This component is responsible for rendering the various cocktail cards on the profile section
+
 import React, { Component } from 'react';
 import CocktailDetail from '../cocktails/CocktailDetail';
 import IBACocktailDetail from '../cocktails/IBACocktailDetail';

@@ -1,3 +1,5 @@
+// This component is responsible for rendering the navbar
+
 import React, { Component } from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
 import auth0Client from '../../auth/Auth';
