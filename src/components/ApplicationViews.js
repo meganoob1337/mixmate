@@ -1,3 +1,5 @@
+// This component functions as the React index for the app. It holds the data in state and sets the routes and data flow to other components.
+
 import { Route } from 'react-router-dom';
 import React, { Component } from 'react';
 import NavBar from './nav/NavBar';
@@ -180,7 +182,10 @@ export default class ApplicationViews extends Component {
                 }}
                 />
 
-                <Route exact path="/callback" component={Callback} />
+                <Route exact path="/callback" render={props => {
+                    return <Callback {...props}
+                    handleGetAlls={this.handleGetAlls}/>
+                }}/>
 
             </React.Fragment>
         );

@@ -1,3 +1,5 @@
+// This component renders the welcome page
+
 import React, { Component } from 'react';
 import auth0Client from '../../auth/Auth';
 import BarVideo from './BarVideo.mp4';

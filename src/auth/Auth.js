@@ -3,7 +3,6 @@ import {AUTH_CONFIG} from './Auth0Variables';
 
 class Auth {
   constructor() {
-    console.log(process.env.NODE_ENV)
     let databaseURL = process.env.NODE_ENV === 'production'
     ? window.location.href
     : "http://localhost:5002/";
@@ -40,7 +39,7 @@ class Auth {
     this.auth0.authorize();
   }
 
-  handleAuthentication() {
+  handleAuthentication(handleGetAlls) {
     return new Promise((resolve, reject) => {
       this.auth0.parseHash((err, authResult) => {
         if (err) return reject(err);
@@ -51,13 +50,13 @@ class Auth {
         this.profile = authResult.idTokenPayload;
         // set the time that the id token will expire at
         this.expiresAt = authResult.idTokenPayload.exp * 1000;
-        this.getCurrentUser()
+        this.getCurrentUser(handleGetAlls)
         .then(() => resolve());
       });
     })
   }
 
-  getCurrentUser() {
+  getCurrentUser(handleGetAlls) {
     let databaseURL = process.env.NODE_ENV === 'production'
     ? ""
     : "http://localhost:5002";
@@ -87,8 +86,12 @@ class Auth {
                 })
                   .then(user => user.json())
                   .then(user => {
-                    localStorage.setItem("userId", user.id);
-                    resolve(user.id);
+                    handleGetAlls("users")
+                    .then(() => {
+                      localStorage.setItem("userId", user.id);
+                      resolve(user.id);
+                    });
+
                   });
               }
             });

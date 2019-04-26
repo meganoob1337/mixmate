@@ -11,6 +11,24 @@
       "email": "huntermettsdev@gmail.com",
       "sub": "google-oauth2|113619286335129988035",
       "id": 2
+    },
+    {
+      "name": "test3",
+      "email": "test3@test.com",
+      "sub": "auth0|5cc226a2d56ec1111c21e6a0",
+      "id": 3
+    },
+    {
+      "name": "test4",
+      "email": "test4@test.com",
+      "sub": "auth0|5cc22ca5e774501118c6b005",
+      "id": 4
+    },
+    {
+      "name": "test5",
+      "email": "test5@test.com",
+      "sub": "auth0|5cc232805439171113059395",
+      "id": 5
     }
   ],
   "cocktails": [
@@ -2550,128 +2568,7 @@
       "id": 88
     }
   ],
-  "userIngredients": [
-    {
-      "userId": 1,
-      "ingredientId": 2,
-      "id": 1
-    },
-    {
-      "userId": 1,
-      "ingredientId": 14,
-      "id": 2
-    },
-    {
-      "userId": 1,
-      "ingredientId": 4,
-      "id": 3
-    },
-    {
-      "userId": 1,
-      "ingredientId": 20,
-      "id": 4
-    },
-    {
-      "userId": 1,
-      "ingredientId": 29,
-      "id": 5
-    },
-    {
-      "userId": 1,
-      "ingredientId": 44,
-      "id": 7
-    },
-    {
-      "userId": 1,
-      "ingredientId": 43,
-      "id": 8
-    },
-    {
-      "userId": 1,
-      "ingredientId": 49,
-      "id": 9
-    },
-    {
-      "userId": 1,
-      "ingredientId": 51,
-      "id": 11
-    },
-    {
-      "userId": 1,
-      "ingredientId": 57,
-      "id": 12
-    },
-    {
-      "userId": 1,
-      "ingredientId": 62,
-      "id": 13
-    },
-    {
-      "userId": 1,
-      "ingredientId": 69,
-      "id": 14
-    },
-    {
-      "userId": 1,
-      "ingredientId": 76,
-      "id": 15
-    },
-    {
-      "userId": 1,
-      "ingredientId": 81,
-      "id": 16
-    },
-    {
-      "userId": 1,
-      "ingredientId": 83,
-      "id": 17
-    },
-    {
-      "userId": 1,
-      "ingredientId": 84,
-      "id": 18
-    },
-    {
-      "userId": 1,
-      "ingredientId": 12,
-      "id": 19
-    },
-    {
-      "userId": 1,
-      "ingredientId": 8,
-      "id": 20
-    },
-    {
-      "userId": 1,
-      "ingredientId": 5,
-      "id": 21
-    },
-    {
-      "userId": 1,
-      "ingredientId": 13,
-      "id": 23
-    },
-    {
-      "userId": 1,
-      "ingredientId": 6,
-      "id": 24
-    },
-    {
-      "userId": 1,
-      "ingredientId": 75,
-      "id": 25
-    },
-    {
-      "userId": 1,
-      "ingredientId": 40,
-      "id": 26
-    },
-    {
-      "userId": 1,
-      "ingredientId": 19,
-      "id": 27
-    }
-  ],
+  "userIngredients": [],
   "cocktailIngredients": [
     {
       "cocktailId": 78,

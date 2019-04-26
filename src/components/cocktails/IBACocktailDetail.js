@@ -1,3 +1,5 @@
+// This component is responsible for rendering the details of a cocktail (IBA)
+
 import React, { Component } from 'react';
 import setCardBackground from '../backgrounds';
 import './CocktailDetail.css';

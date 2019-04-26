@@ -1,3 +1,5 @@
+// This component is responsible for rendering the profile section of the app
+
 import React, { Component } from 'react';
 import ProfileCard from './ProfileCard';
 import ProfileAdd from './ProfileAdd';

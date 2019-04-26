@@ -1,3 +1,5 @@
+// This component is responsible for rendering the navbar
+
 import React, { Component } from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
 import auth0Client from '../../auth/Auth';
@@ -26,7 +28,7 @@ class NavBar extends Component {
                     </div>
                 </nav>
                 <nav className="navbar is-fixed-bottom">
-                    <div className="navbar-brand">
+                    <div className="navbar-brand navbar-bottom-custom">
                         <div className="navbar-item-custom">
                             <NavLink className="navbar-custom-link" activeClassName="selected" to="/inventory">
                                 <img src={inventoryIcon} alt="inventory-icon" />

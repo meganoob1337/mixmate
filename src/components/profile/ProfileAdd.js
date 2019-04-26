@@ -1,3 +1,5 @@
+// This component is responsible for rendering and functionality of the form modal for adding a custom cocktail to the database
+
 import React, { Component } from 'react';
 import './Profile.css';
 

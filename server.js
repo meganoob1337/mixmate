@@ -22,7 +22,7 @@ server.use((req, res, next) => {
     }
 })
 
-// If we made it this fare, the request's url has been changed to '/',
+// If we made it this far, the request's url has been changed to '/',
 //  so we'll retry the default (static) middleware.
 // ...surely there's a better way...????
 server.use(middlewares);

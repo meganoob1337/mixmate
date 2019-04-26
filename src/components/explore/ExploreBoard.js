@@ -1,3 +1,5 @@
+// This component is responsible for rendering the explore section of the app
+
 import React, { Component } from 'react';
 import ExploreCard from './ExploreCard';
 import './Explore.css'

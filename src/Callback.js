@@ -5,7 +5,7 @@ import MixMateIcon from '../src/components/images/cocktail-shaker.png'
 
 class Callback extends Component {
   async componentDidMount() {
-    await auth0Client.handleAuthentication();
+    await auth0Client.handleAuthentication(this.props.handleGetAlls);
     this.props.history.replace('/profile');
   }
 

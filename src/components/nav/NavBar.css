@@ -10,6 +10,11 @@
     font-size: 2em;
     display: flex;
     position: relative;
+    width: 100%;
+}
+
+.navbar-bottom-custom {
+    width: 100%;
 }
 
 .navbar-custom > span {
