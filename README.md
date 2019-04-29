@@ -7,8 +7,9 @@ MixMate is built to simplify the process of at-home cocktail-making. The app ena
 ### Technologies Used:
 
 - HTML/CSS/JavaScript
+- Bulma CSS Framework
 - React.js
-- React-Select
+- React-Select NPM package
 - Auth0
 
 ### Wire Frame:
