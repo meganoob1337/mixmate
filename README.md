@@ -1,6 +1,6 @@
 ## MIXMATE
 
-MixMate is built to simplify the process of at-home cocktail-making. The app enables the user to create and save cocktail recipes, manage inventory, and determine which cocktails can be made with the ingredients the user has in stock. In addition, MixMate includes a database of cocktails from the International Bartender's Association (IBA) which the user can search and filter through to discover new recipes. The app is styled for mobile-first and can be used on mobile by accessing the URL on the Chrome mobile app or simulated on desktop by toggling a mobile device on browser developer tools. Please below for further information, and enjoy.
+MixMate is built to simplify the process of at-home cocktail-making. The app enables the user to create and save cocktail recipes, manage inventory, and determine what cocktails can be made with the ingredients the user has in stock. In addition, MixMate includes a database of cocktails from the International Bartender's Association (IBA) which the user can search and filter through to discover new recipes. MixMate is styled for mobile and can be accessed through the URL on the Chrome mobile app or simulated mobile in the browser by toggling a device through developer tools.
 
 ![](MixMateClip.gif)
 
