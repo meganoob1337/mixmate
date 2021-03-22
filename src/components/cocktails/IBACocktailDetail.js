@@ -6,7 +6,6 @@ import './CocktailDetail.css';
 
 export default class IBACocktailDetail extends Component {
     render() {
-        let i = 0;
             return (
             <React.Fragment>
             <div className="modal is-active">
@@ -21,23 +20,22 @@ export default class IBACocktailDetail extends Component {
                         <p>Category: {this.props.cocktail.category}</p>
                         <ul>Ingredients:
                         {
-                            this.props.cocktail.ingredients.map(cocktailIngredient => {
-                                i++;
+                            this.props.cocktail.ingredients.map((cocktailIngredient, index) => {
                                 let amount = "";
                                 let unit = "";
-                                if (cocktailIngredient.unit === "cl") {
-                                    unit = "oz";
-                                    amount = +(cocktailIngredient.amount * 0.33814).toFixed(1);
+                                if (cocktailIngredient.unit === "oz") {
+                                    unit = "cl";
+                                    amount = +(cocktailIngredient.amount / 0.33814).toFixed(1);
                                 } else {
                                     unit = cocktailIngredient.unit;
                                     amount = cocktailIngredient.amount;
                                 };
                                 if (cocktailIngredient.label) {
-                                    return <li key={i}>{amount} {unit} {cocktailIngredient.label}</li>
+                                    return <li key={index}>{amount} {unit} {cocktailIngredient.label}</li>
                                 } else if (cocktailIngredient.ingredient) {
-                                    return <li key={i}>{amount} {unit} {cocktailIngredient.ingredient}</li>
+                                    return <li key={index}>{amount} {unit} {cocktailIngredient.ingredient}</li>
                                 } else {
-                                    return <li key={i}>{cocktailIngredient.special}</li>
+                                    return <li key={index}>{cocktailIngredient.special}</li>
                                 }
                             })
                         }

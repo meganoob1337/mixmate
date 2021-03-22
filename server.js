@@ -4,10 +4,11 @@ const dbRoutes = Object.keys(require(dbPath)).map(r => '/' + r);
 const jsonServer = require('json-server');
 const server = jsonServer.create();
 const router = jsonServer.router(dbPath);
-const middlewares = jsonServer.defaults({ static: "./build" });
-const port = process.env.PORT || 3000;
+// const middlewares = jsonServer.defaults({ static: "./build" });
+const port = process.env.PORT || 3001;
+const { createProxyMiddleware } = require('http-proxy-middleware');
 
-server.use(middlewares);
+// server.use(middlewares);
 
 server.use((req, res, next) => {
     // If the route looks like one of our db "tables", route it through
@@ -17,7 +18,7 @@ server.use((req, res, next) => {
     if (dbRoutes.some(r => req.path.startsWith(r))) {
         router(req, res, next);
     } else {
-        req.url = '/';
+        // req.url = '/';
         next();
     }
 })
@@ -25,7 +26,7 @@ server.use((req, res, next) => {
 // If we made it this far, the request's url has been changed to '/',
 //  so we'll retry the default (static) middleware.
 // ...surely there's a better way...????
-server.use(middlewares);
+server.use('/', createProxyMiddleware({ target: 'http://localhost:3000', changeOrigin: true }));
 
 server.listen(port, () => {
     console.log(`app running on port ${port}`);

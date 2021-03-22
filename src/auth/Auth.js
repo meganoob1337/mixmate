@@ -5,7 +5,7 @@ class Auth {
   constructor() {
     let databaseURL = process.env.NODE_ENV === 'production'
     ? window.location.href
-    : "http://localhost:5002/";
+    : "http://localhost:3000/";
     this.auth0 = new auth0.WebAuth({
       // the following three lines MUST be updated
       domain: AUTH_CONFIG.domain,

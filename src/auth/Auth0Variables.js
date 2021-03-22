@@ -1,4 +1,4 @@
 export const AUTH_CONFIG = {
-    domain: 'autumn-butterfly-6322.auth0.com',
-    clientId: 'SBerA7ZbT3R3GsXmPJBuT40_8kV5ReXr'
+    domain: 'dev-la6r4inc.eu.auth0.com',
+    clientId: 'fvNAENW8ONh8LzaUh7HrfZtGF5nuZJRg'
 }

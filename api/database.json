@@ -29,6 +29,12 @@
       "email": "test5@test.com",
       "sub": "auth0|5cc232805439171113059395",
       "id": 5
+    },
+    {
+      "name": "an3wilkens",
+      "email": "an3wilkens@gmail.com",
+      "sub": "google-oauth2|115545771861072387123",
+      "id": 6
     }
   ],
   "cocktails": [
@@ -2124,6 +2130,14 @@
       "glass": "Coupe",
       "category": "All Day Cocktail",
       "preparation": "Shake all ingredients with ice then strain into a coupe."
+    },
+    {
+      "userId": 6,
+      "name": "",
+      "glass": "Margarita",
+      "category": "All Day Cocktail",
+      "preparation": "",
+      "id": 80
     }
   ],
   "ingredients": [
@@ -2568,7 +2582,403 @@
       "id": 88
     }
   ],
-  "userIngredients": [],
+  "userIngredients": [
+    {
+      "userId": 6,
+      "ingredientId": 1,
+      "id": 1
+    },
+    {
+      "userId": 6,
+      "ingredientId": 14,
+      "id": 2
+    },
+    {
+      "userId": 6,
+      "ingredientId": 16,
+      "id": 4
+    },
+    {
+      "userId": 6,
+      "ingredientId": 17,
+      "id": 5
+    },
+    {
+      "userId": 6,
+      "ingredientId": 18,
+      "id": 6
+    },
+    {
+      "userId": 6,
+      "ingredientId": 19,
+      "id": 7
+    },
+    {
+      "userId": 6,
+      "ingredientId": 20,
+      "id": 8
+    },
+    {
+      "userId": 6,
+      "ingredientId": 21,
+      "id": 9
+    },
+    {
+      "userId": 6,
+      "ingredientId": 22,
+      "id": 10
+    },
+    {
+      "userId": 6,
+      "ingredientId": 23,
+      "id": 11
+    },
+    {
+      "userId": 6,
+      "ingredientId": 24,
+      "id": 12
+    },
+    {
+      "userId": 6,
+      "ingredientId": 25,
+      "id": 13
+    },
+    {
+      "userId": 6,
+      "ingredientId": 26,
+      "id": 14
+    },
+    {
+      "userId": 6,
+      "ingredientId": 27,
+      "id": 15
+    },
+    {
+      "userId": 6,
+      "ingredientId": 35,
+      "id": 16
+    },
+    {
+      "userId": 6,
+      "ingredientId": 36,
+      "id": 17
+    },
+    {
+      "userId": 6,
+      "ingredientId": 37,
+      "id": 18
+    },
+    {
+      "userId": 6,
+      "ingredientId": 38,
+      "id": 19
+    },
+    {
+      "userId": 6,
+      "ingredientId": 39,
+      "id": 20
+    },
+    {
+      "userId": 6,
+      "ingredientId": 40,
+      "id": 21
+    },
+    {
+      "userId": 6,
+      "ingredientId": 42,
+      "id": 22
+    },
+    {
+      "userId": 6,
+      "ingredientId": 43,
+      "id": 23
+    },
+    {
+      "userId": 6,
+      "ingredientId": 44,
+      "id": 24
+    },
+    {
+      "userId": 6,
+      "ingredientId": 45,
+      "id": 25
+    },
+    {
+      "userId": 6,
+      "ingredientId": 46,
+      "id": 26
+    },
+    {
+      "userId": 6,
+      "ingredientId": 47,
+      "id": 27
+    },
+    {
+      "userId": 6,
+      "ingredientId": 48,
+      "id": 28
+    },
+    {
+      "userId": 6,
+      "ingredientId": 49,
+      "id": 29
+    },
+    {
+      "userId": 6,
+      "ingredientId": 50,
+      "id": 30
+    },
+    {
+      "userId": 6,
+      "ingredientId": 51,
+      "id": 31
+    },
+    {
+      "userId": 6,
+      "ingredientId": 52,
+      "id": 32
+    },
+    {
+      "userId": 6,
+      "ingredientId": 54,
+      "id": 33
+    },
+    {
+      "userId": 6,
+      "ingredientId": 55,
+      "id": 34
+    },
+    {
+      "userId": 6,
+      "ingredientId": 56,
+      "id": 35
+    },
+    {
+      "userId": 6,
+      "ingredientId": 57,
+      "id": 36
+    },
+    {
+      "userId": 6,
+      "ingredientId": 58,
+      "id": 37
+    },
+    {
+      "userId": 6,
+      "ingredientId": 59,
+      "id": 38
+    },
+    {
+      "userId": 6,
+      "ingredientId": 60,
+      "id": 39
+    },
+    {
+      "userId": 6,
+      "ingredientId": 53,
+      "id": 40
+    },
+    {
+      "userId": 6,
+      "ingredientId": 61,
+      "id": 41
+    },
+    {
+      "userId": 6,
+      "ingredientId": 62,
+      "id": 42
+    },
+    {
+      "userId": 6,
+      "ingredientId": 63,
+      "id": 43
+    },
+    {
+      "userId": 6,
+      "ingredientId": 64,
+      "id": 44
+    },
+    {
+      "userId": 6,
+      "ingredientId": 65,
+      "id": 45
+    },
+    {
+      "userId": 6,
+      "ingredientId": 66,
+      "id": 46
+    },
+    {
+      "userId": 6,
+      "ingredientId": 67,
+      "id": 47
+    },
+    {
+      "userId": 6,
+      "ingredientId": 68,
+      "id": 48
+    },
+    {
+      "userId": 6,
+      "ingredientId": 69,
+      "id": 49
+    },
+    {
+      "userId": 6,
+      "ingredientId": 70,
+      "id": 50
+    },
+    {
+      "userId": 6,
+      "ingredientId": 71,
+      "id": 51
+    },
+    {
+      "userId": 6,
+      "ingredientId": 72,
+      "id": 52
+    },
+    {
+      "userId": 6,
+      "ingredientId": 73,
+      "id": 53
+    },
+    {
+      "userId": 6,
+      "ingredientId": 74,
+      "id": 54
+    },
+    {
+      "userId": 6,
+      "ingredientId": 75,
+      "id": 55
+    },
+    {
+      "userId": 6,
+      "ingredientId": 76,
+      "id": 56
+    },
+    {
+      "userId": 6,
+      "ingredientId": 77,
+      "id": 57
+    },
+    {
+      "userId": 6,
+      "ingredientId": 78,
+      "id": 58
+    },
+    {
+      "userId": 6,
+      "ingredientId": 79,
+      "id": 59
+    },
+    {
+      "userId": 6,
+      "ingredientId": 2,
+      "id": 60
+    },
+    {
+      "userId": 6,
+      "ingredientId": 3,
+      "id": 61
+    },
+    {
+      "userId": 6,
+      "ingredientId": 4,
+      "id": 62
+    },
+    {
+      "userId": 6,
+      "ingredientId": 5,
+      "id": 63
+    },
+    {
+      "userId": 6,
+      "ingredientId": 6,
+      "id": 64
+    },
+    {
+      "userId": 6,
+      "ingredientId": 7,
+      "id": 65
+    },
+    {
+      "userId": 6,
+      "ingredientId": 8,
+      "id": 66
+    },
+    {
+      "userId": 6,
+      "ingredientId": 9,
+      "id": 67
+    },
+    {
+      "userId": 6,
+      "ingredientId": 10,
+      "id": 68
+    },
+    {
+      "userId": 6,
+      "ingredientId": 11,
+      "id": 69
+    },
+    {
+      "userId": 6,
+      "ingredientId": 12,
+      "id": 70
+    },
+    {
+      "userId": 6,
+      "ingredientId": 13,
+      "id": 71
+    },
+    {
+      "userId": 6,
+      "ingredientId": 15,
+      "id": 72
+    },
+    {
+      "userId": 6,
+      "ingredientId": 28,
+      "id": 73
+    },
+    {
+      "userId": 6,
+      "ingredientId": 29,
+      "id": 74
+    },
+    {
+      "userId": 6,
+      "ingredientId": 30,
+      "id": 75
+    },
+    {
+      "userId": 6,
+      "ingredientId": 31,
+      "id": 76
+    },
+    {
+      "userId": 6,
+      "ingredientId": 32,
+      "id": 77
+    },
+    {
+      "userId": 6,
+      "ingredientId": 33,
+      "id": 78
+    },
+    {
+      "userId": 6,
+      "ingredientId": 34,
+      "id": 79
+    },
+    {
+      "userId": 6,
+      "ingredientId": 41,
+      "id": 80
+    }
+  ],
   "cocktailIngredients": [
     {
       "cocktailId": 78,
@@ -2614,6 +3024,15 @@
       "unit": "oz",
       "label": "Smith & Cross Rum",
       "required": true
+    },
+    {
+      "cocktailId": 80,
+      "ingredientId": 36,
+      "amount": "2",
+      "unit": "oz",
+      "label": "",
+      "required": false,
+      "id": 7
     }
   ],
   "userCocktails": [
@@ -2664,6 +3083,24 @@
       "cocktailId": 78,
       "comment": "",
       "id": 18
+    },
+    {
+      "userId": 6,
+      "cocktailId": 1,
+      "comment": "",
+      "id": 20
+    },
+    {
+      "userId": 6,
+      "cocktailId": 2,
+      "comment": "",
+      "id": 21
+    },
+    {
+      "userId": 6,
+      "cocktailId": 80,
+      "comment": "",
+      "id": 22
     }
   ],
   "categoryOptions": [
